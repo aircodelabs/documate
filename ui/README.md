@@ -1,6 +1,6 @@
-# Documate Integrations
+# Documate UI Components
 
-The plugins for integrating Documate into your documentation site. Supported frameworks:
+The UI components to integrate Documate into the framework of your choice. Support frameworks:
 
 - [Vitepress](./vitepress/)
 - Docusaurus (coming soon)

@@ -1,5 +1,5 @@
-# Documate Vitepress
+# Documate UI - Vitepress
 
-A plugin for integrating Documate into your Vitepress site.
+A UI component for integrating Documate into your Vitepress site. Already styled to match your Vitepress theme.
 
 ## Usage
