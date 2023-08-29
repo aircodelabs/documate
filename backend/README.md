@@ -1,3 +1,5 @@
-# Documate Backend
+## One-Click Deployment
 
-A set of serverless functions for Documate. Can be deployed to AirCode with a single click.
+Easily get a copy and launch your app on [AirCode](https://aircode.io/) by clicking the button below.
+
+[![Deploy with AirCode](https://aircode.io/aircode-deploy-button.svg)](https://aircode.io/dashboard?owner=AirCodeLabs&repo=documate&branch=main&path=backend&appname=documate-backend)
