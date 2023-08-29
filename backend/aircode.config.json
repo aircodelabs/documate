@@ -1,0 +1,11 @@
+{
+  "name": "documate-backend",
+  "runtime": "node/v18",
+  "retion": "US",
+  "envs": [
+    "OPENAI_API_KEY",
+    "FIELD",
+    "REDIS_URI"
+  ],
+  "typescript": false
+}
