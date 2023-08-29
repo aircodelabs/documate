@@ -7,15 +7,15 @@ hero:
   tagline: Elevate your documatation site with AI chat capabilities this afternoon.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /getting-started/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: View on GitHub
+      link: https://github.com/AirCodeLabs/documate
 
 features:
   - title: Hassle-free integration
-    details: Documate can integrate with popular frameworks you're already familiar with, such as Vitepress, Docusaurus, Docsify, etc. And no AI or vector search knowlegdge required.
+    details: Documate can integrate with popular frameworks you're already familiar with, such as VitePress, Docusaurus, Docsify, etc. And no AI or vector search knowlegdge required.
   - title: Fully controllable
     details: You own the code, you own your data, and you can even choose which pages of your content to index.
   - title: Fully customizable

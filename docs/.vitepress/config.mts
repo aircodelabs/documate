@@ -6,6 +6,10 @@ export default defineConfig({
   description: "Elevate your documatation site with AI chat capabilities.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    outline: {
+      level: [ 2, 3 ],
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -13,10 +17,10 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Getting Started',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Quickstart', link: '/getting-started/' },
+          { text: 'Start with VitePress', link: '/getting-started/vitepress' }
         ]
       }
     ],
