@@ -2,9 +2,9 @@
 
 <p align="center"><strong>Documate</strong></p>
 <p align="center">
-  Elevate your documatation site with AI chat capabilities.
+  Elevate your documentation site with AI chat capabilities.
   <br/>
-  Easy to integrate the popular frameworks, fully accessible, controllable, and customizable.
+  Easy to integrate with popular frameworks, fully accessible, controllable, and customizable.
 </p>
 
 # Documate
