@@ -47,7 +47,7 @@ yarn add @documate/cli @documate/vue
 pnpm add @documate/cli @documate/vue
 ```
 
-The `@documate/cli` package will add a `documate` command to your project, which you can use to upload your content to the backend and generate knowledge base. The `@documate/vue` package contains a Vue component that renders the chat UI.
+The `@documate/cli` package will add a `documate` command to your project. The `@documate/vue` package contains a Vue component that renders the chat UI.
 
 :::
 
@@ -73,3 +73,5 @@ In your `package.json`, add the following script:
   }
 }
 ```
+
+This `documate upload` command will upload all your markdown files to the backend
