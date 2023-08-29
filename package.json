@@ -1,0 +1,9 @@
+{
+  "name": "documate",
+  "version": "0.0.0",
+  "description": "Elevate your documatation site with AI chat capabilities.",
+  "main": "index.js",
+  "repository": "https://github.con/AirCodeLabs/documate",
+  "licence": "MIT",
+  "private": true
+}

@@ -9,7 +9,7 @@ Documate is a toolkit designed to seamlessly integrate AI chat functioinality in
 
 ## Key Features
 - **Hassle-free integration** - Documate can integrate with popular frameworks you're already familiar with, such as Vitepress, Docusaurus, Docsify, etc. Additionally, it's versatile enough to be incorporated into your custom project.
-- **Easy to use** - No  AI or vector search knowlegdge required. Simply follow a few steps and you can integrate Documate into your site in minutes.
+- **Easy to use** - No AI or vector search knowlegdge required. Simply follow a few steps and you can integrate Documate into your site in minutes.
 - **Fully controllable** - You own the code, you own your data, and you can even choose which pages of your content to index.
 - **Fully accessible** - Documate is desined for accessibility. It supports full keyboard navigation and is compatible with screen readers.
 - **Fully customizable** - While provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
