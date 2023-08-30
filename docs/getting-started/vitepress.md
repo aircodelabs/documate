@@ -36,7 +36,7 @@ If you already have a VitePress site, you can add Documate to it by following th
 ::: code-group
 
 ```bash [npm]
-npm install @documate/cli @documate/vue
+npx -p=@documate/cli documate init
 ```
 
 ```bash [yarn]
@@ -69,7 +69,7 @@ In your `package.json`, add the following script:
 {
   "scripts": {
     ...
-    "docs:upload": "documate upload"
+    "documate:upload": "documate upload"
   }
 }
 ```
