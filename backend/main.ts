@@ -3,9 +3,11 @@
 import Chat from './lib/chat';
 
 export default async function (params: any, context: any) {
+  if (context.headers.)
+	
   console.log('Received params:', params);
   
-  const chat = Chat.getInstance(params.projectName); // 使用 projectName 作为实例 id
+  const chat = Chat.getInstance(params.userId);
 
   const response = await chat.question(params.projectName, params.question, params.command);
   console.log(response);

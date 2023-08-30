@@ -6,7 +6,6 @@ import aircode from 'aircode';
 
 const generateDocs = async (projectName: string): Promise<Document[]> => {
   const files = await aircode.db.table('projects').where({ projectName }).find();
-
   const promises = files.map((file) => {
     return aircode.files.download({ 
 		url: file.fileUrl 
@@ -28,7 +27,7 @@ const loader = async (projectName: string): Promise<Document[]> => {
 	const documents = await aircode.db.table('documents').where({ projectName }).find(); // projectName, fileName, content
 
 	const docs = documents.map((doc) => {
-		return new Document(doc.content);
+		return new Document({ pageContent: doc.content });
 	});
 	return docs;
 };

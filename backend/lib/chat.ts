@@ -12,7 +12,7 @@ import knowledge from './knowledge';
 const chatMap = new Map<string, Chat>();
 
 interface IBaseInfo {
-    projectId: string;
+    userId: string;
 }
 
 interface IOptions {
@@ -33,7 +33,7 @@ class Chat {
     
     private baseInfo: IBaseInfo;
 
-    constructor(projectId: string) {
+    constructor(userId: string) {
         const options: IOptions = {
           openAIApiKey: process.env.OPENAI_API_KEY as string,
           temperature: 0, // 数值越低置信度越高
@@ -53,16 +53,16 @@ class Chat {
         this.abortSignal = new AbortController();
         this.model = new ChatOpenAI(options);
         this.baseInfo = {
-          projectId,
+          userId,
         };
     }
 
-    static getInstance(projectId: string): Chat {
-      if (chatMap.has(projectId)) {
-        return chatMap.get(projectId) as Chat;
+    static getInstance(userId: string): Chat {
+      if (chatMap.has(userId)) {
+        return chatMap.get(userId) as Chat;
       } else {
-        const chat = new Chat(projectId);
-        chatMap.set(projectId, chat);
+        const chat = new Chat(userId);
+        chatMap.set(userId, chat);
         return chat;
       }
     }
@@ -133,7 +133,9 @@ class Chat {
       const pureVectorStore = await HNSWLib.fromDocuments(similarityDocuments, new OpenAIEmbeddings({
         openAIApiKey: process.env.openAIApiKey,
       }));
-  
+	  const step3 = Date.now();
+	  console.log('steps pureVectorStore', step3 - step2);
+		
       let result = '';
       switch(command) {
         case 'pure': result = await this.searchFromPureLLM(question); break;
@@ -143,8 +145,7 @@ class Chat {
         default: result = await this.searchFromVectorLLM(pureVectorStore, question); break;
       }
 
-		const step3 = Date.now() - step2;
-	  console.log('gpt', step3);
+	  console.log('gpt', Date.now() - step3);
 
       return result;
     }

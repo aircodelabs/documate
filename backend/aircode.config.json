@@ -5,7 +5,7 @@
   "envs": [
     "OPENAI_API_KEY",
     "FIELD",
-    "REDIS_URI"
+    "To"
   ],
   "typescript": false
 }
