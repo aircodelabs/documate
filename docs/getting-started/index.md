@@ -8,16 +8,19 @@ It uses your content to generate real-time answers to user queries, effectively 
 
 Documate can integrate with popular frameworks you're already familiar with, and it's versatile enough to be incorporated into your custom project.
 
-Please choose a framework below to get started.
+Please choose a framework below to get started:
 
 - [VitePress](/getting-started/vitepress)
-- Docusaurus (Comming soon...)
-- Docsify (Comming soon...)
-- Vuepress (Comming soon...)
-- Docus (Comming soon...)
-- Nextra (Comming soon...)
-- [More](/getting-started/custom)
+- [General Vue Project](/getting-started/general-vue)
 
+The following frameworks are coming soon:
+
+- Docusaurus
+- Docsify
+- Vuepress
+- Docus
+- Nextra
+- General React Project
 ## Key Features
 
 ### Hassle-free integration

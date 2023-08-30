@@ -35,46 +35,7 @@ If you already have a VitePress site, you can add Documate to it by following th
 
 ### 1. Initialize Documate
 
-In the root of your VitePress project, run the following command:
-
-::: code-group
-
-```bash [npm]
-npx -p=@documate/cli documate init
-```
-
-```bash [yarn]
-yarn add @documate/cli @documate/vue
-```
-
-```bash [pnpm]
-pnpm add @documate/cli @documate/vue
-```
-
-:::
-
-This command does the following:
-
-- Install `@documate/cli` and `@documate/vue` packages to your project
-- Create a `documate.json`
-
-```json
-{
-  "include": [ "./**/*.md" ],
-  "backend": ""
-}
-```
-
-- Add a script to your `package.json`
-
-```json
-{
-  "scripts": {
-    ...
-    "documate:upload": "documate upload"
-  }
-}
-```
+<!--@include: ./_partials/_initialize.md-->
 
 ### 2. Add Documate UI to your site
 
@@ -123,38 +84,11 @@ import './custom.css'
 
 See [default CSS variables](/) for the full list.
 
-## Connect to Backend
+## Connect to backend
 
-Now you are all set with the frontend. The last step is to connect it to the backend.
+<!--@include: ./_partials/_connect-backend.md-->
 
-::: tip Prerequisite
-Before continue, please make sure you have built and deployed the backend. Follow [Build the Backend](/getting-started/backend) guide if you haven't done so. It only takes 5 minutes.
-:::
-
-### 1. Add the backend URL to `documate.json`
-
-Enter your backend App in the [AirCode dashboard](https://aircode.io/dashboard), and find the backend URL. It's located under any function's name.
-
-TODO: Get backend url screenshot
-
-Then add it to the `documate.json` file:
-
-```json{3}
-{
-  "include": [ "./**/*.md" ],
-  "backend": "https://test123.us.aircode.run"
-}
-```
-
-Remember to replace `https://test123.us.aircode.run` with your own one. And you should only keep the domain without path. Documate will automatically find the corresponding function to invoke.
-
-### 2. Add the ask endpoint to component
-
-Find the `ask` endpoint (Which is the URL for `ask.js`), and click to copy it.
-
-Todo: Copy ask endpoint screenshot
-
-Modify the `.vitepress/theme/index.js` file pass the endpoint to the `Documate` component as props.
+Modify the `.vitepress/theme/index.js` file to pass the endpoint to the `Documate` component as props.
 
 ```js{11-14}
 // .vitepress/theme/index.js

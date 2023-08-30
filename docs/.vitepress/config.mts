@@ -21,13 +21,14 @@ export default defineConfig({
         items: [
           { text: 'Quickstart', link: '/getting-started/' },
           { text: 'Build the Backend', link: '/getting-started/backend' },
-          { text: 'Start with VitePress', link: '/getting-started/vitepress' }
+          { text: 'Start with VitePress', link: '/getting-started/vitepress' },
+          { text: 'General Vue Project', link: '/getting-started/general-vue' }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/aircodelabs/documate' }
     ]
   }
 })
