@@ -4,6 +4,6 @@
   "description": "Elevate your documatation site with AI chat capabilities.",
   "main": "index.js",
   "repository": "https://github.con/AirCodeLabs/documate",
-  "licence": "MIT",
+  "licence": "MPL-2.0",
   "private": true
 }
