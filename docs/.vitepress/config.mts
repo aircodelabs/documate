@@ -20,6 +20,7 @@ export default defineConfig({
         text: 'Getting Started',
         items: [
           { text: 'Quickstart', link: '/getting-started/' },
+          { text: 'Build the Backend', link: '/getting-started/backend' },
           { text: 'Start with VitePress', link: '/getting-started/vitepress' }
         ]
       }
