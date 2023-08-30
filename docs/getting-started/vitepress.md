@@ -135,7 +135,7 @@ Before continue, please make sure you have built and deployed the backend. Follo
 
 Enter your backend App in the [AirCode dashboard](https://aircode.io/dashboard), and find the backend URL. It's located under any function's name.
 
-![Get backend url](./screenshot-for-get-backend-url.png)
+TODO: Get backend url screenshot
 
 Then add it to the `documate.json` file:
 
@@ -152,7 +152,7 @@ Remember to replace `https://test123.us.aircode.run` with your own one. And you 
 
 Find the `ask` endpoint (Which is the URL for `ask.js`), and click to copy it.
 
-![Copy ask endpoint](./screenshot-for-copy-ask-endpoint.png)
+Todo: Copy ask endpoint screenshot
 
 Modify the `.vitepress/theme/index.js` file pass the endpoint to the `Documate` component as props.
 
