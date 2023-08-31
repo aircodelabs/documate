@@ -36,9 +36,9 @@ class Chat {
     constructor(userId: string) {
         const options: IOptions = {
           openAIApiKey: process.env.OPENAI_API_KEY as string,
-          temperature: 0, // 数值越低置信度越高
-          maxRetries: 2, // 重试次数 2
-          maxConcurrency: 10, // 并发数 1
+          temperature: 0, // 0-1, the lower the value, the higher the confidence level.
+          maxRetries: 2,
+          maxConcurrency: 10,
           cache: true,
 		      // stream: false,
         };

@@ -2,8 +2,10 @@
 // import aircode from 'aircode';
 import Chat from './lib/chat';
 
-export default async function (params: any, context: any) {
-  if (context.headers.)
+export default async function (params: any, context: any) {	
+  if (process.env.TOKEN && context.headers.token !== process.env.TOKEN) {
+	  throw new Error('no authorize');
+  }
 	
   console.log('Received params:', params);
   

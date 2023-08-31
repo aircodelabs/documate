@@ -28,3 +28,7 @@ Upload the domain knowledge through the upload file feature in the aircode datab
 Modify code to implement your own app and click the `Deploy` button to publish your app online.
 
 <img src="./docs/deploy.png" width="500">
+
+### 4. Advanced Options
+- You can set the environment `TOKEN` to make you request more safety
+- You can set the environment `REDIS_URI` to make you request quicker

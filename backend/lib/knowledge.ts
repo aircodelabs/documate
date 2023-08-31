@@ -17,6 +17,7 @@ const generateDocs = async (projectName: string): Promise<Document[]> => {
 	
   const splitter = new CharacterTextSplitter({
     separator: '\n\n',
+    chunkSize: 2000,
   });
   const docs = await splitter.createDocuments(texts);
 
