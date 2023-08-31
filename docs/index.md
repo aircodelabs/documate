@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Documate"
+  name: Documate
   tagline: Elevate your documatation site with AI chat capabilities this afternoon.
   actions:
     - theme: brand

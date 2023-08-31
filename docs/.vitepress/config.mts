@@ -2,10 +2,18 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Documate",
-  description: "Elevate your documatation site with AI chat capabilities.",
+  title: 'Documate',
+  description: 'Elevate your documatation site with AI chat capabilities.',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: { 
+      light: '/site-logo-light.svg',
+      dark: '/site-logo-dark.svg',
+      height: 24,
+    },
+
+    siteTitle: false,
+
     outline: {
       level: [ 2, 3 ],
     },
