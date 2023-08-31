@@ -1,5 +1,5 @@
 {
-  "name": "documate-backend",
+  "name": "documate-backend-aircode",
   "runtime": "node/v18",
   "retion": "US",
   "envs": [

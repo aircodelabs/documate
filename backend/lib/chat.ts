@@ -128,7 +128,7 @@ class Chat {
       const similarityDocuments = await allVectorStore.similaritySearch(question);
 	  const step2 = Date.now();
 	  console.log('steps similarity', step2 - start);
-		// todo, 获取到 reference
+	  // todo, 获取到 reference
 		
       const pureVectorStore = await HNSWLib.fromDocuments(similarityDocuments, new OpenAIEmbeddings({
         openAIApiKey: process.env.openAIApiKey,
