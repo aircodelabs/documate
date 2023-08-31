@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Documate',
   description: 'Elevate your documatation site with AI chat capabilities.',
+  head: [
+    [ 'link', { rel: 'icon', href: '/favicon.png' } ],
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: { 

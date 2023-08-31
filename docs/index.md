@@ -2,9 +2,12 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
+title: Documate
+titleTemplate: Elevate your documentation site with AI chat
+
 hero:
   name: Documate
-  tagline: Elevate your documatation site with AI chat capabilities this afternoon.
+  text: Elevate your documentation site with AI chat
   actions:
     - theme: brand
       text: Get Started
@@ -21,4 +24,6 @@ features:
   - title: Fully customizable
     details: While provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
 ---
+<style>
 
+</style>
