@@ -2,7 +2,7 @@
 
 The UI components to integrate Documate into the framework of your choice. Support frameworks:
 
-- [Vitepress](./vitepress/)
+- [VitePress](./vitepress/)
 - Docusaurus (coming soon)
 - Docsify (coming soon)
 
