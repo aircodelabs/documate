@@ -6,15 +6,10 @@ import aircode from 'aircode';
 
 const generateDocs = async (projectName: string): Promise<Document[]> => {
   const files = await aircode.db.table('projects').where({ projectName }).find();
-  const promises = files.map((file) => {
-    return aircode.files.download({ 
-		url: file.fileUrl 
-	}, {
-		dataType: 'string',
-	});
+
+  const texts = files.map((file) => {
+	  return file.content;
   });
-  const texts = await Promise.all(promises) as string[];
-	
   const splitter = new CharacterTextSplitter({
     separator: '\n\n',
     chunkSize: 2000,

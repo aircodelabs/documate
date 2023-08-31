@@ -31,7 +31,10 @@ const finishAction = async (projectName: string, mode: string) => {
 	     const subArray = contents.slice(i, i + chunkSize);
 	     await aircode.db.table('documents').save(subArray);
 	  }
-	  const projects = await aircode.db.table('projects').where({}).find();
+	  const projects = await aircode.db.table('projects').where({}).projection({
+		  projectName: 1,
+		  _id: 1,
+	  }).find();
 	  const deletedItems = projects.map((project) => {
 		return  {
 			url: project.fileUrl
@@ -46,11 +49,11 @@ const finishAction = async (projectName: string, mode: string) => {
 const uploadAction = async (params: { projectName: string, fileName: string, content: string }) => {
   const { projectName , fileName, content } = params;
 	  
-  const file = await aircode.files.upload(content, `${projectName}-${fileName}`);
+  // const file = await aircode.files.upload(content, `${projectName}-${fileName}`);
 
-  await aircode.db.table('projects').save({ projectName, fileName, fileUrl: file.url });
+  const result = await aircode.db.table('projects').save({ projectName, fileName, content });
 
-  return file;
+  return result;
 }
 
 export default async function (params: any, context: any) {
