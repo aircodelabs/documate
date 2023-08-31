@@ -30,16 +30,11 @@ const finishAction = async (projectName: string, mode: string) => {
 	     const subArray = contents.slice(i, i + chunkSize);
 	     await aircode.db.table('documents').save(subArray);
 	  }
-	  const projects = await aircode.db.table('projects').where({}).projection({
-		  projectName: 1,
+	  
+	  const projects = await aircode.db.table('projects').where({ projectName }).projection({
 		  _id: 1,
 	  }).find();
-	  const deletedItems = projects.map((project) => {
-		return  {
-			url: project.fileUrl
-		}
-	  });
-	  await aircode.files.delete(deletedItems);  
+	  await aircode.db.table('projects').delete(projects);
   } else {
 	  await aircode.db.table('documents').save(contents);
   }
