@@ -22,8 +22,8 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Quickstart', link: '/getting-started/' },
+      { text: 'Reference', link: '/reference/documate-config' }
     ],
 
     sidebar: [
@@ -35,7 +35,16 @@ export default defineConfig({
           { text: 'Start with VitePress', link: '/getting-started/vitepress' },
           { text: 'General Vue Project', link: '/getting-started/general-vue' }
         ]
-      }
+      },
+      {
+        text: 'Reference',
+        items: [
+          { text: 'documate.json', link: '/reference/documate-config' },
+          { text: 'CLI', link: '/reference/cli' },
+          { text: '@documate/vue', link: '/reference/documate-vue' },
+          { text: 'Backend APIs', link: '/reference/backend-apis' },
+        ]
+      },
     ],
 
     socialLinks: [

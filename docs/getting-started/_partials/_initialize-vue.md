@@ -3,15 +3,15 @@ In the root of your project, run the following command:
 ::: code-group
 
 ```bash [npm]
-npx -p=@documate/cli documate init
+npx -p=@documate/cli documate init --framework vue
 ```
 
 ```bash [yarn]
-yarn dlx -p @documate/cli documate init
+yarn dlx -p @documate/cli documate init --framework vue
 ```
 
 ```bash [pnpm]
-pnpm --package=@documate/cli documate init
+pnpm --package=@documate/cli documate init --framework vue
 ```
 
 :::
@@ -23,7 +23,8 @@ This command does the following:
 
 ```json
 {
-  "include": [ "./**/*.md" ],
+  "root": ".",
+  "include": [ "**/*.md" ],
   "backend": ""
 }
 ```
