@@ -25,7 +25,7 @@ const upload = async (uploadUrl, files, token = '') => {
       await Promise.all(promises);
       const processIndex = startIndex + chunkSize > files.length ? files.length : startIndex + chunkSize;
       console.log(`Documate:upload files:: ${processIndex}/${files.length}, duration: ${Date.now() - startTime} ms`);
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
     }
 
     await axios.post(uploadUrl, {
@@ -36,6 +36,7 @@ const upload = async (uploadUrl, files, token = '') => {
         token,
       }
     });
+    console.log('Documate:uploaded all files');
   } catch (error) {
     console.error(error);
     await axios.post(uploadUrl, {

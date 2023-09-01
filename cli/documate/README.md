@@ -2,8 +2,5 @@
 
 The CLI for Documate. Will add a `documate` command to your project.
 
-## Installation
-
-```shell
-npm i @documate/cli
-```
+[Documate CLI Reference
+](https://documate-git-feature-docs-referece-aircode.vercel.app/reference/cli.html)

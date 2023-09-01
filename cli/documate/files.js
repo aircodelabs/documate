@@ -2,34 +2,10 @@ const { glob } = require("glob");
 const fsPromises = require('fs/promises');
 const path = require('path');
 
-const _readFilesRecursivelyFromPath = async (dirPath) => {
-  let results = [];
-
-  const files = await fsPromises.readdir(dirPath);
-  for (const file of files) {
-    const filePath = path.join(dirPath, file);
-    const stats = await fsPromises.stat(filePath);
-
-    if (stats.isDirectory()) {
-      results = results.concat(await _readFilesRecursivelyFromPath(filePath));
-    } else {
-      if (!filePath.endsWith('.md')) {
-        continue;
-      }
-      const content = await fsPromises.readFile(filePath, 'utf8');
-      if (content.length !== 0) {
-        results.push({ fileName: path.relative(dirPath, filePath), content });
-      }
-    }
-  }
-
-  return results;
-};
-
-const _readFilesFromFileNames = async (fileNames) => {
+const _readFilesFromFileNames = async (rootPath, fileNames) => {
   const results = [];
   for (const fileName of fileNames) {
-    const content = await fsPromises.readFile(fileName, 'utf8');
+    const content = await fsPromises.readFile(path.join(rootPath, fileName), 'utf8');
     if (content.length !== 0) {
       results.push({ fileName, content });
     }
@@ -38,17 +14,16 @@ const _readFilesFromFileNames = async (fileNames) => {
 };
 
 const readFiles = async (config = {}) => {
-  let files;
-
-  if (config.include) {
-    const fileNames = await glob(config.include, { ignore: 'node_modules/**' })
-    files = await _readFilesFromFileNames(fileNames);
-  } else {
-    console.log(`Documate:Couldn't locate documate.json in ${process.cwd()}. Files will be sourced from CLI arguments; if none provided, the current directory will be used.`);
-    const path = process.argv[3] || process.cwd();
-    console.log('Documate:path:: ', path);
-    files = await _readFilesRecursivelyFromPath(path);
+  let ignore = [];
+  if (config.exclude) {
+    ignore = Array.isArray(config.exclude) ? config.exclude : [config.exclude];
   }
+  ignore.push('node_modules/**');
+
+  const include = config.include || '**';
+
+  const fileNames = await glob(include, { ignore, cwd: config.root })
+  const files = await _readFilesFromFileNames(config.root, fileNames);
   
   console.log('Documate:files nums:: ', files.length);
   return files;
