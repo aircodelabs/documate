@@ -1,0 +1,14 @@
+:root {
+  --dm-c-white: #fff;
+  --dm-text-color: #374151;
+  --dm-modal-bg-color: #fff;
+  --dm-mask-bg-color: rgba(101,108,133, .8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dm-text-color: #E5E7E8;
+    --dm-modal-bg-color: #202127;
+    --dm-mask-bg-color: #fff;
+  }
+}

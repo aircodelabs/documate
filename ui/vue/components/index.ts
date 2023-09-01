@@ -1,0 +1,1 @@
+export { default as Documate } from './Documate.vue';
