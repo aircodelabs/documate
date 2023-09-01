@@ -2,7 +2,7 @@
 
 Documate is a open source project designed to seamlessly __integrate AI chat functionality into your documentation site__.
 
-It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" form your platform.
+It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" for your platform.
 
 ## Getting Started
 

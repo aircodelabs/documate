@@ -8,6 +8,7 @@ export default {
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'home-hero-before': () => h(HeroPattern),
+      'doc-top': () => h(HeroPattern),
     })
   }
 }

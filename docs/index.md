@@ -6,8 +6,7 @@ title: Documate
 titleTemplate: Elevate your documentation site with AI chat
 
 hero:
-  name: Documate
-  text: Elevate your documentation site with AI chat
+  name: Elevate your documentation site with AI chat
   actions:
     - theme: brand
       text: Get Started

@@ -59,14 +59,14 @@ import GridPattern from './GridPattern.vue'
 .hero-pattern-grid-container {
   position: absolute;
   inset: 0px;
-  background-image: linear-gradient(to right, #36b49f, #DBFF75);
+  background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(14, 165, 233));
   opacity: 0.4;
   -webkit-mask-image: radial-gradient(farthest-side at top,white,transparent);
   mask-image: radial-gradient(farthest-side at top,white,transparent);
 }
 
 .dark .hero-pattern-grid-container {
-  background-image: linear-gradient(to right, rgb(54 180 159 / 0.3), rgb(219 255 117 / 0.3));
+  background-image: linear-gradient(to right, rgba(56, 189, 248, 0.3), rgba(14, 165, 233, 0.3));
   opacity: 1;
 }
 
