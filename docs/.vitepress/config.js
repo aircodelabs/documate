@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Documate',
-  description: 'Elevate your documatation site with AI chat capabilities.',
+  description: 'Elevate your documentation site with AI chat capabilities.',
   head: [
     [ 'link', { rel: 'icon', href: '/favicon.png' } ],
     [ 'meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' } ],
