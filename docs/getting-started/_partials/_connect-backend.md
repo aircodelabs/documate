@@ -12,7 +12,7 @@ TODO: Get backend url screenshot
 
 Then add it to the `documate.json` file:
 
-```json{3}
+```json{4}
 {
   "root": ".",
   "include": [ "**/*.md" ],

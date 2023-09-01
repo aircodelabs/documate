@@ -13,14 +13,14 @@ The root directory of your content files. By default, it's the current working d
 
 ## include
 
-- Type: `Array` of pattern `String`
+- Type: `String`, or `Array` of pattern `String`
 - Default: `[ "**/*.md" ]`
 
 A [glob pattern](https://github.com/isaacs/node-glob#glob-primer) to match files that should be uploaded to the backend. By default, all markdown files in the project will be uploaded.
 
 ## exclude
 
-- Type: `Array` of pattern `String`
+- Type: `String`, or `Array` of pattern `String`
 
 A [glob pattern](https://github.com/isaacs/node-glob#glob-primer) to match files that should be excluded from the upload.
 
