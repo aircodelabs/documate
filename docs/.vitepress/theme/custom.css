@@ -1,0 +1,30 @@
+:root {
+  --vp-c-emerald-1: #10b981;
+  --vp-c-emerald-2: #059669;
+  --vp-c-emerald-3: #047857;
+  --vp-c-emerald-soft: rgba(16, 185, 129, 0.14);
+
+  --vp-c-teal-1: #14b8a6;
+  --vp-c-teal-2: #0d9488;
+  --vp-c-teal-3: #0f766e;
+  --vp-c-teal-soft: rgba(13, 148, 136, 0.14);
+
+  .dark {
+    --vp-c-emerald-1: #4ade80;
+    --vp-c-emerald-2: #10b981;
+    --vp-c-emerald-3: #059669;
+    --vp-c-emerald-soft: rgba(16, 185, 129, 0.16);
+
+    --vp-c-teal-1: #2dd4bf;
+    --vp-c-teal-2: #14b8a6;
+    --vp-c-teal-3: #0d9488;
+    --vp-c-teal-soft: rgba(13, 148, 136, 0.16);
+  }
+}
+
+:root {
+  --vp-c-brand-1: var(--vp-c-teal-1);
+  --vp-c-brand-2: var(--vp-c-teal-2);
+  --vp-c-brand-3: var(--vp-c-teal-3);
+  --vp-c-brand-soft: var(--vp-c-teal-soft);
+}

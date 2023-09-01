@@ -12,7 +12,7 @@
 Documate is a toolkit designed to seamlessly integrate AI chat functionality into your documentation site. It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" for your platform.
 
 ## Key Features
-- **Hassle-free integration** - Documate can integrate with popular frameworks you're already familiar with, such as Vitepress, Docusaurus, Docsify, etc. Additionally, it's versatile enough to be incorporated into your custom project.
+- **Hassle-free integration** - Documate can integrate with popular frameworks you're already familiar with, such as VitePress, Docusaurus, Docsify, etc. Additionally, it's versatile enough to be incorporated into your custom project.
 - **Easy to use** - No  AI or vector search knowledge required. Simply follow a few steps, and you can integrate Documate into your site in minutes.
 - **Fully controllable** - You own the code, you own your data, and you can even choose which pages of your content to index.
 - **Fully accessible** - Documate is designed for accessibility. It supports full keyboard navigation and is compatible with screen readers.
