@@ -5,7 +5,7 @@ There are two ways you can integrate Documate with VitePress. Both are convinien
 - [Create a new VitePress site using CLI](#quickstart-for-new-project)
 - [Add to an existing VitePress site](#mannually-add-to-existing-project)
 
-## Quickstart for new project
+## Quickstart for New Project
 
 To create a new VitePress site with Documate, use the following command:
 
@@ -29,19 +29,19 @@ Then follow the prompts.
 
 After the project is created, please follow [the instructions to connect it to a backend](#connect-to-backend).
 
-## Mannually add to existing project
+## Mannually Add to Existing Project
 
 If you already have a VitePress site, you can add Documate to it by following these steps:
 
 ### 1. Initialize Documate
 
-<!--@include: ./_partials/_initialize.md-->
+<!--@include: ./_partials/_initialize-vue.md-->
 
-### 2. Add Documate UI to your site
+### 2. Add Documate UI to Your Project
 
 VitePress allows you to customize the project by [extending the default theme](https://vitepress.dev/guide/extending-default-theme). For adding Documate UI, follow the steps below:
 
-#### 2.1. Add `@documate/vue` to the Layout
+#### 2.1. Add `@documate/vue` to Layout
 
 In the `.vitepress/theme/index.js` file (You need to create one if it doesn't exist), add the following code:
 
@@ -59,7 +59,7 @@ export default {
 }
 ```
 
-#### 2.2. Customize CSS to match your style
+#### 2.2. Customize CSS to Match Your Brand
 
 The default style of Documate UI can be customized by overriding the CSS variables.
 
@@ -84,7 +84,7 @@ import './custom.css'
 
 See [default CSS variables](/) for the full list.
 
-## Connect to backend
+## Connect to Backend
 
 <!--@include: ./_partials/_connect-backend.md-->
 
@@ -110,7 +110,7 @@ export default {
 }
 ```
 
-## Run the project
+## Run the Project
 
 Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
 

@@ -1,8 +1,8 @@
 # Documate Quickstart
 
-Documate is a toolkit designed to seamlessly __integrate AI chat functionality into your documentation site__.
+Documate is a open source project designed to seamlessly __integrate AI chat functionality into your documentation site__.
 
-It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" form your platform.
+It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" for your platform.
 
 ## Getting Started
 
@@ -23,23 +23,23 @@ The following frameworks are coming soon:
 - General React Project
 ## Key Features
 
-### Hassle-free integration
+### Hassle-free Integration
 
 Documate can integrate with popular frameworks you're already familiar with, such as VitePress, Docusaurus, Docsify, etc. Additionally, it's versatile enough to be incorporated into your custom project.
 
-### Easy to use
+### Easy to Use
 
 No  AI or vector search knowledge required. Simply follow a few steps, and you can integrate Documate into your site in minutes.
 
-### Fully controllable
+### Fully Controllable
 
 You own the code, you own your data, and you can even choose which pages of your content to index.
 
-### Fully accessible
+### Fully Accessible
 
 Documate is designed for accessibility. It supports full keyboard navigation and is compatible with screen readers.
 
-### Fully customizable
+### Fully Customizable
 
 While provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
 

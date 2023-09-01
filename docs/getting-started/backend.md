@@ -2,7 +2,7 @@
 
 The backend for Documate is a set of serverless functions that handle the content upload and process question requests. These functions can be deployed to [AirCode](https://aircode.io) by a single click.
 
-## Get a copy
+## Get a Copy
 
 By clicking the button below, you can get a copy of the backend and launch your own App.
 
@@ -20,7 +20,7 @@ This key is used to access the OpenAI API, which is required for the content pro
 
 Then click the __Deploy__ button located on the top bar. This action will ship the functions and provide you with individual accessible URLs for each function.
 
-## Main endpoints
+## Main Endpoints
 
 There are two primary endpoints you need to know: `upload` and `ask`.
 

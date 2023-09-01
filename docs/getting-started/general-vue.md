@@ -4,48 +4,9 @@ Besides the popular frameworks, Documate also supports any Vue project. This gui
 
 ## Initialize Documate
 
-In the root of your project, run the following command:
+<!--@include: ./_partials/_initialize-vue.md-->
 
-::: code-group
-
-```bash [npm]
-npx -p=@documate/cli documate init
-```
-
-```bash [yarn]
-yarn dlx -p @documate/cli documate init
-```
-
-```bash [pnpm]
-pnpm --package=@documate/cli documate init
-```
-
-:::
-
-This command does the following:
-
-- Install `@documate/cli` and `@documate/vue` packages to your project
-- Create a `documate.json`
-
-```json
-{
-  "include": [ "./**/*.md" ],
-  "backend": ""
-}
-```
-
-- Add a script to your `package.json`
-
-```json
-{
-  "scripts": {
-    ...
-    "documate:upload": "documate upload"
-  }
-}
-```
-
-## Add Documate UI to your site
+## Add Documate UI to Your Project
 
 Documate offer a ready-to-use and fully accessible Vue component that you can add to your project.
 
@@ -73,7 +34,7 @@ If you want to customize the default style to match your brand, you can override
 
 See [default CSS variables](/) for the full list.
 
-## Connect to backend
+## Connect to Backend
 
 <!--@include: ./_partials/_connect-backend.md-->
 
@@ -93,7 +54,7 @@ import '@documate/vue/dist/style.css'
 </template>
 ```
 
-## Run the project
+## Run the Rroject
 
 Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
 
