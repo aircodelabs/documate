@@ -15,21 +15,23 @@ const installWith = (command) => {
 }
 
 const installWithUserPackageManager = (framework)=> {
+  const packages = `@documate/${framework}`
+
   try {
     execSync('pnpm --version');
-    installWith(`pnpm add @documate/cli @documate/${framework}`);
+    installWith(`pnpm add ${packages}`);
     return;
   } catch (e) {}
 
   try {
     execSync('yarn --version');
-    installWith(`yarn add @documate/cli @documate/${framework}`);
+    installWith(`yarn add ${packages}`);
     return;
   } catch (e) {}
 
   try {
     execSync('npm --version');
-    installWith(`npm install @documate/cli @documate/${framework}`);
+    installWith(`npm install ${packages}`);
     return;
   } catch (e) {
     console.error('No package manager found.');
