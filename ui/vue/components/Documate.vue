@@ -399,7 +399,6 @@ ul {
 .combobox-options {
   overflow-y: auto;
   padding: 1rem;
-  padding-bottom: 0.5rem;
   max-height: 20rem;
   scroll-padding-top: 2.5rem;
   scroll-padding-bottom: 2.5rem;
@@ -421,11 +420,12 @@ ul {
 }
 
 .combobox-options-title {
-  font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
   line-height: 2.5rem;
   color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .quick-options-section {
