@@ -224,9 +224,7 @@ onBeforeUnmount(() => {
             </div>
 
             <div static class="combobox-options" v-if="questions.length" ref="chatContainer">
-              <li>
                 <ul class="question-anwser-section">
-                  <div>
                     <li class="question-anwser-item" v-for="(q, index) in questions" v-bind:key="index">
                       <div v-if="q.role === 'user'" class="question-role-user">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="question-role-icon">
@@ -255,9 +253,7 @@ onBeforeUnmount(() => {
                     <li>
                       <div v-if="loading" class="loading">...</div>
                     </li>
-                  </div>
                 </ul>
-              </li>
             </div>
 
             <div class="footer">
