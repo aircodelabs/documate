@@ -12,9 +12,6 @@ export default async function (params: any, context: any) {
   const chat = Chat.getInstance(params.userId);
 
   const response = await chat.question(params.project || 'default', params.question, params.command);
-  console.log(response);
   
-  return {
-    response,
-  };
+  return response;
 };
