@@ -1,12 +1,5 @@
 <script lang="ts">
 
-interface Props {
-  endpoint: string;
-  askAILabel?: string;
-  placeholder?: string;
-  quickActions?: string[];
-}
-
 const quickActions = [
   'What is Documate?',
   'How do I get started with Documate?',
@@ -33,8 +26,9 @@ import {
 
 import MarkdownIt from "markdown-it";
 import MarkdownItHighlightjs from "markdown-it-highlightjs";
+import { DocumateProps } from './index';
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
   askAILabel: 'Ask AI',
   placeholder: 'Ask your docs a question...',
