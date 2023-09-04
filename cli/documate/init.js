@@ -1,6 +1,3 @@
-// install @documate/cli @documate/vue
-// create documate.json
-// package.json add script
 const fs = require('fs');
 const { execSync } = require('child_process');
 
