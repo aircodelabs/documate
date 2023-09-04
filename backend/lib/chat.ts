@@ -1,3 +1,5 @@
+import { Readable } from 'stream';
+
 import { Redis } from "ioredis";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { RedisCache } from "langchain/cache/ioredis";
@@ -21,7 +23,7 @@ interface IOptions {
     maxRetries: number;
     maxConcurrency: number;
     cache?: RedisCache | boolean;
-	stream?: boolean;
+	streaming?: boolean;
 }
 
 type ICommand = 'stop' | 'pure' | 'vectorLLM' | 'fileSearch';
@@ -40,7 +42,7 @@ class Chat {
           maxRetries: 2,
           maxConcurrency: 10,
           cache: true,
-		      // stream: false,
+		  streaming: true,
         };
         
         if (process.env.REDIS_URI && process.env.REIDS_URI?.startsWith('redis://')) {
@@ -89,7 +91,7 @@ class Chat {
       return response.content;
     }
 
-    private async searchFromVectorLLM(vectorStore: any, question: string): Promise<string> {
+    private async searchFromVectorLLM(vectorStore: any, question: string): Promise<Readable> {
       // Initialize a retriever wrapper around the vector store
       const vectorStoreRetriever = vectorStore.asRetriever();
 
@@ -97,15 +99,29 @@ class Chat {
         prompt: chatPrompt,
       });
 
-      const res = await chain.call({
+      const stream = new Readable({
+        read() {}
+      });
+
+      chain.call({
         query: question,
         field: 'aircode',
         question,
+        // signal: this.abortSignal, // 支持取消 signal
       }, {
-        // signal: this.signal 支持取消 signal
+        callbacks: [
+          {
+            handleLLMNewToken(token: string) {
+              stream.push(token);
+            },
+            handleLLMEnd() {
+              stream.push(null);
+            }
+          },
+        ],
       });
 
-      return res.text;
+      return stream;
     }
 
     private async searchFromVector(vectorStore: HNSWLib, question: string): Promise<string> {
@@ -119,33 +135,40 @@ class Chat {
       }
     }
 
-    public async question(projectName: string, question: string, command: ICommand): Promise<string> {
-      const documents = await knowledge.loader(projectName);
-	  const start = Date.now();
-      const allVectorStore = await HNSWLib.fromDocuments(documents, new OpenAIEmbeddings({
-        openAIApiKey: process.env.openAIApiKey,
-      }));
-      const similarityDocuments = await allVectorStore.similaritySearch(question);
-	  const step2 = Date.now();
-	  console.log('steps similarity', step2 - start);
-	  // todo, 获取到 reference
-		
-      const pureVectorStore = await HNSWLib.fromDocuments(similarityDocuments, new OpenAIEmbeddings({
-        openAIApiKey: process.env.openAIApiKey,
-      }));
-	  const step3 = Date.now();
-	  console.log('steps pureVectorStore', step3 - step2);
-		
-      let result = '';
-      switch(command) {
-        case 'pure': result = await this.searchFromPureLLM(question); break;
-        case 'stop': this.cacel(); break;
-        case 'fileSearch': result = await this.searchFromVector(pureVectorStore, question); break;
-        case 'vectorLLM':
-        default: result = await this.searchFromVectorLLM(pureVectorStore, question); break;
+     public async question(projectName: string, question: string, command: ICommand): Promise<Readable | String | undefined> {
+      const step1 = Date.now();
+        const documents = await knowledge.loader(projectName);
+        if (documents.length === 0) {
+        throw new Error('no documents in this project');
       }
+      
+      const step2 = Date.now();
+      console.log('steps loader', step2 - step1);
+      const start = Date.now();
+        const allVectorStore = await HNSWLib.fromDocuments(documents, new OpenAIEmbeddings({
+          openAIApiKey: process.env.openAIApiKey,
+        }));
+        const similarityDocuments = await allVectorStore.similaritySearch(question);
+      const step3 = Date.now();
+      console.log('steps similarity', step3 - step2);
+      // todo, 获取到 reference
+      
+        const pureVectorStore = await HNSWLib.fromDocuments(similarityDocuments, new OpenAIEmbeddings({
+          openAIApiKey: process.env.openAIApiKey,
+        }));
+      const step4 = Date.now();
+      console.log('steps pureVectorStore', step4 - step3);
+      
+        let result;
+        switch(command) {
+          case 'pure': result = await this.searchFromPureLLM(question); break;
+          case 'stop': this.cacel(); break;
+          case 'fileSearch': result = await this.searchFromVector(pureVectorStore, question); break;
+          case 'vectorLLM':
+          default: result = await this.searchFromVectorLLM(pureVectorStore, question); break;
+        }
 
-	  console.log('gpt', Date.now() - step3);
+      console.log('gpt', Date.now() - step4);
 
       return result;
     }
