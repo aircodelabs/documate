@@ -1,9 +1,9 @@
 {
-  "name": "Documate vue component",
+  "name": "@documate/vue",
   "private": true,
   "type": "module",
   "files": [
-    "dist"
+    "dist/*"
   ],
   "main": "./dist/documate.es.umd.js",
   "module": "./dist/documate.es.js",
@@ -11,7 +11,8 @@
     ".": {
       "import": "./dist/documate.es.js",
       "require": "./dist/documate.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "version": "0.0.1",
   "scripts": {
