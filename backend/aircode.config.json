@@ -1,11 +1,9 @@
 {
-  "name": "documate-backend",
+  "name": "documate-backend-aircode",
   "runtime": "node/v18",
   "retion": "US",
   "envs": [
-    "OPENAI_API_KEY",
-    "FIELD",
-    "REDIS_URI"
+    "OPENAI_API_KEY"
   ],
   "typescript": false
 }
