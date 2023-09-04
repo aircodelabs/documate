@@ -170,6 +170,8 @@ class Chat {
 
       console.log('gpt', Date.now() - step4);
 
+	  console.log('gpt', Date.now() - step3);
+
       return result;
     }
 }
