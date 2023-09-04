@@ -22,20 +22,16 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
     "@tailwindcss/forms": "^0.5.6",
-    "rehype-highlight": "^6.0.0",
-    "rehype-raw": "^7.0.0",
-    "rehype-sanitize": "^6.0.0",
-    "rehype-stringify": "^10.0.0",
-    "remark-parse": "^10.0.2",
-    "remark-rehype": "^10.1.0",
-    "swr": "^2.2.2",
-    "unified": "^11.0.2",
+    "markdown-it": "^13.0.1",
+    "markdown-it-highlightjs": "^4.0.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/markdown-it": "^13.0.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"
