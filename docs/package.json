@@ -22,5 +22,8 @@
       "tailwindcss": {},
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.0.18"
   }
 }

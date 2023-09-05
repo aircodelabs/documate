@@ -80,3 +80,7 @@
   text-decoration-thickness: from-font;
   text-underline-position: from-font;
 }
+
+.VPHome .VPHomeHero {
+  padding-bottom: 96px;
+}
