@@ -9,7 +9,18 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
+    "@types/node": "^20.5.9",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9",
     "vitepress": "1.0.0-rc.10",
     "vue": "^3.3.4"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   }
 }

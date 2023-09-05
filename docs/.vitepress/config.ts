@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -11,6 +12,18 @@ export default defineConfig({
     [ 'meta', { name: 'og:image', content: '/og-image-0901.png' } ],
     [ 'meta', { name: 'twitter:image', content: '/og-image-0901.png' } ],
   ],
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPFeature\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./theme/components/DocuFeature.vue', import.meta.url)
+          )
+        },
+      ],
+    },
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: { 

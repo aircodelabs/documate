@@ -1,11 +1,11 @@
-<script setup>
-const props = defineProps({
-  width: Number,
-  height: Number,
-  x: [ String, Number ],
-  y: [ String, Number ],
-  squares: Array,
-})
+<script setup lang="ts">
+defineProps<{
+  width: number
+  height: number
+  x: string | number
+  y: string | number
+  squares: Array<[x: number, y: number]>
+}>()
 </script>
 
 <template>
