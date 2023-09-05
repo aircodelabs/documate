@@ -34,7 +34,6 @@ const TEMPLATES = [
 
 async function main () {
 
-
   const cwd = process.cwd()
   const root = path.join(cwd)
 
@@ -42,9 +41,9 @@ async function main () {
 
   async function init() {
 
-    const options = program.opts();
-    let projectName = options.projectName || program.args[0];
-    let template = options.template;
+    const options = program.opts()
+    let projectName = options.projectName || program.args[0]
+    let template = options.template
   
     if (!projectName || !template) {
 
@@ -122,8 +121,8 @@ async function main () {
   .option('--project-name <project-name>', 'Name of the project')
   .option('--template <template>', 'Which template to use', 'vitepress')
   .action(() => {
-    init();
-  });
+    init()
+  })
 
   await program.parseAsync()
 
