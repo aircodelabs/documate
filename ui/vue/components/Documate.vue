@@ -1,12 +1,3 @@
-<script lang="ts">
-
-const quickActions = [
-  'What is Documate?',
-  'How do I get started with Documate?',
-  'How do I run Documate with my documents?',
-]
-</script>
-
 <script setup lang="ts">
 
 import './styles/vars.css'
@@ -30,9 +21,9 @@ import { DocumateProps } from './index';
 
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
-  askAILabel: 'Ask AI',
+  buttonLabel: 'Ask AI',
   placeholder: 'Ask your docs a question...',
-  quickActions: () => quickActions,
+  predefinedQuestions: () => [],
 })
 
 const open = ref(true)
@@ -40,12 +31,13 @@ const query = ref<string>('')
 const questions = ref<{ role: string; content: string; id: number }[]>([])
 const loading = ref(false)
 const chatContainer = ref<HTMLElement | null>(null)
+let selectionMade = ref(false);
 
 let assistantId = 0
 let isCmdPressed = false
 
 function onSelect(item: string ): void {
-  console.log('item', item)
+  selectionMade.value = true
   startChat(item)
 }
 
@@ -56,7 +48,6 @@ const markdownToHtml = (content: string): string => {
 
   const html = markdown.render(content)
   return html
-
 }
 
 // fetch ChatGPT
@@ -93,7 +84,6 @@ async function startChat(question: string) {
       const reader = body?.pipeThrough(new TextDecoderStream()).getReader();
       while (reader) {
         let stream = await reader.read()
-        console.log("the stream", stream)
         if (stream.done) break
         const chunks = stream.value
           .replaceAll(/^data: /gm, "")
@@ -107,7 +97,6 @@ async function startChat(question: string) {
             const assistantIndex = questions.value.findIndex(q => q.role === 'assistant' && q.id === assistantId)
 
             const content = chunk.choices[0].delta.content
-            console.log('content: ', content)
             if (!content) continue
 
             if (chatContainer.value) {
@@ -130,17 +119,21 @@ async function startChat(question: string) {
 }
 
 const keyEnter = (e: KeyboardEvent) => {
-  console.log('query.value', query.value)
+  if (selectionMade.value) {
+    selectionMade.value = false
+    query.value = ''
+    return
+  }
   e.preventDefault()
   startChat(query.value)
   scrollToBottom()
   query.value = ''
 }
 
-const filteredQuickActions = computed(() =>
+const filteredPredefinedQuestions = computed(() =>
   query.value === ''
-    ? props.quickActions
-    : props.quickActions.filter((item) => {
+    ? props.predefinedQuestions
+    : props.predefinedQuestions.filter((item) => {
         return item.toLowerCase().includes(query.value)
       })
 )
@@ -178,7 +171,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-<span class="ask-ai" @click="open = true">{{ props.askAILabel }}</span>
+<span class="ask-ai" @click="open = true">{{ buttonLabel }}</span>
 <TransitionRoot :show="open" as="template" appear>
   <Dialog as="div" class="dialog" @close="open = false">
     <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
@@ -196,11 +189,10 @@ onBeforeUnmount(() => {
               <ComboboxInput class="chat-input" :placeholder="placeholder" aria-autocomplete="false"  @change="query = $event.target.value" @keyup.enter="keyEnter" :value="query" autocomplete="off" />
             </div>
 
-            <ComboboxOptions v-if="props.quickActions.length > 0 && !questions.length" static class="combobox-options">
-              <li v-if="props.quickActions.length > 0">
-                <h2 class="combobox-options-title" v-if="filteredQuickActions.length > 0">Frequently Asked</h2>
+            <ComboboxOptions v-if="props.predefinedQuestions.length > 0 && !questions.length" static class="combobox-options">
+              <li v-if="props.predefinedQuestions.length > 0">
                 <ul class="combobox-options-container">
-                  <ComboboxOption v-for="action in filteredQuickActions" :key="action" :value="action" as="template" v-slot="{ active }">
+                  <ComboboxOption v-for="action in filteredPredefinedQuestions" :key="action" :value="action" as="template" v-slot="{ active }">
                     <li class="combobox-option" :class="{ active }">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="option-icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
@@ -212,9 +204,8 @@ onBeforeUnmount(() => {
               </li>
             </ComboboxOptions>
 
-            <div v-if="query !== '' && props.quickActions.length === 0 && props.quickActions.length === 0" class="result-not-found">
-              <p class="result-not-found-title">No results found</p>
-              <p class="result-not-found-text">We couldn’t find anything with that term. Please try again.</p>
+            <div v-if="(props.predefinedQuestions.length === 0 && questions.length === 0)" class="result-not-found">
+              <p class="result-not-found-text">No recent searches</p>
             </div>
 
             <div static class="combobox-options" v-if="questions.length" ref="chatContainer">
@@ -245,7 +236,7 @@ onBeforeUnmount(() => {
                       </div>
                     </li>
                     <li>
-                      <div v-if="loading" class="loading">...</div>
+                      <div v-show="loading" class="loading">...</div>
                     </li>
                 </ul>
             </div>
@@ -256,9 +247,9 @@ onBeforeUnmount(() => {
                 <kbd class="kbd">⌘</kbd>
                 <span class="kbd-text">+</span>
                 <kbd class="kbd">/</kbd>
-                <span class="kbd-text">for search,</span>
+                <span class="kbd-text">to open</span>
                 <kbd :class="['kbd', 'esc']">esc</kbd>
-                <span class="kbd-text">for hide</span>
+                <span class="kbd-text">to close</span>
                 </div>
               <a href="https://documate.site/" class="powered-by">
                 <span>Powered by</span>
@@ -350,6 +341,9 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 }
 
 .glass-icon {
@@ -375,6 +369,9 @@ ul {
   height: 3rem;
   color: var(--dm-text-color);
   background-color: transparent;
+  --tw-divide-opacity: 1;
+  border-color: rgb(243, 244, 246, 1);
+  border-width: 1px;
 
   @media (min-width: 640px) {
     font-size: 0.875rem;
@@ -393,9 +390,6 @@ ul {
   scroll-padding-top: 2.5rem;
   scroll-padding-bottom: 2.5rem;
   scroll-padding-bottom: 0.5rem;
-  --tw-divide-opacity: 1;
-  border-color: rgb(243, 244, 246, 1);
-  border-width: 1px;
   min-height: 5rem;
 }
 
@@ -407,15 +401,6 @@ ul {
   padding-right: 1rem;
   cursor: default;
   user-select: none;
-}
-
-.combobox-options-title {
-  line-height: 1rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-  color: #111827;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .quick-options-section {
@@ -571,6 +556,9 @@ ul {
   line-height: 1rem;
   color: #374151;
   background-color: #F9FAFB;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .kbd-wrap {
@@ -617,6 +605,9 @@ ul {
   text-decoration: none;
   color: var(--dm-text-color);
   gap: 0.5rem;
+  @media (max-width: 768px) {
+    margin-top: 0.2rem;
+  }
 }
 
 </style>
