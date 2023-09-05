@@ -1,7 +1,7 @@
 {
   "name": "create-documate",
-  "version": "0.0.2",
-  "description": "",
+  "version": "0.0.3",
+  "description": "create-documate can let you create a new Documate project without installing CLI.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,8 @@
   "bin": {
     "create-documate": "./index.js"
   },
-  "keywords": [],
+  "homepage": "https://documate.site/reference/cli.html",
+  "keywords": ["documate", "documate-create"],
   "author": "",
   "license": "MPL-2.0",
   "dependencies": {
