@@ -42,7 +42,7 @@ async function main () {
   async function init() {
 
     const options = program.opts()
-    let projectName = options.projectName || program.args[0]
+    let projectName = options.projectName || (program.args.length ? program.args[0] : null);
     let template = options.template
 
     let questions = []
@@ -125,9 +125,11 @@ async function main () {
   }
 
   program
+  .arguments('[project-name]')
   .option('--project-name <project-name>', 'Name of the project')
   .option('--template <template>', 'Which template to use')
-  .action(() => {
+  .action((projectNameArg) => {
+    projectNameArg && (program.projectName = projectNameArg);
     init()
   })
 
