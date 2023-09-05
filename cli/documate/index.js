@@ -49,7 +49,6 @@ const parseArgs = async () => {
     program.parse();
   });
 
-  console.log('Documate:options:: ', options);
   return {
     command,
     options,
