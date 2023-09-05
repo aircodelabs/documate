@@ -7,6 +7,7 @@ const APIURL = 'https://dppbqvuvmi.us.aircode-test.run/aka'
 
 <template>
   <div>
+    <!-- replace endpoint with your own -->
     <Documate :endpoint="APIURL" />
   </div>
 </template>
