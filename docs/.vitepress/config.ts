@@ -12,6 +12,7 @@ export default defineConfig({
     [ 'meta', { name: 'og:image', content: '/og-image-0901.png' } ],
     [ 'meta', { name: 'twitter:image', content: '/og-image-0901.png' } ],
   ],
+  cleanUrls: true,
   vite: {
     resolve: {
       alias: [
