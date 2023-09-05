@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<DocumateProps>(), {
   predefinedQuestions: () => [],
 })
 
-const open = ref(true)
+const open = ref(false)
 const query = ref<string>('')
 const questions = ref<{ role: string; content: string; id: number }[]>([])
 const loading = ref(false)
@@ -369,9 +369,7 @@ ul {
   height: 3rem;
   color: var(--dm-text-color);
   background-color: transparent;
-  --tw-divide-opacity: 1;
-  border-color: rgb(243, 244, 246, 1);
-  border-width: 1px;
+  border-bottom: 1px solid #F3F4F6;
 
   @media (min-width: 640px) {
     font-size: 0.875rem;

@@ -5,4 +5,6 @@ export interface DocumateProps {
   predefinedQuestions?: string[];
 }
 
-export { default as Documate } from './Documate.vue';
+import Documate from './Documate.vue';
+
+export default Documate;
