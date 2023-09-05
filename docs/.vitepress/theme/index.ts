@@ -1,7 +1,9 @@
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import HeroPattern from './components/HeroPattern.vue'
+
+import './tailwind.postcss'
 import './custom.css'
+import HeroPattern from './components/HeroPattern.vue'
 
 export default {
   ...DefaultTheme,

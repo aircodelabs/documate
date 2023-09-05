@@ -3,9 +3,9 @@ import GridPattern from './GridPattern.vue'
 </script>
 
 <template>
-<div class="hero-pattern">
-  <div class="hero-pattern-container">
-    <div class="hero-pattern-grid-container">
+<div class="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">
+  <div class="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#0EA5E9] opacity-40 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-[#38BDF8]/30 dark:to-[#0EA5E9]/30 dark:opacity-100">
       <GridPattern
         :width="72"
         :height="56"
@@ -17,89 +17,16 @@ import GridPattern from './GridPattern.vue'
           [7, 3],
           [10, 6],
         ]"
-        class="hero-pattern-grid"
+        class="absolute inset-x-0 inset-y-[-50%] h-[200%] w-full skew-y-[-18deg] fill-black/40 stroke-black/50 mix-blend-overlay dark:fill-white/2.5 dark:stroke-white/5"
       />
     </div>
     <svg
       viewBox="0 0 1113 440"
       aria-hidden="true"
-      class="hero-pattern-fade"
+      class="absolute left-1/2 top-0 ml-[-19rem] w-[69.5625rem] fill-white blur-[26px] dark:hidden"
     >
       <path d="M.016 439.5s-9.5-300 434-300S882.516 20 882.516 20V0h230.004v439.5H.016Z" />
     </svg>
   </div>
 </div>
 </template>
-
-<style>
-.hero-pattern {
-  position: absolute;
-  inset: 0px;
-  z-index: -10;
-  margin-left: 0;
-  margin-right: 0;
-  max-width: none;
-  overflow: hidden;
-}
-
-.hero-pattern-container {
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  margin-left: -38rem;
-  height: 25rem;
-  width: 81.25rem;
-}
-
-.dark .hero-pattern-container {
-  -webkit-mask-image: linear-gradient(white, transparent);
-  mask-image: linear-gradient(white, transparent);
-}
-
-.hero-pattern-grid-container {
-  position: absolute;
-  inset: 0px;
-  background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(14, 165, 233));
-  opacity: 0.4;
-  -webkit-mask-image: radial-gradient(farthest-side at top,white,transparent);
-  mask-image: radial-gradient(farthest-side at top,white,transparent);
-}
-
-.dark .hero-pattern-grid-container {
-  background-image: linear-gradient(to right, rgba(56, 189, 248, 0.3), rgba(14, 165, 233, 0.3));
-  opacity: 1;
-}
-
-.hero-pattern-grid {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -50%;
-  bottom: -50%;
-  height: 200%;
-  width: 100%;
-  transform: skewY(-18deg);
-  fill: rgba(0, 0, 0, 0.4);
-  stroke: rgba(0, 0, 0, 0.5);
-  mix-blend-mode: overlay;
-}
-
-.dark .hero-pattern-grid {
-  fill: rgba(255, 255, 255, 0.025);
-  stroke: rgba(255, 255, 255, 0.05);
-}
-
-.hero-pattern-fade {
-  position: absolute;
-  left: 50%;
-  top: 0px;
-  margin-left: -19rem;
-  width: 69.5625rem;
-  fill: white;
-  filter: blur(26px);
-}
-
-.dark .hero-pattern-fade {
-  display: none;
-}
-</style>

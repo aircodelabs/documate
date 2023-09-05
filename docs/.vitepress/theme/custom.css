@@ -80,3 +80,18 @@
   text-decoration-thickness: from-font;
   text-underline-position: from-font;
 }
+
+.VPHome .VPHomeHero {
+  padding-bottom: 96px;
+}
+
+@media (min-width: 960px) {
+  #app .VPNavBar:not(.has-sidebar):not(.top) {
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+  }
+
+  #app .VPNavBar:not(.has-sidebar):not(.top) .content .content-body {
+    background-color: transparent;
+  }
+}
