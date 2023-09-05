@@ -45,11 +45,12 @@ VitePress allows you to customize the project by [extending the default theme](h
 
 In the `.vitepress/theme/index.js` file (You need to create one if it doesn't exist), add the following code:
 
-```js{4,8-10}
+```js{4,5,8-10}
 // .vitepress/theme/index.js
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import Documate from '@documate/vue'
+import '@documate/vue/dist/style.css'
 
 export default {
   ...DefaultTheme,
@@ -65,11 +66,12 @@ The default style of Documate UI can be customized by overriding the CSS variabl
 
 In VitePress, this can be done by creating a `custom.css` file in the `.vitepress/theme` folder, and import it in the `index.js` file:
 
-```js{5}
+```js{6}
 // .vitepress/theme/index.js
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import Documate from '@documate/vue'
+import '@documate/vue/dist/style.css'
 import './custom.css'
 
 ...
@@ -90,11 +92,12 @@ See [default CSS variables](/) for the full list.
 
 Modify the `.vitepress/theme/index.js` file to pass the endpoint to the `Documate` component as props.
 
-```js{11-14}
+```js{12-15}
 // .vitepress/theme/index.js
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import Documate from '@documate/vue'
+import '@documate/vue/dist/style.css'
 
 export default {
   ...DefaultTheme,
