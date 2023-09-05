@@ -44,32 +44,39 @@ async function main () {
     const options = program.opts()
     let projectName = options.projectName || program.args[0]
     let template = options.template
+
+    let questions = []
+
+    if (!projectName) {
+      questions.push({
+        type: projectName ? null : 'text',
+        name: 'projectName',
+        message: reset('Project name:'),
+        initial: options.projectName || defaultProjectName,
+      })
+    }
+
+    if (!template) {
+      questions.push({
+        type: 'select',
+        name: 'template',
+        message:`Please select a template from below: `,
+        initial: 0,
+        choices: TEMPLATES.map((template) => {
+          const templateColor = template.color || lightBlue
+          return {
+            title: templateColor(template.display || template.name),
+            value: template,
+          }
+        }),
+      })
+    }
   
-    if (!projectName || !template) {
+    if (questions.length > 0) {
 
       try {
         result = await prompts(
-          [
-            {
-              type: projectName ? null : 'text',
-              name: 'projectName',
-              message: reset('Project name:'),
-              initial: defaultProjectName,
-            },
-            {
-              type: template && TEMPLATES.includes(template) ? null : 'select',
-              name: 'template',
-              message:`Please select a template from below: `,
-              initial: 0,
-              choices: TEMPLATES.map((template) => {
-                const templateColor = template.color || lightBlue
-                return {
-                  title: templateColor(template.display || template.name),
-                  value: template,
-                }
-              }),
-            }
-          ],
+          questions,
           {
             onCancel: () => {
               throw new Error(red('✖') + ' Operation cancelled')
@@ -78,8 +85,8 @@ async function main () {
         )
 
       // user choice associated with prompts
-      template = result.template.name || template
-      projectName = result.projectName || projectName
+      template = template || (result.template ? result.template.name : null);
+      projectName = projectName || result.projectName
 
       } catch (cancelled) {
         console.log(cancelled.message)
@@ -119,7 +126,7 @@ async function main () {
 
   program
   .option('--project-name <project-name>', 'Name of the project')
-  .option('--template <template>', 'Which template to use', 'vitepress')
+  .option('--template <template>', 'Which template to use')
   .action(() => {
     init()
   })
