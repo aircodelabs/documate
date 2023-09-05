@@ -5,26 +5,29 @@ const installWith = (command) => {
   try {
     const output = execSync(command);
     console.log(`Installed with: ${output}`);
-    // console.log(`Installed with: ${command}`);
   } catch (e) {
-    console.error(`Error during installation: ${e.stderr}`);
+    console.error(`Error during installation: ${e.message}`);
   }
 }
 
 const installWithUserPackageManager = (framework)=> {
-  const packages = `@documate/${framework}`
+  const packages = `@documate/${framework}@latest`
 
   try {
     execSync('pnpm --version');
     installWith(`pnpm add ${packages}`);
     return;
-  } catch (e) {}
+  } catch (e) {
+
+  }
 
   try {
     execSync('yarn --version');
     installWith(`yarn add ${packages}`);
     return;
-  } catch (e) {}
+  } catch (e) {
+
+  }
 
   try {
     execSync('npm --version');
@@ -36,7 +39,7 @@ const installWithUserPackageManager = (framework)=> {
 }
 
 const injectScript = () => {
-  const packageJsonPath = './package.json';
+  const packageJsonPath = `${process.cwd()}/package.json`;
 
   if (fs.existsSync(packageJsonPath)) {
     const packageJsonData = require(packageJsonPath);
@@ -51,9 +54,7 @@ const injectScript = () => {
       packageJsonPath,
       JSON.stringify(packageJsonData, null, 2),
       'utf8'
-    );
-    
-    console.log('Script injected.');
+    );    
   } else {
     console.error('package.json not found.');
   }
@@ -82,7 +83,7 @@ const init = async (options) => {
   try {
     generateDocumateJson();
   } catch (error) {
-    console.error("Error during Documate JSON generation: ", error);
+    console.error("Error during Documate JSON generation: ");
     return;
   }
 
