@@ -5,8 +5,6 @@ import knowledge from './lib/knowledge';
 
 const finishAction = async (projectName: string, mode: string) => {
   if (mode === 'clear') {
-	  const documents = await aircode.db.table('documents').where({ projectName }).projection({ _id: 1 }).find();
-	  await aircode.db.table('documents').delete(documents);
 	  const projects = await aircode.db.table('projects').where({ projectName }).projection({ _id: 1 }).find();
 	  await aircode.db.table('projects').delete(projects);
 	  return;
@@ -16,7 +14,6 @@ const finishAction = async (projectName: string, mode: string) => {
   const contents = documents.map((document) => {
 	 return {
 		 projectName: projectName,
-		 // todo, fileName
 		 content: document.pageContent
 	  }
   });
@@ -40,9 +37,7 @@ const finishAction = async (projectName: string, mode: string) => {
   }
 }
 
-const uploadAction = async (params: { projectName: string, fileName: string, content: string }) => {
-  const { projectName , fileName, content } = params;
-	  
+const uploadAction = async (projectName: string, fileName: string, content: string) => {	  
   const result = await aircode.db.table('projects').save({ projectName, fileName, content });
 
   return result;
@@ -54,10 +49,12 @@ export default async function (params: any, context: any) {
   }
   console.log('Received params:', params);
 
+  const project = params.project || 'default';
+
   if (params.state === 'finish') {
-	  await finishAction(params.projectName, params.mode);
+	  await finishAction(project, params.mode);
   }	else {
-	  await uploadAction(params);
+	  await uploadAction(project, params.fileName, params.content);
   }
   return {
 	  success: true
