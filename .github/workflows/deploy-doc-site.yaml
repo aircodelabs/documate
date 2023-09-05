@@ -1,0 +1,31 @@
+name: Deploy Doc Site
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/**
+jobs:
+  Deploy-Production:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.6
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+          cache-dependency-path: docs/pnpm-lock.yaml
+      - name: Install Vercel CLI
+        run: pnpm i -g vercel@latest
+      - name: Build Project and Deploy to Vercel
+        working-directory: ./docs
+        run: |
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_DEPLOY_TOKEN }}
+          vercel build --prod --token=${{ secrets.VERCEL_DEPLOY_TOKEN }}
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_DEPLOY_TOKEN }}

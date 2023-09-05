@@ -17,11 +17,11 @@ hero:
 
 features:
   - title: Hassle-free integration
-    details: Documate can integrate with popular frameworks you're already familiar with, such as VitePress, Docusaurus, Docsify, etc. And no AI or vector search knowlegdge required.
+    details: Easily integrate with VitePress, Docusaurus, Docsify, and any other doc sites, no AI or LLM knowledge required.
   - title: Fully controllable
-    details: You own the code, you own your data, and you can even choose which pages of your content to index.
+    details: You own the code, you own your data, you choose which content to index.
   - title: Fully customizable
-    details: While provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
+    details: Come with ainely-tuned UI that's fully customizable to cater to your specific needs.
 ---
 <style>
 
