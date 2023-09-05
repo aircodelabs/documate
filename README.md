@@ -27,7 +27,7 @@ Browse the [examples directory](./examples/) for sample implementations. Each ex
 
 For help, voice ideas, or discussion about best practices:
 
-[Discuss Documate on GitHub Discussions](https://github/aircodelabs/documate/discussions)
+[Discuss Documate on GitHub Discussions](https://github.com/aircodelabs/documate/discussions)
 
 To chat with other community members:
 
