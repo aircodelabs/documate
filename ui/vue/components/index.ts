@@ -1,8 +1,8 @@
 export interface DocumateProps {
   endpoint: string;
-  askAILabel?: string;
+  buttonLabel?: string;
   placeholder?: string;
-  quickActions?: string[];
+  predefinedQuestions?: string[];
 }
 
 export { default as Documate } from './Documate.vue';

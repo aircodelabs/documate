@@ -3,12 +3,18 @@ import Documate from './../components/Documate.vue'
 
 const APIURL = 'https://dppbqvuvmi.us.aircode-test.run/aka'
 
+const quickActions = [
+  'What is Documate?',
+  'How do I get started with Documate?',
+  'How do I run Documate with my documents?',
+]
+
 </script>
 
 <template>
   <div>
-    <!-- replace endpoint with your own -->
-    <Documate :endpoint="APIURL" />
+    <!-- replace props with your own -->
+    <Documate :endpoint="APIURL" :predefinedQuestions="quickActions" :placeholder="`Ask your docs a question...`" :buttonLabel="`Ask AI`" />
   </div>
 </template>
 
