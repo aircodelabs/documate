@@ -5,7 +5,7 @@ export default defineConfig({
   title: 'Documate',
   description: 'Seamlessly integrate AI chat into your documentation site. Documate is fully open-source, controllable, and customizable.',
   head: [
-    [ 'link', { rel: 'icon', href: '/favicon.png' } ],
+    [ 'link', { rel: 'icon', href: '/favicon.ico' } ],
     [ 'meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' } ],
     [ 'meta', { name: 'twitter:card', content: 'summary_large_image' } ],
     [ 'meta', { name: 'og:image', content: '/og-image-0901.png' } ],
