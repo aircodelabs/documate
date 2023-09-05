@@ -1,7 +1,6 @@
 {
   "name": "@documate/vue",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
   "files": [
     "dist",
