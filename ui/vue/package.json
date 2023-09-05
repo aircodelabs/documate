@@ -1,9 +1,11 @@
 {
   "name": "@documate/vue",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "files": [
-    "dist/*"
+    "dist",
+    "README.md"
   ],
   "main": "./dist/documate.es.umd.js",
   "module": "./dist/documate.es.js",
@@ -14,7 +16,12 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
-  "version": "0.0.1",
+  "keywords": [
+    "documate",
+    "@documate/vue",
+    "vue3",
+    "vuejs"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
