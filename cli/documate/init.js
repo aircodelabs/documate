@@ -83,7 +83,7 @@ const init = async (options) => {
   try {
     generateDocumateJson();
   } catch (error) {
-    console.error("Error during Documate JSON generation: ");
+    console.error("Error during Documate JSON generation: ", error);
     return;
   }
 
