@@ -174,16 +174,16 @@ onBeforeUnmount(() => {
 <span class="ask-ai" @click="open = true">{{ buttonLabel }}</span>
 <TransitionRoot :show="open" as="template" appear>
   <Dialog as="div" class="dialog" @close="open = false">
-    <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-      <div class="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity"></div>
+    <TransitionChild as="template" class="enter enter-from enter-to leave leave-from leave-to">
+      <div class="transition-child-ref"></div>
     </TransitionChild>
 
     <div class="dialog-container">
-      <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0 scale-95" enter-to="opacity-100 scale-100" leave="ease-in duration-200" leave-from="opacity-100 scale-100" leave-to="opacity-0 scale-95">
+      <TransitionChild as="template">
         <DialogPanel class="dialog-panel">
           <Combobox @update:modelValue="onSelect">
             <div class="chat-container">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="glass-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="magnifying-glass-icon" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
               <ComboboxInput class="chat-input" :placeholder="placeholder" aria-autocomplete="false"  @change="query = $event.target.value" @keyup.enter="keyEnter" :value="query" autocomplete="off" />
@@ -218,7 +218,6 @@ onBeforeUnmount(() => {
                         {{ q.content }}
                       </div>
                       <div v-else-if="q.role === 'assistant' && !q.content" class="result-not-found">
-                        <!-- <ExclamationTriangleIcon class="result-not-found-icon" aria-hidden="true" /> -->
                         <p class="result-not-found-text">We couldn’t find anything with that term. Please try again.</p>
                       </div>
                       <div
@@ -253,7 +252,7 @@ onBeforeUnmount(() => {
                 </div>
               <a href="https://documate.site/" class="powered-by">
                 <span>Powered by</span>
-                <svg width="120" height="23" viewBox="0 0 240 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="120" height="22" viewBox="0 0 240 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.72224 46.8237C7.2755 46.7799 6.8307 46.7181 6.38892 46.6386C6.06446 46.5805 5.76104 46.4379 5.50921 46.2252C5.25739 46.0125 5.06605 45.7372 4.95446 45.427C4.84287 45.1168 4.81497 44.7827 4.87356 44.4584C4.93216 44.134 5.07519 43.8308 5.28824 43.5792C6.31452 42.3694 7.01535 40.9178 7.32449 39.3617C7.38203 39.074 7.26946 38.5687 6.6891 38.0033C2.56157 33.9883 0 28.5425 0 22.5138C0 9.93109 11.0768 0 24.39 0C37.7031 0 48.7799 9.93109 48.7799 22.5138C48.7799 35.0965 37.7031 45.0276 24.39 45.0276C22.3062 45.0276 20.2799 44.785 18.3438 44.3297C15.1789 46.3186 11.4415 47.1962 7.72224 46.8237ZM26.0073 36.1273C25.9152 36.2256 25.7937 36.2748 25.643 36.2748C25.4922 36.2748 25.3666 36.2256 25.2661 36.1273C25.1739 36.0372 25.1153 35.9185 25.0902 35.771C24.9143 34.4768 24.7216 33.3915 24.5123 32.515C24.3029 31.6387 24.0265 30.9261 23.6831 30.3772C23.3397 29.8203 22.8832 29.3779 22.3136 29.0503C21.7525 28.7227 21.028 28.4606 20.1401 28.264C19.2523 28.0592 18.1593 27.8749 16.8611 27.7111C16.7019 27.6947 16.5721 27.6373 16.4716 27.539C16.3711 27.4407 16.3208 27.3179 16.3208 27.1705C16.3208 27.023 16.3711 26.9002 16.4716 26.8019C16.5721 26.7036 16.7019 26.6463 16.8611 26.6298C18.1677 26.4906 19.2649 26.3309 20.1527 26.1507C21.0405 25.9623 21.7692 25.7002 22.3388 25.3644C22.9083 25.0286 23.3648 24.5781 23.7082 24.0129C24.06 23.4477 24.3364 22.7228 24.5374 21.8382C24.7468 20.9536 24.931 19.8601 25.0902 18.5578C25.1153 18.4185 25.1739 18.3038 25.2661 18.2137C25.3666 18.1154 25.4922 18.0663 25.643 18.0663C25.7937 18.0663 25.9152 18.1154 26.0073 18.2137C26.1078 18.3038 26.1706 18.4185 26.1958 18.5578C26.3633 19.8601 26.5475 20.9536 26.7486 21.8382C26.9579 22.7228 27.2343 23.4477 27.5777 24.0129C27.9211 24.5781 28.3776 25.0286 28.9472 25.3644C29.5167 25.7002 30.2454 25.9623 31.1333 26.1507C32.0294 26.3309 33.1267 26.4906 34.4249 26.6298C34.584 26.6463 34.7096 26.7036 34.8017 26.8019C34.9022 26.9002 34.9525 27.023 34.9525 27.1705C34.9525 27.3179 34.9022 27.4407 34.8017 27.539C34.7096 27.6373 34.584 27.6947 34.4249 27.7111C33.1267 27.8504 32.0294 28.0141 31.1333 28.2025C30.2454 28.3828 29.5167 28.6408 28.9472 28.9766C28.3776 29.3125 27.9211 29.7629 27.5777 30.328C27.2343 30.8934 26.9579 31.6182 26.7486 32.5028C26.5475 33.3875 26.3633 34.4768 26.1958 35.771C26.1706 35.9185 26.1078 36.0372 26.0073 36.1273ZM17.841 23.288C17.774 23.3535 17.6903 23.3863 17.5897 23.3863C17.372 23.3863 17.2464 23.2716 17.2129 23.0423C17.1207 22.2641 17.0202 21.658 16.9113 21.2239C16.8024 20.7816 16.6349 20.4499 16.4088 20.2287C16.1826 20.0075 15.8351 19.8396 15.366 19.725C14.9053 19.6103 14.273 19.4833 13.4689 19.3441C13.2177 19.3113 13.092 19.1925 13.092 18.9878C13.092 18.7912 13.2009 18.6724 13.4187 18.6315C14.2395 18.484 14.8802 18.353 15.3409 18.2383C15.8099 18.1154 16.1617 17.9475 16.3962 17.7346C16.6307 17.5134 16.8024 17.1858 16.9113 16.7517C17.0202 16.3175 17.1207 15.7155 17.2129 14.9456C17.2464 14.7162 17.372 14.6015 17.5897 14.6015C17.8075 14.6015 17.929 14.7121 17.9541 14.9333C18.063 15.7196 18.1719 16.338 18.2808 16.7885C18.3896 17.2308 18.5571 17.5667 18.7833 17.796C19.0178 18.0172 19.3654 18.1851 19.8261 18.2997C20.2951 18.4062 20.94 18.5168 21.7608 18.6315C21.853 18.6479 21.9284 18.6888 21.987 18.7543C22.054 18.8117 22.0875 18.8895 22.0875 18.9878C22.0875 19.1925 21.9786 19.3113 21.7608 19.3441C20.94 19.4997 20.2993 19.639 19.8386 19.7618C19.378 19.8847 19.0304 20.0567 18.7959 20.2778C18.5613 20.4908 18.3896 20.8143 18.2808 21.2485C18.1719 21.6744 18.063 22.2764 17.9541 23.0546C17.9457 23.1447 17.908 23.2225 17.841 23.288ZM23.6202 15.2036C23.5867 15.351 23.503 15.4247 23.369 15.4247C23.2182 15.4247 23.1345 15.351 23.1177 15.2036C23.0004 14.5892 22.8915 14.1388 22.791 13.8521C22.6989 13.5572 22.5021 13.3483 22.2006 13.2255C21.9074 13.1026 21.4133 12.9838 20.7181 12.8692C20.5673 12.8364 20.4919 12.7545 20.4919 12.6234C20.4919 12.476 20.5673 12.3941 20.7181 12.3777C21.4133 12.2548 21.9074 12.1361 22.2006 12.0214C22.5021 11.8985 22.6989 11.6938 22.791 11.4071C22.8915 11.1122 23.0004 10.6535 23.1177 10.031C23.1345 9.88357 23.2182 9.80985 23.369 9.80985C23.503 9.80985 23.5867 9.88357 23.6202 10.031C23.7291 10.6535 23.8338 11.1122 23.9343 11.4071C24.0348 11.6938 24.2317 11.8985 24.5248 12.0214C24.818 12.1361 25.3121 12.2548 26.0073 12.3777C26.1581 12.3941 26.2335 12.476 26.2335 12.6234C26.2335 12.7545 26.1581 12.8364 26.0073 12.8692C25.3121 12.9838 24.818 13.1026 24.5248 13.2255C24.2317 13.3483 24.0348 13.5572 23.9343 13.8521C23.8338 14.1388 23.7291 14.5892 23.6202 15.2036Z" fill="var(--dm-text-color)"/>
                 <path d="M66.5693 37.5231V12.3076H76.4394C78.2405 12.3076 79.8615 12.6078 81.3024 13.2082C82.7673 13.8085 84.016 14.6731 85.0487 15.8018C86.0813 16.9305 86.8738 18.2633 87.4261 19.8002C87.9785 21.3372 88.2546 23.0422 88.2546 24.9154C88.2546 26.7885 87.9785 28.5056 87.4261 30.0665C86.8738 31.6035 86.0813 32.9363 85.0487 34.065C84.0401 35.1696 82.8033 36.0222 81.3384 36.6225C79.8735 37.2229 78.2405 37.5231 76.4394 37.5231H66.5693ZM70.4597 34.173L70.3517 33.7768H76.2593C77.5321 33.7768 78.6608 33.5727 79.6454 33.1644C80.654 32.7562 81.4945 32.1798 82.1669 31.4354C82.8633 30.6669 83.3917 29.7303 83.7519 28.6256C84.1121 27.521 84.2922 26.2842 84.2922 24.9154C84.2922 23.5465 84.1121 22.3218 83.7519 21.2411C83.3917 20.1364 82.8633 19.1998 82.1669 18.4314C81.4705 17.6629 80.63 17.0745 79.6454 16.6663C78.6608 16.258 77.5321 16.0539 76.2593 16.0539H70.2436L70.4597 15.7297V34.173Z" fill="var(--dm-text-color)"/>
                 <path d="M100.72 37.8833C98.8708 37.8833 97.2138 37.4631 95.7489 36.6225C94.308 35.758 93.1673 34.5933 92.3268 33.1284C91.4863 31.6395 91.0661 29.9464 91.0661 28.0493C91.0661 26.1521 91.4863 24.4711 92.3268 23.0062C93.1673 21.5173 94.308 20.3526 95.7489 19.512C97.2138 18.6475 98.8708 18.2152 100.72 18.2152C102.545 18.2152 104.178 18.6475 105.619 19.512C107.084 20.3526 108.237 21.5173 109.077 23.0062C109.918 24.4711 110.338 26.1521 110.338 28.0493C110.338 29.9464 109.918 31.6395 109.077 33.1284C108.237 34.5933 107.084 35.758 105.619 36.6225C104.178 37.4631 102.545 37.8833 100.72 37.8833ZM100.72 34.4972C101.849 34.4972 102.857 34.2211 103.746 33.6687C104.634 33.0924 105.331 32.3239 105.835 31.3633C106.339 30.3787 106.58 29.274 106.556 28.0493C106.58 26.8005 106.339 25.6958 105.835 24.7352C105.331 23.7506 104.634 22.9822 103.746 22.4298C102.857 21.8775 101.849 21.6013 100.72 21.6013C99.5913 21.6013 98.5707 21.8895 97.6581 22.4659C96.7696 23.0182 96.0731 23.7867 95.5688 24.7713C95.0645 25.7319 94.8244 26.8245 94.8484 28.0493C94.8244 29.274 95.0645 30.3787 95.5688 31.3633C96.0731 32.3239 96.7696 33.0924 97.6581 33.6687C98.5707 34.2211 99.5913 34.4972 100.72 34.4972Z" fill="var(--dm-text-color)"/>
@@ -307,6 +306,41 @@ ul {
   z-index: 10;
 }
 
+.enter {
+  transition: opacity 200ms ease-out;
+}
+
+.enter-from {
+  opacity: 0;
+}
+
+.enter-to {
+  opacity: 1;
+}
+
+.leave {
+  transition: opacity 100ms ease-in;
+}
+
+.leave-from {
+  opacity: 1;
+}
+
+.leave-to {
+  opacity: 0;
+}
+
+.transition-child-ref {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .dialog-container {
   overflow-y: auto;
   position: fixed;
@@ -316,6 +350,7 @@ ul {
   left: 0;
   z-index: 10;
   padding: 1rem;
+  background-color: var(--dm-mask-bg-color);
 
   @media (min-width: 640px) { 
     padding: 1.5rem;
@@ -330,13 +365,8 @@ ul {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 0.75rem;
-  border-top-width: 1px;
-  border-color: #F3F4F6;
-  box-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  --ring-color: #000000;
-  --ring-opacity: 0.05; 
   max-width: 36rem;
-  background-color: #ffffff;
+  background-color: var(--dm-modal-bg-color);
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -346,7 +376,7 @@ ul {
   }
 }
 
-.glass-icon {
+.magnifying-glass-icon {
   position: absolute;
   top: 0.875rem;
   left: 1rem;
@@ -369,7 +399,7 @@ ul {
   height: 3rem;
   color: var(--dm-text-color);
   background-color: transparent;
-  border-bottom: 1px solid #F3F4F6;
+  border-bottom: 1px solid var(--dm-divider-color);
 
   @media (min-width: 640px) {
     font-size: 0.875rem;
@@ -401,23 +431,18 @@ ul {
   user-select: none;
 }
 
-.quick-options-section {
-  padding: 1rem 0;
-  margin-top: 0.5rem;
-}
-
 .combobox-options-container {
   margin-top: 0.5rem;
   margin-left: -1rem;
   margin-right: -1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #374151;
+  color: var(--dm-text-color);
 }
 
 .active {
-  color: #ffffff;
-  background-color: #4F46E5;
+  color: var(--dm-c-white);
+  background-color: var(--dm-highlight-color);
 }
 
 .combobox-options-name {
@@ -427,29 +452,6 @@ ul {
   text-overflow: ellipsis;
   white-space: nowrap;
  }
-
-.result-not-found {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  text-align: center;
-
-  @media (min-width: 640px) {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-}
-.result-not-found-title {
-  margin-top: 1rem;
-  font-weight: 600;
-  color: #111827;
-}
-
-.result-not-found-text {
-  margin-top: 0.5rem;
-  color: #6B7280;
-}
 
 .loading {
   padding: 1rem;
@@ -461,14 +463,6 @@ ul {
   width: 1.5rem;
   height: 1.5rem;
   color: var(--dm-text-color);
-}
-
-.option-name {
-  margin-left: 0.75rem;
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .question-anwser-section {
@@ -493,7 +487,6 @@ ul {
   flex: none;
   width: 1.5rem;
   height: 1.5rem;
-  color: #9CA3AF;
 }
 
 .documate-logo {
@@ -514,15 +507,10 @@ ul {
   }
 }
 
-.result-not-found-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: #9CA3AF;
-}
-
 .result-not-found-text {
   margin-top: 0.5rem;
-  color: #6B7280;
+  color: var(--dm-text-color);
+  font-size: 0.85rem;
 }
 .anwser-content {
   display: flex;
@@ -534,10 +522,6 @@ ul {
   font-size: 0.875rem;
   line-height: 1.25rem;
   overflow-wrap: break-word;
-}
-
-.markdown-body > p {
-  margin-top: 0;
 }
 
 .footer {
@@ -552,8 +536,8 @@ ul {
   align-items: center;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #374151;
-  background-color: #F9FAFB;
+  color: var(--dm-text-color);
+  border-top: 1px solid var(--dm-divider-color);
   @media (max-width: 768px) {
     justify-content: center;
   }
@@ -583,9 +567,6 @@ ul {
   width: 1.25rem;
   height: 1.25rem;
   font-weight: 600;
-  background-color: #ffffff;
-  border-color: #4F46E5;
-  color: #4F46E5;
 
   @media (min-width: 640px) { 
     margin-left: 0.5rem;
