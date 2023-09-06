@@ -5,16 +5,28 @@
   --dm-modal-bg-color: var(--dm-c-white);
   --dm-mask-bg-color: rgba(101,108,133, .8);
   --dm-divider-color: #F3F4F6;
+  --dm-placeholder-color: rgba(60, 60, 67, .78);
   --dm-highlight-color: var(--dm-color-brand);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --dm-color-brand: #a8b1ff;
-    --dm-text-color: #E5E7E8;
+    --dm-text-color: rgba(255, 255, 245, .86);
     --dm-modal-bg-color: #202127;
     --dm-mask-bg-color: rgba(101,108,133, .8);
     --dm-divider-color: #2e2e32;
+    --dm-placeholder-color: rgba(235, 235, 245, .6);
     --dm-highlight-color: var(--dm-color-brand);
   }
+}
+
+.dark {
+  --dm-color-brand: #a8b1ff;
+  --dm-text-color: rgba(255, 255, 245, .86);
+  --dm-modal-bg-color: #202127;
+  --dm-mask-bg-color: rgba(101,108,133, .8);
+  --dm-divider-color: #2e2e32;
+  --dm-placeholder-color: rgba(235, 235, 245, .6);
+  --dm-highlight-color: var(--dm-color-brand);
 }
