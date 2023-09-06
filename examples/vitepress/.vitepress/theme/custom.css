@@ -1,0 +1,4 @@
+/* .vitepress/theme/custom.css */
+:root {
+  --dm-color-brand: var(--vp-c-brand-1);
+}

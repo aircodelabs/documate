@@ -94,7 +94,7 @@ async function main () {
       }
     }
   
-    const templatePath = path.join(__dirname, 'templates', template)
+    const templatePath = path.join(__dirname, '..', '..', 'examples', template)
     const destinationPath = path.join(process.cwd(), projectName)
   
     if (!fs.existsSync(destinationPath)) {
