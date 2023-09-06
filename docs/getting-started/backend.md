@@ -26,7 +26,7 @@ There are two primary endpoints you need to know: `upload` and `ask`.
 
 ### `upload.js`
 
-This function handles the content upload. Once all the files have been uploaded, the content is processed to generate a knowledge base specific to your project, which is then stored in the datase.
+This function handles the content upload. Once all the files have been uploaded, the content is processed to generate a knowledge base specific to your project, which is then stored in the database.
 
 ### `ask.js`
 
