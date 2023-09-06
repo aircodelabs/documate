@@ -25,7 +25,7 @@ features:
     icon: shield-check
     link: /getting-started/backend
   - title: Fully customizable
-    details: Come with ainely-tuned UI that's fully customizable to cater to your specific needs.
+    details: Come with a finely-tuned UI that's fully customizable to cater to your specific needs.
     icon: adjustments-horizontal
     link: /reference/documate-vue
 ---
