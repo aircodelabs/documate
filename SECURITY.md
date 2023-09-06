@@ -1,1 +1,1 @@
-Visit [https://github.com/AirCodeLabs/aircode/blob/main/SECURITY.md] to view the disclosure policy.
+Visit [https://github.com/AirCodeLabs/aircode/blob/main/SECURITY.md](https://github.com/AirCodeLabs/aircode/blob/main/SECURITY.md) to view the disclosure policy.
