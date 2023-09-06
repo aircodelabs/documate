@@ -36,7 +36,7 @@ import {
   withKeys
 } from "./chunk-G3CMYKT2.js";
 
-// node_modules/@documate/vue/dist/documate.es.js
+// node_modules/.pnpm/@documate+vue@0.0.6_tailwindcss@3.3.3/node_modules/@documate/vue/dist/documate.es.js
 function pe(t, e, ...n) {
   if (t in e) {
     let a = e[t];
