@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord Chat
+    url: https://discord.gg/YhypQrZBu5
+    about: Chat with other Documate users in real time
+  - name: Ask a question
+    url: https://github.com/AirCodeLabs/documate/discussions
+    about: Ask questions and discuss ideas in GitHub discussions
