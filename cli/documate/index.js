@@ -8,7 +8,7 @@ const upload = require('./upload');
 const parseArgs = async () => {
   const { command, options } = await new Promise((res, rej) => {
     program
-      .name('@documate/cli')
+      .name('@documate/documate')
       .description('Documate is a open source project designed to seamlessly integrate AI chat functionality into your documentation site.')
       .version(package.version);
 
