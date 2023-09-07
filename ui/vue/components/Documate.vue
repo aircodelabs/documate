@@ -517,6 +517,7 @@ ul {
   font-size: 0.875rem;
   line-height: 1.25rem;
   overflow-wrap: break-word;
+  color: var(--dm-text-color);
 }
 
 .footer {

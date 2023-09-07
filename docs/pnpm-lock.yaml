@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@documate/vue':
-    specifier: ^0.0.7
-    version: 0.0.7(tailwindcss@3.3.3)
+    specifier: ^0.0.9
+    version: 0.0.9(tailwindcss@3.3.3)(vue@3.3.4)
   '@heroicons/vue':
     specifier: ^2.0.18
     version: 2.0.18(vue@3.3.4)
@@ -256,8 +256,10 @@ packages:
       - debug
     dev: true
 
-  /@documate/vue@0.0.7(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-zuyBKB7JeEHFztgIzJ+AtribKerLa1bJ1TiIMBRbROkR6BW6TCpqY3EjHaSRduGH5VGWLH2hBnKhunYqIqrDUw==}
+  /@documate/vue@0.0.9(tailwindcss@3.3.3)(vue@3.3.4):
+    resolution: {integrity: sha512-sJ6oQr4MflaL4HnrGSlmjPT0mZ9e7HBXtC4DIoB/iJNe7bkWOJgLMPs37Q93GoxoQXHrGMMdpGH5YHc4VVw/WQ==}
+    peerDependencies:
+      vue: ^3.3.4
     dependencies:
       '@headlessui/vue': 1.7.16(vue@3.3.4)
       '@tailwindcss/forms': 0.5.6(tailwindcss@3.3.3)
