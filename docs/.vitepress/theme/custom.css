@@ -67,6 +67,8 @@
 
   --vp-link-color: var(--vp-c-sky-2);
   --vp-link-hover-color: var(--vp-c-sky-2);
+
+  --dm-color-brand: var(--vp-c-brand-1);
 }
 
 .vp-doc a {

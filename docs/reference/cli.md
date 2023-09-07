@@ -44,46 +44,46 @@ pnpm create documate --template vitepress
 
 :::
 
-## Installing `@documate/cli`
+## Installing `@documate/documate`
 
-The `@documate/cli` package will add a `documate` command for you. You can either install it globally or per project.
+The `@documate/documate` package will add a `documate` command for you. You can either install it globally or per project.
 
 ### Install Globally
 
-A global install of `@documate/cli` will allow you to run the `documate` command in any project.
+A global install of `@documate/documate` will allow you to run the `documate` command in any project.
 
 ::: code-group
 
 ```bash [npm]
-npm install @documate/cli --global
+npm install @documate/documate --global
 ```
 
 ```bash [yarn]
-yarn global add @documate/cli
+yarn global add @documate/documate
 ```
 
 ```bash [pnpm]
-pnpm install @documate/cli --global
+pnpm install @documate/documate --global
 ```
 
 :::
 
 ### Install Per Project
 
-You can pin the version of `@documate/cli` to your project by installing it as a dev dependency. This is useful if you are collaborating with other developers.
+You can pin the version of `@documate/documate` to your project by installing it as a dev dependency. This is useful if you are collaborating with other developers.
 
 ::: code-group
 
 ```bash [npm]
-npm install @documate/cli --save-dev
+npm install @documate/documate --save-dev
 ```
 
 ```bash [yarn]
-yarn add @documate/cli --dev
+yarn add @documate/documate --dev
 ```
 
 ```bash [pnpm]
-pnpm install @documate/cli --save-dev
+pnpm install @documate/documate --save-dev
 ```
 
 :::
