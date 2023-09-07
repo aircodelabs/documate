@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Documate from './../components/Documate.vue'
 
-const APIURL = 'https://dppbqvuvmi.us.aircode-test.run/aka'
+const APIURL = 'https://xqtb17uycg.us.aircode.run/ask'
 
 const quickActions = [
   'What is Documate?',
