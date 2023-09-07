@@ -18,3 +18,12 @@
     --dm-highlight-color: var(--dm-color-brand);
   }
 }
+
+.dark {
+  --dm-color-brand: #a8b1ff;
+  --dm-text-color: #E5E7E8;
+  --dm-modal-bg-color: #202127;
+  --dm-mask-bg-color: rgba(101,108,133, .8);
+  --dm-divider-color: #2e2e32;
+  --dm-highlight-color: var(--dm-color-brand);
+}
