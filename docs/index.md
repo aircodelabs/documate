@@ -29,6 +29,3 @@ features:
     icon: adjustments-horizontal
     link: /reference/documate-vue
 ---
-<style>
-
-</style>
