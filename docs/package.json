@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "documate:init": "documate init",
+    "documate:upload": "documate upload"
   },
   "devDependencies": {
     "@types/node": "^20.5.9",
@@ -24,6 +26,7 @@
     }
   },
   "dependencies": {
+    "@documate/vue": "^0.0.6",
     "@heroicons/vue": "^2.0.18"
   }
 }
