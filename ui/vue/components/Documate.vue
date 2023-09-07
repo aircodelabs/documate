@@ -86,17 +86,12 @@ async function startChat(question: string) {
         let stream = await reader.read()
         if (stream.done) break
         const chunks = stream.value
-          .replaceAll(/^data: /gm, "")
-          .split("\n")
-          .filter((c: string) => Boolean(c.length) && c !== "[DONE]")
-          .map((c: string) => JSON.parse(c))
 
         if (chunks) {
           for (let chunk of chunks) {
-
             const assistantIndex = questions.value.findIndex(q => q.role === 'assistant' && q.id === assistantId)
 
-            const content = chunk.choices[0].delta.content
+            const content = chunk
             if (!content) continue
 
             if (chatContainer.value) {
@@ -348,7 +343,7 @@ ul {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 999999;
   padding: 1rem;
   background-color: var(--dm-mask-bg-color);
 
