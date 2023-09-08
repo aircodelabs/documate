@@ -3,7 +3,6 @@ const { program } = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const prompts = require('prompts')
-const getPkgManager = require('./../utils');
 
 const {
   green,
@@ -12,7 +11,18 @@ const {
   reset,
 } = require('kolorist')
 
-const pkgManager = getPkgManager();
+function pkgFromUserAgent(userAgent) {
+  if (!userAgent) return undefined
+  const pkgSpec = userAgent.split(' ')[0]
+  const pkgSpecArr = pkgSpec.split('/')
+  return {
+    name: pkgSpecArr[0],
+    version: pkgSpecArr[1],
+  }
+}
+
+const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
+const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
 
 const TEMPLATES = [
   {
@@ -31,9 +41,9 @@ async function main () {
 
   async function init() {
 
-    const options = program.opts()
+    const options = program.opts();
     let projectName = options.projectName || (program.args.length ? program.args[0] : null);
-    let template = options.template
+    let template = options.template;
 
     let questions = []
 
@@ -84,7 +94,7 @@ async function main () {
       }
     }
   
-    const templatePath = path.join(__dirname, '..', '..', 'examples', template)
+    const templatePath = path.join(__dirname, 'templates', template)
     const destinationPath = path.join(process.cwd(), projectName)
   
     if (!fs.existsSync(destinationPath)) {
@@ -118,8 +128,7 @@ async function main () {
   .arguments('[project-name]')
   .option('--project-name <project-name>', 'Name of the project')
   .option('--template <template>', 'Which template to use')
-  .action((projectNameArg) => {
-    projectNameArg && (program.projectName = projectNameArg);
+  .action(() => {
     init()
   })
 

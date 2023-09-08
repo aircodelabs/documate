@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
-const getPkgManager = require('./../utils');
+const getPkgManager = require('./utils');
 
 const installWith = (command) => {
   try {
