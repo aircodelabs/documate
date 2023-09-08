@@ -13,6 +13,3 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# templates in cli/create-documents/templates
-templates/
