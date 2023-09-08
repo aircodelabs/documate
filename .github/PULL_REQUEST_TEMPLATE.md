@@ -2,4 +2,4 @@
 
 ### Description
 
-<!-- Write a short summary of what this PR is solving. If necessary, include relevant screenshorts. -->
+<!-- Write a short summary of what this PR is solving. If necessary, include relevant screenshots. -->
