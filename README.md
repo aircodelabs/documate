@@ -5,6 +5,13 @@
     </picture>
     <h1 align="center">Documate</h1>
   </a>
+  <div align="center">
+    <a href="https://documate.site">Website</a> 
+    <span> · </span>
+    <a href="https://github.com/aircodelabs/documate">GitHub</a> 
+    <span> · </span>
+    <a href="https://discord.gg/YhypQrZBu5">Discord</a>
+  </div>
 </p>
 
 Documate is a toolkit designed to seamlessly integrate AI chat functionality into your documentation site. It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" for your platform.
