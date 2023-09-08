@@ -37,7 +37,7 @@ const installWithUserPackageManager = (framework)=> {
         break
     }
   } catch (error) {
-    console.error(`install ${pkg} failed: ${error.message}`);
+    console.error(`Install ${frameworkPkg} or ${cli} failed: ${error}`);
   }
 }
 
