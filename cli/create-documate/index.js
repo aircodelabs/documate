@@ -41,9 +41,9 @@ async function main () {
 
   async function init() {
 
-    const options = program.opts();
-    let projectName = options.projectName || (program.args.length ? program.args[0] : null);
-    let template = options.template;
+    const options = program.opts()
+    let projectName = options.projectName || (program.args.length ? program.args[0] : null)
+    let template = options.template
 
     let questions = []
 
