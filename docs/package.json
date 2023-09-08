@@ -1,0 +1,32 @@
+{
+  "name": "documate-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "documate:upload": "documate upload"
+  },
+  "devDependencies": {
+    "@documate/documate": "^0.0.1",
+    "@types/node": "^20.5.9",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9",
+    "vitepress": "1.0.0-rc.10",
+    "vue": "^3.3.4"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "dependencies": {
+    "@documate/vue": "^0.0.9",
+    "@heroicons/vue": "^2.0.18"
+  }
+}

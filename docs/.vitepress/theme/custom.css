@@ -1,0 +1,99 @@
+:root {
+  --vp-c-emerald-1: #10b981;
+  --vp-c-emerald-2: #059669;
+  --vp-c-emerald-3: #047857;
+  --vp-c-emerald-soft: rgba(16, 185, 129, 0.14);
+
+  --vp-c-teal-1: #14b8a6;
+  --vp-c-teal-2: #0d9488;
+  --vp-c-teal-3: #0f766e;
+  --vp-c-teal-soft: rgba(13, 148, 136, 0.14);
+
+  --vp-c-slate-1: #334155;
+  --vp-c-slate-2: #1e293b;
+  --vp-c-slate-3: #0f172a;
+  --vp-c-slate-soft: rgba(31, 41, 58, 0.14);
+
+  --vp-c-sky-1: #0ea5e9;
+  --vp-c-sky-2: #0284c7;
+  --vp-c-sky-3: #0369a1;
+  --vp-c-sky-soft: rgba(2, 132, 199, 0.14);
+}
+
+.dark {
+  --vp-c-emerald-1: #34d399;
+  --vp-c-emerald-2: #10b981;
+  --vp-c-emerald-3: #059669;
+  --vp-c-emerald-soft: rgba(16, 185, 129, 0.16);
+
+  --vp-c-teal-1: #2dd4bf;
+  --vp-c-teal-2: #14b8a6;
+  --vp-c-teal-3: #0d9488;
+  --vp-c-teal-soft: rgba(13, 148, 136, 0.16);
+
+  --vp-c-slate-1: #f1f5f9;
+  --vp-c-slate-2: #e2e8f0;
+  --vp-c-slate-3: #cbd5e1;
+  --vp-c-slate-soft: rgba(203, 232, 241, 0.16);
+
+  --vp-c-sky-1: #38bdf8;
+  --vp-c-sky-2: #0ea5e9;
+  --vp-c-sky-3: #0284c7;
+  --vp-c-sky-soft: rgba(2, 132, 199, 0.16);
+}
+
+:root {
+  --vp-c-brand-1: var(--vp-c-slate-1);
+  --vp-c-brand-2: var(--vp-c-slate-2);
+  --vp-c-brand-3: var(--vp-c-slate-3);
+  --vp-c-brand-soft: var(--vp-c-slate-soft);
+
+  --vp-button-brand-text: var(--vp-c-bg);
+  --vp-button-brand-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-text: var(--vp-c-bg);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-text: var(--vp-c-bg);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  --vp-button-alt-border: var(--vp-c-default-3);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-hover-border: var(--vp-c-default-1);
+  --vp-button-alt-hover-text: var(--vp-c-text-1);
+  --vp-button-alt-hover-bg: transparent;
+  --vp-button-alt-active-border: var(--vp-c-default-1);
+  --vp-button-alt-active-text: var(--vp-c-text-1);
+  --vp-button-alt-active-bg: transparent;
+
+  --vp-link-color: var(--vp-c-sky-2);
+  --vp-link-hover-color: var(--vp-c-sky-2);
+
+  --dm-color-brand: var(--vp-c-brand-1);
+}
+
+.vp-doc a {
+  color: var(--vp-link-color);
+  text-decoration: none;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-link-hover-color);
+  text-decoration-line: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+
+.VPHome .VPHomeHero {
+  padding-bottom: 96px;
+}
+
+@media (min-width: 960px) {
+  #app .VPNavBar:not(.has-sidebar):not(.top) {
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+  }
+
+  #app .VPNavBar:not(.has-sidebar):not(.top) .content .content-body {
+    background-color: transparent;
+  }
+}

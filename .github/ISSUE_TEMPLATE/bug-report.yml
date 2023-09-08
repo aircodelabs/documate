@@ -1,0 +1,43 @@
+name: Bug Report
+description: Create a bug report to help us improve
+labels: ["bug", "needs: triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to file a bug report! Please fill out this form as completely as possible.
+  - type: dropdown
+    id: os
+    attributes:
+      label: What operating system are you using?
+      options:
+        - Mac
+        - Windows
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: bug-desctiption
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of the bug. If you intent to submit a PR for this issue, tell us in the description.
+      placeholder: I am doing ... What I expect is ... What actually happening is ...
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Please provide the steps to reproduce the behavior. Screenshots can be provided in the issue body below.
+    validations:
+      required: true
+  - type: input
+    id: reproduction-link
+    attributes:
+      label: Reproduction Link
+      description: Include a link to a repository that reproduces the problem you ran into. This is optional, but increases the likelihood that we can help you!
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: Before posting the issue go through the steps you've written down to make sure the steps provided are detailed and clear.
