@@ -36,3 +36,8 @@ To chat with other community members:
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
+
+## Authors
+
+- Adcent Lei ([@adcentlei](https://twitter.com/adcentlei))
+- Kevin Wu ([@0xinhua](https://twitter.com/0xinhua))
