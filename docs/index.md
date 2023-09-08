@@ -7,6 +7,7 @@ titleTemplate: Elevate your documentation site with AI chat
 
 hero:
   name: Elevate your documentation site with AI chat
+  tagline: An open-source tool to integrate AI chat dialog into your site, leveraging your own content.
   actions:
     - theme: brand
       text: Get Started

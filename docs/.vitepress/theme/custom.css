@@ -83,10 +83,6 @@
   text-underline-position: from-font;
 }
 
-.VPHome .VPHomeHero {
-  padding-bottom: 96px;
-}
-
 @media (min-width: 960px) {
   #app .VPNavBar:not(.has-sidebar):not(.top) {
     background-color: transparent;
@@ -95,5 +91,9 @@
 
   #app .VPNavBar:not(.has-sidebar):not(.top) .content .content-body {
     background-color: transparent;
+  }
+
+  .VPHome .VPHomeHero {
+    padding-bottom: 120px;
   }
 }
