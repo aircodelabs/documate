@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
+const getPkgManager = require('./../utils');
 
 const installWith = (command) => {
   try {
@@ -11,30 +12,27 @@ const installWith = (command) => {
 }
 
 const installWithUserPackageManager = (framework)=> {
-  const packages = `@documate/${framework}@latest`
+  const pkg = `@documate/${framework}@latest`
+
+  const pkgManager = getPkgManager();
 
   try {
-    execSync('pnpm --version');
-    installWith(`pnpm add ${packages}`);
-    return;
-  } catch (e) {
-
-  }
-
-  try {
-    execSync('yarn --version');
-    installWith(`yarn add ${packages}`);
-    return;
-  } catch (e) {
-
-  }
-
-  try {
-    execSync('npm --version');
-    installWith(`npm install ${packages}`);
-    return;
-  } catch (e) {
-    console.error('No package manager found.');
+    switch (pkgManager) {
+      case 'yarn':
+        execSync('yarn --version');
+        installWith(`yarn add ${pkg}`);
+        break
+      case 'pnpm':
+        execSync('pnpm --version');
+        installWith(`pnpm add ${pkg}`);
+        break
+      default:
+        execSync('npm --version');
+        installWith(`npm install ${pkg}`);
+        break
+    }
+  } catch (error) {
+    console.error(`install ${pkg} failed: ${error.message}`);
   }
 }
 

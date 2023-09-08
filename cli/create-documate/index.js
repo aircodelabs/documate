@@ -3,6 +3,7 @@ const { program } = require('commander')
 const fs = require('fs-extra')
 const path = require('path')
 const prompts = require('prompts')
+const getPkgManager = require('./../utils');
 
 const {
   green,
@@ -11,18 +12,7 @@ const {
   reset,
 } = require('kolorist')
 
-function pkgFromUserAgent(userAgent) {
-  if (!userAgent) return undefined
-  const pkgSpec = userAgent.split(' ')[0]
-  const pkgSpecArr = pkgSpec.split('/')
-  return {
-    name: pkgSpecArr[0],
-    version: pkgSpecArr[1],
-  }
-}
-
-const pkgInfo = pkgFromUserAgent(process.env.npm_config_user_agent)
-const pkgManager = pkgInfo ? pkgInfo.name : 'npm'
+const pkgManager = getPkgManager();
 
 const TEMPLATES = [
   {
