@@ -3,15 +3,15 @@ In the root of your project, run the following command:
 ::: code-group
 
 ```bash [npm]
-npx -p=@documate/documate init --framework vue
+npx @documate/documate init --framework vue
 ```
 
 ```bash [yarn]
-yarn dlx -p @documate/documate init --framework vue
+yarn dlx @documate/documate init --framework vue
 ```
 
 ```bash [pnpm]
-pnpm --package=@documate/documate dlx documate init --framework vue
+pnpm dlx @documate/documate init --framework vue
 ```
 
 :::
