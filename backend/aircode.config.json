@@ -1,0 +1,9 @@
+{
+  "name": "Documate",
+  "runtime": "node/v18",
+  "retion": "US",
+  "envs": [
+    "OPENAI_API_KEY"
+  ],
+  "typescript": false
+}
