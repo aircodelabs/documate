@@ -21,7 +21,7 @@ import hljs from 'highlight.js'
 import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 import { DocumateProps } from './index'
 
-import * as hljsDefineVue from 'highlightjs-vue'
+import * as hljsDefineVue from 'highlightjs-vue/dist/highlightjs-vue.esm.js'
 import bash from 'highlight.js/lib/languages/bash'
 
 // languages
