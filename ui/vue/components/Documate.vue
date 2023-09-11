@@ -2,7 +2,6 @@
 
 import './styles/vars.css'
 import './styles/markdown-body.css'
-import 'highlight.js/styles/github.css'
 
 import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import {
