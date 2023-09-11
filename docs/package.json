@@ -26,7 +26,7 @@
     }
   },
   "dependencies": {
-    "@documate/vue": "^0.0.15",
+    "@documate/vue": "^0.0.16",
     "@heroicons/vue": "^2.0.18"
   }
 }
