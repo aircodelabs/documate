@@ -2,9 +2,27 @@
 const aircode = require('aircode');
 const crypto = require('crypto');
 const util = require('util');
+const tokenizer = require('gpt-3-encoder');
 const { generateEmbeddings } = require('./generate');
 
+const MAX_TOKEN_PER_CHUNK = 8191;
+
 const PagesTable = aircode.db.table('pages');
+
+// Split the page content into chunks base on the MAX_TOKEN_PER_CHUNK
+function getContentChunks(content) {
+  const encoded = tokenizer.encode(content);
+  const tokenChunks = encoded.reduce(
+    (acc, token) => (
+      acc[acc.length - 1].length < MAX_TOKEN_PER_CHUNK
+        ? acc[acc.length - 1].push(token)
+        : acc.push([token]),
+      acc
+    ),
+    [[]],
+  );
+  return tokenChunks.map(tokens => tokenizer.decode(tokens));
+}
 
 module.exports = async function(params, context) {
   if (!process.env.OPENAI_API_KEY) {
@@ -67,19 +85,23 @@ module.exports = async function(params, context) {
       return { ok: 1 };
     } else {
       // Delete the exist one since we will regenerate it
-      await PagesTable.delete(existed);
+      await PagesTable.where({ project, path });
     }
   }
 
-  // Save the result to database
-  await PagesTable.save({
+  const chunks = getContentChunks(content);
+  const pagesToSave = chunks.map((chunk, index) => ({
     project,
     path,
     title,
     checksum,
-    content,
+    chunkIndex: index,
+    content: chunk,
     embedding: null,
-  });
+  }))
+
+  // Save the result to database
+  await PagesTable.save(pagesToSave);
 
   return { ok: 1 };
 };
