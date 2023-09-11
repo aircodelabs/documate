@@ -18,22 +18,8 @@ const handleError = (spinnies, name, error) => {
 
 const uploadFiles = async (uploadUrl, files) => {  
   const spinnies = new Spinnies();
-
-  spinnies.add('preparing', {
-    text: 'Preparing...',
-  });
-  try {
-    // Currently, we refresh the knowledge base every time.
-    await axios.post(uploadUrl, {
-      operation: 'clean',
-    });
-
-    spinnies.succeed('preparing', { text: 'OK. Start uploading.' });
-  } catch (error) {
-    return handleError(spinnies, 'preparing', error);
-  }
   
-  spinnies.add('uploading', {
+  spinnies.add('Start uploading', {
     text: `Uploading files: 0/${files.length}`
   });
   try {
