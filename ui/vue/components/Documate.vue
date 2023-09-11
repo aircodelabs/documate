@@ -16,10 +16,17 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
-import MarkdownIt from "markdown-it";
-import hljs from 'highlight.js';
-import MarkdownItHighlightjs from "markdown-it-highlightjs";
-import { DocumateProps } from './index';
+import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js'
+import MarkdownItHighlightjs from 'markdown-it-highlightjs'
+import { DocumateProps } from './index'
+
+import hljsDefineVue from 'highlightjs-vue'
+import bash from 'highlight.js/lib/languages/bash'
+
+// languages
+hljs.registerLanguage('bash', bash)
+hljsDefineVue(hljs)
 
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
@@ -61,8 +68,12 @@ const markdownToHtml = (content: string): string => {
   })
   .use(MarkdownItHighlightjs)
 
-  const html = markdown.render(content)
-  return html
+  try {
+    const html = markdown.render(content)
+    return html
+  } catch (error) {
+    console.error('render markdown error: ', error)
+  }
 }
 
 // fetch ChatGPT
@@ -168,6 +179,7 @@ const scrollToBottom = () => {
 }
 
 onMounted(() => {
+  hljs.highlightAll()
   window.addEventListener('keydown', handleKeydown)
   window.addEventListener('keyup', (event) => {
     if (event.key === 'Meta') isCmdPressed = false  // Cmd key on Mac
@@ -187,7 +199,6 @@ onBeforeUnmount(() => {
     <TransitionChild as="template" class="enter enter-from enter-to leave leave-from leave-to">
       <div class="transition-child-ref"></div>
     </TransitionChild>
-
     <div class="dialog-container">
       <TransitionChild as="template">
         <DialogPanel class="dialog-panel">
@@ -198,7 +209,6 @@ onBeforeUnmount(() => {
               </svg>
               <ComboboxInput class="chat-input" :placeholder="placeholder" aria-autocomplete="false"  @change="query = $event.target.value" @keyup.enter="keyEnter" :value="query" autocomplete="off" />
             </div>
-
             <ComboboxOptions v-if="props.predefinedQuestions.length > 0 && !questions.length" static class="combobox-options">
               <li v-if="props.predefinedQuestions.length > 0">
                 <ul class="combobox-options-container">
@@ -213,7 +223,6 @@ onBeforeUnmount(() => {
                 </ul>
               </li>
             </ComboboxOptions>
-
             <div v-if="(props.predefinedQuestions.length === 0 && questions.length === 0)" class="result-not-found">
               <p class="result-not-found-text">No recent searches</p>
             </div>
@@ -253,7 +262,6 @@ onBeforeUnmount(() => {
                 </li>
               </ul>
             </div>
-
             <div class="footer">
               <div class="kbd-wrap">
                 <span class="kbd-text">Type</span>
@@ -284,7 +292,7 @@ onBeforeUnmount(() => {
       </TransitionChild>
     </div>
   </Dialog>
-  </TransitionRoot>
+</TransitionRoot>
 </template>
 
 <style scoped>
@@ -441,7 +449,7 @@ ul {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
 }
 
