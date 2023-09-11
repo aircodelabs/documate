@@ -21,7 +21,7 @@ import hljs from 'highlight.js'
 import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 import { DocumateProps } from './index'
 
-import hljsDefineVue from 'highlightjs-vue'
+import * as hljsDefineVue from 'highlightjs-vue'
 import bash from 'highlight.js/lib/languages/bash'
 
 // languages
@@ -316,7 +316,7 @@ ul {
 }
 
 .ask-ai {
-  padding: 0.25rem 1rem;
+  padding: 0 1rem;
   cursor: pointer;
   font-size: 0.75rem;
   color: var(--dm-text-color);
