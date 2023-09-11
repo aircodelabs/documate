@@ -73,8 +73,6 @@ function hljsDefineVue() {
 hljs.registerLanguage('bash', bash)
 hljs.registerLanguage('vue', hljsDefineVue)
 
-hljs.highlightAll()
-
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
   buttonLabel: 'Ask AI',
@@ -226,6 +224,7 @@ const scrollToBottom = () => {
 }
 
 onMounted(() => {
+  hljs.highlightAll()
   window.addEventListener('keydown', handleKeydown)
   window.addEventListener('keyup', (event) => {
     if (event.key === 'Meta') isCmdPressed = false  // Cmd key on Mac
