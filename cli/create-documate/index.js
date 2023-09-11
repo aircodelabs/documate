@@ -42,7 +42,7 @@ async function main () {
   async function init() {
 
     const options = program.opts()
-    let projectName = options.projectName || (program.args.length ? program.args[0] : null);
+    let projectName = options.projectName || (program.args.length ? program.args[0] : null)
     let template = options.template
 
     let questions = []
@@ -94,7 +94,7 @@ async function main () {
       }
     }
   
-    const templatePath = path.join(__dirname, '..', '..', 'examples', template)
+    const templatePath = path.join(__dirname, 'templates', template)
     const destinationPath = path.join(process.cwd(), projectName)
   
     if (!fs.existsSync(destinationPath)) {
@@ -128,8 +128,7 @@ async function main () {
   .arguments('[project-name]')
   .option('--project-name <project-name>', 'Name of the project')
   .option('--template <template>', 'Which template to use')
-  .action((projectNameArg) => {
-    projectNameArg && (program.projectName = projectNameArg);
+  .action(() => {
     init()
   })
 

@@ -1,9 +1,11 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
+const getPkgManager = require('./utils');
 
-const installWith = (command) => {
+const installWith = (command, isDev = false) => {
+  const devFlag = isDev ? '--dev' : '';
   try {
-    const output = execSync(command);
+    const output = execSync(`${command} ${devFlag}`);
     console.log(`Installed with: ${output}`);
   } catch (e) {
     console.error(`Error during installation: ${e.message}`);
@@ -11,30 +13,31 @@ const installWith = (command) => {
 }
 
 const installWithUserPackageManager = (framework)=> {
-  const packages = `@documate/${framework}@latest`
+  const frameworkPkg = `@documate/${framework}@latest`
+  const cli = `@documate/documate@latest`
+
+  const pkgManager = getPkgManager();
 
   try {
-    execSync('pnpm --version');
-    installWith(`pnpm add ${packages}`);
-    return;
-  } catch (e) {
-
-  }
-
-  try {
-    execSync('yarn --version');
-    installWith(`yarn add ${packages}`);
-    return;
-  } catch (e) {
-
-  }
-
-  try {
-    execSync('npm --version');
-    installWith(`npm install ${packages}`);
-    return;
-  } catch (e) {
-    console.error('No package manager found.');
+    switch (pkgManager) {
+      case 'yarn':
+        execSync('yarn --version');
+        installWith(`yarn add ${frameworkPkg}`);
+        installWith(`yarn add ${cli}`, true);
+        break
+      case 'pnpm':
+        execSync('pnpm --version');
+        installWith(`pnpm add ${frameworkPkg}`);
+        installWith(`pnpm add ${cli} -D`);
+        break
+      default:
+        execSync('npm --version');
+        installWith(`npm install ${frameworkPkg}`);
+        installWith(`npm install ${cli} --save-dev`);
+        break
+    }
+  } catch (error) {
+    console.error(`Install ${frameworkPkg} or ${cli} failed: ${error}`);
   }
 }
 

@@ -32,7 +32,7 @@ async function generateEmbeddings(project) {
   
     return { ok: 1 };
   } catch (error) {
-    console.error(`Failed to generate embeddings for ${path}`);
+    console.error(`Failed to generate embeddings for ${project}`);
     throw error;
   }
 }
