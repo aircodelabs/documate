@@ -11,6 +11,9 @@ dependencies:
   '@tailwindcss/forms':
     specifier: ^0.5.6
     version: 0.5.6(tailwindcss@3.3.3)
+  highlight.js:
+    specifier: ^11.8.0
+    version: 11.8.0
   markdown-it:
     specifier: ^13.0.1
     version: 13.0.1
