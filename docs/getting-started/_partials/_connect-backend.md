@@ -1,8 +1,7 @@
 Now you are all set with the frontend. The last step is to connect it to the backend.
 
-::: tip Prerequisite
+### Prerequisite
 Before continue, please make sure you have built and deployed the backend. Follow [Build the Backend Guide](/getting-started/backend) if you haven't done so. It only takes 5 minutes.
-:::
 
 ### 1. Add the Backend URL to `documate.json`
 

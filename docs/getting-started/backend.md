@@ -6,7 +6,7 @@ The backend for Documate is a set of serverless functions that handle the conten
 
 By clicking the button below, you can get a copy of the backend and launch your own App.
 
-<a href="https://aircode.io/dashboard?owner=AirCodeLabs&repo=documate&branch=main&path=backend&appname=Documate" style="display: inline-block">
+<a href="https://aircode.io/dashboard?owner=AirCodeLabs&repo=documate&branch=main&path=backend&appname=Documate" style="display: inline-block" target="_blank">
   <img src="https://aircode.io/aircode-deploy-button.svg" alt="Deploy with AirCode" width="166">
 </a>
 
