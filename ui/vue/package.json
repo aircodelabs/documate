@@ -1,6 +1,6 @@
 {
   "name": "@documate/vue",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "files": [
     "dist",
@@ -30,7 +30,6 @@
     "@headlessui/vue": "^1.7.16",
     "@tailwindcss/forms": "^0.5.6",
     "highlight.js": "^11.8.0",
-    "highlightjs-vue": "^1.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1"
   },

@@ -21,12 +21,59 @@ import hljs from 'highlight.js'
 import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 import { DocumateProps } from './index'
 
-import * as hljsDefineVue from 'highlightjs-vue/dist/highlightjs-vue.esm.js'
 import bash from 'highlight.js/lib/languages/bash'
+
+function hljsDefineVue() {
+	return {
+		subLanguage: 'xml',
+		contains: [
+			hljs.COMMENT('<!--', '-->', {
+				relevance: 10,
+			}),
+			{
+				begin: /^(\s*)(<script>)/gm,
+				end: /^(\s*)(<\/script>)/gm,
+				subLanguage: 'javascript',
+				excludeBegin: true,
+				excludeEnd: true,
+			},
+			{
+				begin: /^(\s*)(<script lang=["']ts["']>)/gm,
+				end: /^(\s*)(<\/script>)/gm,
+				subLanguage: 'typescript',
+				excludeBegin: true,
+				excludeEnd: true,
+			},
+			{
+				begin: /^(\s*)(<style(\sscoped)?>)/gm,
+				end: /^(\s*)(<\/style>)/gm,
+				subLanguage: 'css',
+				excludeBegin: true,
+				excludeEnd: true,
+			},
+			{
+				begin: /^(\s*)(<style lang=["'](scss|sass)["'](\sscoped)?>)/gm,
+				end: /^(\s*)(<\/style>)/gm,
+				subLanguage: 'scss',
+				excludeBegin: true,
+				excludeEnd: true,
+			},
+			{
+				begin: /^(\s*)(<style lang=["']stylus["'](\sscoped)?>)/gm,
+				end: /^(\s*)(<\/style>)/gm,
+				subLanguage: 'stylus',
+				excludeBegin: true,
+				excludeEnd: true,
+			},
+		],
+	};
+}
 
 // languages
 hljs.registerLanguage('bash', bash)
-hljsDefineVue(hljs)
+hljs.registerLanguage('vue', hljsDefineVue)
+
+hljs.highlightAll()
 
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
@@ -179,7 +226,6 @@ const scrollToBottom = () => {
 }
 
 onMounted(() => {
-  hljs.highlightAll()
   window.addEventListener('keydown', handleKeydown)
   window.addEventListener('keyup', (event) => {
     if (event.key === 'Meta') isCmdPressed = false  // Cmd key on Mac
