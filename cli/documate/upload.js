@@ -19,7 +19,7 @@ const handleError = (spinnies, name, error) => {
 const uploadFiles = async (uploadUrl, files) => {  
   const spinnies = new Spinnies();
   
-  spinnies.add('Start uploading', {
+  spinnies.add('uploading', {
     text: `Uploading files: 0/${files.length}`
   });
   try {
