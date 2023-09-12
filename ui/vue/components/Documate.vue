@@ -15,9 +15,10 @@ import {
   TransitionRoot,
 } from '@headlessui/vue'
 
-import MarkdownIt from "markdown-it";
-import MarkdownItHighlightjs from "markdown-it-highlightjs";
-import { DocumateProps } from './index';
+import MarkdownIt from 'markdown-it'
+import MarkdownItHighlightjs from 'markdown-it-highlightjs'
+import { DocumateProps } from './index'
+
 
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
@@ -172,7 +173,6 @@ onBeforeUnmount(() => {
     <TransitionChild as="template" class="enter enter-from enter-to leave leave-from leave-to">
       <div class="transition-child-ref"></div>
     </TransitionChild>
-
     <div class="dialog-container">
       <TransitionChild as="template">
         <DialogPanel class="dialog-panel">
@@ -183,7 +183,6 @@ onBeforeUnmount(() => {
               </svg>
               <ComboboxInput class="chat-input" :placeholder="placeholder" aria-autocomplete="false"  @change="query = $event.target.value" @keyup.enter="keyEnter" :value="query" autocomplete="off" />
             </div>
-
             <ComboboxOptions v-if="props.predefinedQuestions.length > 0 && !questions.length" static class="combobox-options">
               <li v-if="props.predefinedQuestions.length > 0">
                 <ul class="combobox-options-container">
@@ -198,7 +197,6 @@ onBeforeUnmount(() => {
                 </ul>
               </li>
             </ComboboxOptions>
-
             <div v-if="(props.predefinedQuestions.length === 0 && questions.length === 0)" class="result-not-found">
               <p class="result-not-found-text">No recent searches</p>
             </div>
@@ -238,7 +236,6 @@ onBeforeUnmount(() => {
                 </li>
               </ul>
             </div>
-
             <div class="footer">
               <div class="kbd-wrap">
                 <span class="kbd-text">Type</span>
@@ -269,7 +266,7 @@ onBeforeUnmount(() => {
       </TransitionChild>
     </div>
   </Dialog>
-  </TransitionRoot>
+</TransitionRoot>
 </template>
 
 <style scoped>
@@ -293,7 +290,7 @@ ul {
 }
 
 .ask-ai {
-  padding: 0.25rem 1rem;
+  padding: 0 1rem;
   cursor: pointer;
   font-size: 0.75rem;
   color: var(--dm-text-color);
@@ -426,7 +423,7 @@ ul {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  cursor: default;
+  cursor: pointer;
   user-select: none;
 }
 
