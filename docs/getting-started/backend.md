@@ -16,6 +16,8 @@ The functions code is located in the [backend directory on GitHub](https://githu
 
 Once you've created the App, you should set the `OPENAI_API_KEY` environment variable in the __Environments__ tabs. You can find the API key in your [OpenAI dashboard](https://platform.openai.com/account/api-keys).
 
+![](./_images/backend__set-environments.png)
+
 This key is used to access the OpenAI API, which is required for the content processing.
 
 Then click the __Deploy__ button located on the top bar. This action will ship the functions and provide you with individual accessible URLs for each function.
