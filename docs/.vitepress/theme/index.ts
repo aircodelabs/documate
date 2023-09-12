@@ -14,13 +14,9 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'home-hero-before': () => h(HeroPattern),
       'home-hero-image': () => h(HeroVideo),
-      'nav-bar-content-before': () => h(
-        Documate,
-        {
-        // Replace the URL with your own one
+      'nav-bar-content-before': () => h(Documate, {
         endpoint: 'https://xqtb17uycg.us.aircode.run/ask',
-      },
-      ),
+      }),
     })
   }
 }
