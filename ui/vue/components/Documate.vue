@@ -16,61 +16,9 @@ import {
 } from '@headlessui/vue'
 
 import MarkdownIt from 'markdown-it'
-import hljs from 'highlight.js'
 import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 import { DocumateProps } from './index'
 
-import bash from 'highlight.js/lib/languages/bash'
-
-function hljsDefineVue() {
-	return {
-		subLanguage: 'xml',
-		contains: [
-			hljs.COMMENT('<!--', '-->', {
-				relevance: 10,
-			}),
-			{
-				begin: /^(\s*)(<script>)/gm,
-				end: /^(\s*)(<\/script>)/gm,
-				subLanguage: 'javascript',
-				excludeBegin: true,
-				excludeEnd: true,
-			},
-			{
-				begin: /^(\s*)(<script lang=["']ts["']>)/gm,
-				end: /^(\s*)(<\/script>)/gm,
-				subLanguage: 'typescript',
-				excludeBegin: true,
-				excludeEnd: true,
-			},
-			{
-				begin: /^(\s*)(<style(\sscoped)?>)/gm,
-				end: /^(\s*)(<\/style>)/gm,
-				subLanguage: 'css',
-				excludeBegin: true,
-				excludeEnd: true,
-			},
-			{
-				begin: /^(\s*)(<style lang=["'](scss|sass)["'](\sscoped)?>)/gm,
-				end: /^(\s*)(<\/style>)/gm,
-				subLanguage: 'scss',
-				excludeBegin: true,
-				excludeEnd: true,
-			},
-			{
-				begin: /^(\s*)(<style lang=["']stylus["'](\sscoped)?>)/gm,
-				end: /^(\s*)(<\/style>)/gm,
-				subLanguage: 'stylus',
-				excludeBegin: true,
-				excludeEnd: true,
-			},
-		],
-	};
-}
-
-// languages
-hljs.registerLanguage('bash', bash)
-hljs.registerLanguage('vue', hljsDefineVue)
 
 const props = withDefaults(defineProps<DocumateProps>(), {
   endpoint: '',
@@ -96,28 +44,11 @@ function onSelect(item: string ): void {
 
 // markdown processor
 const markdownToHtml = (content: string): string => {
-  const markdown = new MarkdownIt({
-    highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return '<pre class="hljs"><code>' +
-                 hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
-                 '</code></pre>'
-        } catch (error) {
-          console.error('markdown processor lang error: ', error)
-        }
-      }
-      return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>'
-    }
-  })
+  const markdown = new MarkdownIt()
   .use(MarkdownItHighlightjs)
 
-  try {
-    const html = markdown.render(content)
-    return html
-  } catch (error) {
-    console.error('render markdown error: ', error)
-  }
+  const html = markdown.render(content)
+  return html
 }
 
 // fetch ChatGPT
@@ -223,7 +154,6 @@ const scrollToBottom = () => {
 }
 
 onMounted(() => {
-  hljs.highlightAll()
   window.addEventListener('keydown', handleKeydown)
   window.addEventListener('keyup', (event) => {
     if (event.key === 'Meta') isCmdPressed = false  // Cmd key on Mac
