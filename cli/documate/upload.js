@@ -1,9 +1,11 @@
-const fsPromises = require('fs/promises');
-const path = require('path');
+import fsPromises from 'fs/promises';
+import path from 'path';
 
-const axios = require('axios');
-const { glob } = require("glob");
-const Spinnies = require('spinnies');
+import axios from 'axios';
+import { glob } from 'glob';
+import Spinnies from 'spinnies';
+
+const cwd = process.cwd();
 
 const handleError = (spinnies, name, error) => {
   let message = '';
@@ -26,6 +28,10 @@ const uploadFiles = async (uploadUrl, files) => {
     let uploadedFilesNum = 0;  
 
     for (const file of files) {
+      spinnies.update('uploading', {
+        text: `Uploading files: ${uploadedFilesNum}/${files.length} ${file.fileName}`
+      });
+
       await axios.post(uploadUrl, {
         operation: 'add',
         path: file.fileName,
@@ -33,12 +39,9 @@ const uploadFiles = async (uploadUrl, files) => {
       });
 
       uploadedFilesNum += 1;
-      spinnies.update('uploading', {
-        text: `Uploading files: ${uploadedFilesNum}/${files.length}`
-      });
     }
 
-    spinnies.succeed('uploading', { text: 'Uploading files success.' });
+    spinnies.succeed('uploading', { text: `${files.length} files uploaded.` });
   } catch (error) {
     return handleError(spinnies, 'uploading', error);
   }
@@ -50,10 +53,13 @@ const uploadFiles = async (uploadUrl, files) => {
     await axios.post(uploadUrl, {
       operation: 'generate',
     });
-    spinnies.succeed('generating', { text: 'Knowledge base generated. Now you can try to Ask AI in you doc site.' });
+    spinnies.succeed('generating', { text: 'Knowledge base generated.' });
   } catch (error) {
     return handleError(spinnies, 'generating', error);
   }
+
+  console.log('\nDone.');
+  console.log('Now you can try to Ask AI in you doc site.');
 };
 
 const _readFilesFromFileNames = async (rootPath, fileNames) => {
@@ -78,14 +84,33 @@ const readFiles = async (config = {}) => {
 
   const fileNames = await glob(include, { ignore, cwd: config.root })
   const files = await _readFilesFromFileNames(config.root, fileNames);
-  
-  console.log('Documate:files nums:: ', files.length);
+
   return files;
 };
 
-const upload = async (config = {}) => {
+const upload = async (options) => {
+  console.log('Start uploading files to backend.\n');
+
+  let config = {}; // root, include , exclude, backend
+
+  try {
+    const data = await fsPromises.readFile(`${cwd}/documate.json`, 'utf-8');
+    config = JSON.parse(data);
+  } catch (error) {
+    console.log(`Documate: Couldn't locate documate.json, we will use CLI arguments instead.\n`);
+  }
+
+  config.backend = options.backend || config.backend;
+  if (!config.backend) {
+    throw new Error('The parameter `backend` is required.');
+  }
+  config.include = options.include || config.include;
+  config.exclude = options.exclude || config.exclude;
+  config.token = options.token || config.token;
+  config.root = options.root || config.root || cwd;
+
   const files = await readFiles(config);
   await uploadFiles(config.backend, files, config.token);
 };
 
-module.exports = upload;
+export default upload;

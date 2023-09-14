@@ -1,101 +1,100 @@
-const fs = require('fs');
-const { execSync } = require('child_process');
-const getPkgManager = require('./utils');
+import fsPromises from 'fs/promises';
+import { detect } from 'detect-package-manager';
+import Spinnies from 'spinnies';
+import { $ } from 'execa';
 
-const installWith = (command, isDev = false) => {
-  const devFlag = isDev ? '--dev' : '';
-  try {
-    const output = execSync(`${command} ${devFlag}`);
-    console.log(`Installed with: ${output}`);
-  } catch (e) {
-    console.error(`Error during installation: ${e.message}`);
-  }
-}
+const cwd = process.cwd();
 
-const installWithUserPackageManager = (framework)=> {
+const installWithUserPackageManager = async (framework)=> {
   const frameworkPkg = `@documate/${framework}@latest`
   const cli = `@documate/documate@latest`
 
-  const pkgManager = getPkgManager();
+  let pkgManager = await detect();
+  if (!pkgManager) pkgManager = 'npm';
 
+  switch (pkgManager) {
+    case 'yarn':
+      await $`yarn add ${frameworkPkg}`;
+      await $`yarn add ${cli} -D`;
+      break
+    case 'pnpm':
+      await $`pnpm i ${frameworkPkg}`;
+      await $`pnpm i ${cli} -D`;
+      break
+    case 'bun':
+      await $`bun add ${frameworkPkg}`;
+      await $`bun add ${cli} -D`;
+      break
+    default:
+      await $`npm i ${frameworkPkg}`;
+      await $`npm i ${cli} -D`;
+      break
+  }
+}
+
+const injectScript = async () => {
+  const packageJsonPath = `${cwd}/package.json`;
+  const data = await fsPromises.readFile(packageJsonPath, 'utf-8');
+  const packageJsonData = JSON.parse(data);
+  if (!packageJsonData.scripts) {
+    packageJsonData.scripts = {};
+  }
+  packageJsonData.scripts['documate:upload'] = 'documate upload';
+  await fsPromises.writeFile(
+    packageJsonPath,
+    JSON.stringify(packageJsonData, null, 2),
+    'utf8'
+  );
+}
+
+const generateDocumateJson = async () => {
+  const filePath = `${cwd}/documate.json`;
   try {
-    switch (pkgManager) {
-      case 'yarn':
-        execSync('yarn --version');
-        installWith(`yarn add ${frameworkPkg}`);
-        installWith(`yarn add ${cli}`, true);
-        break
-      case 'pnpm':
-        execSync('pnpm --version');
-        installWith(`pnpm add ${frameworkPkg}`);
-        installWith(`pnpm add ${cli} -D`);
-        break
-      default:
-        execSync('npm --version');
-        installWith(`npm install ${frameworkPkg}`);
-        installWith(`npm install ${cli} --save-dev`);
-        break
-    }
+    fsPromises.access(filePath);
   } catch (error) {
-    console.error(`Install ${frameworkPkg} or ${cli} failed: ${error}`);
-  }
-}
-
-const injectScript = () => {
-  const packageJsonPath = `${process.cwd()}/package.json`;
-
-  if (fs.existsSync(packageJsonPath)) {
-    const packageJsonData = require(packageJsonPath);
-    
-    if (!packageJsonData.scripts) {
-      packageJsonData.scripts = {};
-    }
-
-    packageJsonData.scripts['documate:upload'] = 'documate upload';
-
-    fs.writeFileSync(
-      packageJsonPath,
-      JSON.stringify(packageJsonData, null, 2),
-      'utf8'
-    );    
-  } else {
-    console.error('package.json not found.');
-  }
-}
-
-const generateDocumateJson = () => {
-  if (!fs.existsSync('./documate.json')) {
-    fs.writeFileSync('./documate.json', JSON.stringify({
+    fsPromises.writeFile(filePath, JSON.stringify({
       "root": ".",
       "include": [ "**/*.md" ],
       "backend": ""
-    }, null, 2));
+    }, null, 2))
   }
 };
 
 const init = async (options) => {
+  console.log('Start initializing the project with Documate.\n');
+
+  const spinnies = new Spinnies();
   const { framework = 'vue' } = options;
 
+  spinnies.add('installing', { text: 'Installing dependencies...' });
   try {
-    installWithUserPackageManager(framework);
+    await installWithUserPackageManager(framework);
+    spinnies.succeed('installing', { text: 'Dependencies installed.' });
   } catch (error) {
-    console.error("Error during package manager installation: ", error);
-    return;
+    spinnies.fail('installing', { text: 'Dependencies installation failed.' });
+    throw error;
   }
 
+  spinnies.add('config', { text: 'Generating documate.json...' });
   try {
-    generateDocumateJson();
+    await generateDocumateJson();
+    spinnies.succeed('config', { text: 'documate.json generated.' });
   } catch (error) {
-    console.error("Error during Documate JSON generation: ", error);
-    return;
+    spinnies.fail('config', { text: 'documate.json generation failed.' });
+    throw error;
   }
 
+  spinnies.add('injecting', { text: 'Adding script to package.json...' });
   try {
-    injectScript();
+    await injectScript();
+    spinnies.succeed('injecting', { text: 'Script added to package.json.' });
   } catch (error) {
-    console.error("Error during script injection: ", error);
-    return;
+    spinnies.fail('injecting', { text: 'Script injection failed.' });
+    throw error;
   }
+
+  console.log('\nDone.');
+  console.log('To learn how to build and connect your backend, please visit https://documate.site/getting-started/backend.')
 };
 
-module.exports = init;
+export default init;
