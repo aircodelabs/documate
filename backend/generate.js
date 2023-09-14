@@ -10,6 +10,10 @@ async function generateEmbeddings(project) {
     .where({ project, embedding: null })
     .find();
 
+  if (!pages || pages.length === 0) {
+    return { ok: 1 };
+  }
+
   // Replace newlines with spaces for OpenAI embeddings
   const input = pages.map(page => page.content.replace(/\n/g, ' '));
   
