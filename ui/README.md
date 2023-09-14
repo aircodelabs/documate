@@ -1,8 +1,8 @@
 # Documate UI Components
 
-The UI components to integrate Documate into the framework of your choice. Support frameworks:
+The UI components to integrate Documate into the framework of your choice. Packages:
 
-- [VitePress](./vitepress/)
-- Docusaurus (coming soon)
-- Docsify (coming soon)
-
+- [`@documate/vue`](./vue)
+- `@documate/react` (Comming soon)
+- `@documate/headless-vue` (Comming soon)
+- `@documate/headless-react` (Comming soon)
