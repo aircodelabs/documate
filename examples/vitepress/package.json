@@ -4,7 +4,6 @@
   "description": "A demo of how to integrate Documate into Vitepress site. You can also use this as a template to start a new project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",

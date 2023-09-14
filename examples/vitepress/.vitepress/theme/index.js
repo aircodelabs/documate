@@ -11,8 +11,7 @@ export default {
     'nav-bar-content-before': () => h(
       Documate,
       {
-        // Replace the URL with your own one
-        endpoint: 'https://test123.us.aircode.run/ask',
+        endpoint: '',
       },
     )
   })
