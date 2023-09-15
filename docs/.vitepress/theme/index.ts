@@ -27,7 +27,7 @@ export default {
         '71137b4efb8f425b8ce4addea9900216',
         {
           debug: import.meta.env.DEV,
-          persitence: 'localStorage',
+          persistence: 'localStorage',
         },
       )
       mixpanel.register({
