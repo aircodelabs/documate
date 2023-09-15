@@ -1,15 +1,8 @@
 # Documate Quickstart
 
-Documate is an open source project designed to seamlessly __integrate AI chat functionality into your documentation site__.
+Documate is an open-source tool designed to seamlessly __integrate an AI chat dialog into your documentation site__.
 
-It uses your content to generate real-time answers to user queries, effectively acting as a "ChatGPT" for your platform.
-
-<div class="overflow-hidden rounded-lg shadow-lg max-w-lg mx-auto mt-6">
-  <video autoplay loop muted playsinline class="translate-x-[1px] rounded-lg">
-    <source src="/site-screen-record.webm" type="video/webm">
-    <source src="/site-screen-record.mp4" type="video/mp4">
-  </video>
-</div>
+It uses your content to generate real-time answers to user questions, effectively acting as a "ChatGPT" for your platform.
 
 ## Getting Started
 

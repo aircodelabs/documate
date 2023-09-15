@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Documate',
-  description: 'Seamlessly integrate AI chat into your site. Documate is fully open-source, controllable, and customizable.',
+  description: 'Seamlessly embed AI chat into your doc site. Documate is fully open-source, controllable, and customizable.',
   head: [
     [ 'link', { rel: 'icon', href: '/favicon.ico' } ],
     [ 'meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' } ],

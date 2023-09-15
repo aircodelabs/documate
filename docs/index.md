@@ -3,11 +3,11 @@
 layout: home
 
 title: Documate
-titleTemplate: Elevate your documentation site with AI chat
+titleTemplate: Make your doc site intelligent
 
 hero:
-  name: Elevate your documentation site with AI chat
-  tagline: An open-source tool to integrate AI chat dialog into your site, leveraging your own content.
+  name: Make your doc site intelligent
+  tagline: An open-source tool for embedding AI chat dialog into your doc site to answer user questions based on your content.
   actions:
     - theme: brand
       text: Get Started
