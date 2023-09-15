@@ -11,6 +11,12 @@ dependencies:
   '@heroicons/vue':
     specifier: ^2.0.18
     version: 2.0.18(vue@3.3.4)
+  '@types/mixpanel-browser':
+    specifier: ^2.47.1
+    version: 2.47.1
+  mixpanel-browser:
+    specifier: ^2.47.0
+    version: 2.47.0
 
 devDependencies:
   '@documate/documate':
@@ -556,6 +562,10 @@ packages:
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.3.3
+    dev: false
+
+  /@types/mixpanel-browser@2.47.1:
+    resolution: {integrity: sha512-4Oif1hbjmStA6KI1OLer19rbKjlPd67ujp5Wipfa7rIskA/lOFZbp6kYsPjXD0f5AiiCQTbf0R/SnnzgOaKrbA==}
     dev: false
 
   /@types/node@20.5.9:
@@ -1387,6 +1397,10 @@ packages:
   /minisearch@6.1.0:
     resolution: {integrity: sha512-PNxA/X8pWk+TiqPbsoIYH0GQ5Di7m6326/lwU/S4mlo4wGQddIcf/V//1f9TB0V4j59b57b+HZxt8h3iMROGvg==}
     dev: true
+
+  /mixpanel-browser@2.47.0:
+    resolution: {integrity: sha512-Ldrva0fRBEIFWmEibBQO1PulfpJVF3pf28Guk09lDirDaSQqqU/xs9zQLwN2rL5VwVtsP1aD3JaCgaa98EjojQ==}
+    dev: false
 
   /mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}

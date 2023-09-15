@@ -1,7 +1,9 @@
-import { h } from 'vue'
+import { h, onMounted } from 'vue'
 import DefaultTheme from 'vitepress/theme'
+import { useRouter } from 'vitepress'
 import Documate from '@documate/vue'
 import '@documate/vue/dist/style.css'
+import mixpanel from 'mixpanel-browser'
 
 import './tailwind.postcss'
 import './custom.css'
@@ -18,5 +20,25 @@ export default {
         endpoint: 'https://xqtb17uycg.us.aircode.run/ask',
       }),
     })
-  }
+  },
+  setup() {
+    onMounted(() => {
+      mixpanel.init(
+        '71137b4efb8f425b8ce4addea9900216',
+        {
+          debug: import.meta.env.DEV,
+          persitence: 'localStorage',
+        },
+      )
+      mixpanel.register({
+        'Broswer Language': navigator.language,
+        'Timezone': Intl.DateTimeFormat().resolvedOptions().timeZone,
+      })
+      mixpanel.track_pageview()
+    })
+
+    useRouter().onAfterRouteChanged = () => {
+      mixpanel.track_pageview()
+    }
+  },
 }
