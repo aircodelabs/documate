@@ -9,8 +9,8 @@ export default defineConfig({
     [ 'link', { rel: 'icon', href: '/favicon.ico' } ],
     [ 'meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' } ],
     [ 'meta', { name: 'twitter:card', content: 'summary_large_image' } ],
-    [ 'meta', { name: 'og:image', content: '/og-image-0901.png' } ],
-    [ 'meta', { name: 'twitter:image', content: '/og-image-0901.png' } ],
+    [ 'meta', { name: 'og:image', content: '/og-image-0916.png' } ],
+    [ 'meta', { name: 'twitter:image', content: '/og-image-0916.png' } ],
   ],
   cleanUrls: true,
   vite: {
