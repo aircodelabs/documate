@@ -1,6 +1,6 @@
 {
   "name": "@documate/vue",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "files": [
     "dist",
@@ -25,7 +25,8 @@
   "scripts": {
     "dev": "vitepress dev playground",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublish": "pnpm build"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
