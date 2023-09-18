@@ -32,7 +32,7 @@ If you want to customize the default style to match your brand, you can override
 }
 ```
 
-See [default CSS variables](/) for the full list.
+See [default CSS variables](https://github.com/AirCodeLabs/documate/blob/main/ui/vue/components/styles/vars.css) for the full list.
 
 ## Connect to Backend
 
