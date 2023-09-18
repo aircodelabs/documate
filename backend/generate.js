@@ -32,7 +32,9 @@ async function generateEmbeddings(project) {
       embedding: data[index].embedding,
     }));
 
-    await PagesTable.save(updatedPage);
+    for (let i = 0; i < updatedPage; i += 100) {
+      await PagesTable.save(updatedPage.slice(i, i + 100));
+    }
   
     return { ok: 1 };
   } catch (error) {
