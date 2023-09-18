@@ -10,7 +10,10 @@ export default {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-before': () => h(Documate, {
-        endpoint: '',
+        endpoint: 'https://xqtb17uycg.us.aircode.run/ask',
+        predefinedQuestions: [
+          'What is Documate?',
+        ],
       }),
     })
   },
