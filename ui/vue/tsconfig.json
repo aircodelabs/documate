@@ -19,7 +19,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    "paths": {
+      "@documate/vue": ["./components"]
+    }
   },
-  "include": ["playground/**/*.ts", "playground/**/*.d.ts", "playground/**/*.tsx", "playground/**/*.vue"],
+  "include": ["components", "playground", "vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

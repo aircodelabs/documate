@@ -1,6 +1,6 @@
 {
   "name": "@documate/vue",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "files": [
     "dist",
@@ -8,6 +8,7 @@
   ],
   "main": "./dist/documate.es.umd.js",
   "module": "./dist/documate.es.js",
+  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/documate.es.js",
@@ -22,7 +23,7 @@
     "vuejs"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "vitepress dev playground",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -33,13 +34,17 @@
     "markdown-it-highlightjs": "^4.0.1"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.1",
+    "@types/node": "^20.6.2",
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.3",
+    "vitepress": "1.0.0-rc.14",
+    "vue": "^3.3.4",
     "vue-tsc": "^1.8.5"
   }
 }

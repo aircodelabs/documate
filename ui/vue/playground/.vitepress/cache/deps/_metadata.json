@@ -1,0 +1,62 @@
+{
+  "hash": "da786559",
+  "browserHash": "00b84237",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "692f0805",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "cb98c942",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/integrations/useFocusTrap": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+integrations@10.4.1_focus-trap@7.5.2_vue@3.3.4/node_modules/@vueuse/integrations/useFocusTrap.mjs",
+      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
+      "fileHash": "fa754076",
+      "needsInterop": false
+    },
+    "vitepress > mark.js/src/vanilla.js": {
+      "src": "../../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
+      "file": "vitepress___mark__js_src_vanilla__js.js",
+      "fileHash": "afa5b3e7",
+      "needsInterop": false
+    },
+    "vitepress > minisearch": {
+      "src": "../../../../node_modules/.pnpm/minisearch@6.1.0/node_modules/minisearch/dist/es/index.js",
+      "file": "vitepress___minisearch.js",
+      "fileHash": "0f88a15a",
+      "needsInterop": false
+    },
+    "@headlessui/vue": {
+      "src": "../../../../node_modules/.pnpm/@headlessui+vue@1.7.16_vue@3.3.4/node_modules/@headlessui/vue/dist/headlessui.esm.js",
+      "file": "@headlessui_vue.js",
+      "fileHash": "24e58105",
+      "needsInterop": false
+    },
+    "markdown-it": {
+      "src": "../../../../node_modules/.pnpm/markdown-it@13.0.1/node_modules/markdown-it/index.js",
+      "file": "markdown-it.js",
+      "fileHash": "5ec0bb4e",
+      "needsInterop": true
+    },
+    "markdown-it-highlightjs": {
+      "src": "../../../../node_modules/.pnpm/markdown-it-highlightjs@4.0.1/node_modules/markdown-it-highlightjs/index.js",
+      "file": "markdown-it-highlightjs.js",
+      "fileHash": "332764e4",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-67UUJLDS": {
+      "file": "chunk-67UUJLDS.js"
+    },
+    "chunk-76J2PTFD": {
+      "file": "chunk-76J2PTFD.js"
+    }
+  }
+}
