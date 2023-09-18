@@ -94,7 +94,7 @@ module.exports = async function (params, context) {
     }
 
     // Ask gpt
-    const prompt = `You are a very kindly assistant who loves to help people. Given the following sections from documatation, answer the question using only that information, outputted in markdown format. If you are unsure and the answer is not explicitly written in the documentation, say "Sorry, I don't know how to help with that."
+    const prompt = `You are a very kindly assistant who loves to help people. Given the following sections from documatation, answer the question using only that information, outputted in markdown format. If you are unsure and the answer is not explicitly written in the documentation, say "Sorry, I don't know how to help with that.", otherwise try to answer the question in the spoken language of the questioner.
 
 Context sections:
 ${contextSections}
