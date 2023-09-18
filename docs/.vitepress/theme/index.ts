@@ -18,6 +18,11 @@ export default {
       'home-hero-image': () => h(HeroVideo),
       'nav-bar-content-before': () => h(Documate, {
         endpoint: 'https://xqtb17uycg.us.aircode.run/ask',
+        predefinedQuestions: [
+          'What is Documate?',
+          'How to integrate Documate with VitePress?',
+          'How to integrate Documate with other Vue projects?',
+        ],
       }),
     })
   },

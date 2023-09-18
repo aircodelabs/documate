@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@documate/vue':
-    specifier: ^0.1.1
-    version: 0.1.1(tailwindcss@3.3.3)(vue@3.3.4)
+    specifier: ^0.2.3
+    version: 0.2.3(tailwindcss@3.3.3)(vue@3.3.4)
   '@heroicons/vue':
     specifier: ^2.0.18
     version: 2.0.18(vue@3.3.4)
@@ -264,10 +264,10 @@ packages:
       - debug
     dev: true
 
-  /@documate/vue@0.1.1(tailwindcss@3.3.3)(vue@3.3.4):
-    resolution: {integrity: sha512-GZJPepa+nCli2/DDT4b3TK1IguLCr3qYhiybg+nvMLwK1T6Dbx1xwjkuQv2wcpDRCT5ASEBrBl1T1bddHwOixw==}
+  /@documate/vue@0.2.3(tailwindcss@3.3.3)(vue@3.3.4):
+    resolution: {integrity: sha512-3YbtCd0VPl9rkAZzt5GFil+EbXQ8F3bOh1B5u3V7dK1K1ni92v+ySdTQSU9O1fdL6PHC4nZv0nn+8jn4EFk8JA==}
     peerDependencies:
-      vue: ^3.3.4
+      vue: ^3
     dependencies:
       '@headlessui/vue': 1.7.16(vue@3.3.4)
       '@tailwindcss/forms': 0.5.6(tailwindcss@3.3.3)
