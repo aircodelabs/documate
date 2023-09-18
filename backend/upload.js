@@ -101,7 +101,9 @@ module.exports = async function(params, context) {
   }))
 
   // Save the result to database
-  await PagesTable.save(pagesToSave);
+  for (let i = 0; i < pagesToSave.length; i += 100) {
+    await PagesTable.save(pagesToSave.slice(i, i + 100));
+  }
 
   return { ok: 1 };
 };

@@ -113,7 +113,7 @@ Answer as markdown (including related code snippets if available):`
       messages,
       model: 'gpt-3.5-turbo',
       max_tokens: 512,
-      temperature: 0,
+      temperature: 0.4,
       stream: true,
     })
 
