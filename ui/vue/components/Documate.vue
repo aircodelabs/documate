@@ -299,7 +299,7 @@ ul {
 
 .documate-button {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 
   padding-left: 0.75rem;
