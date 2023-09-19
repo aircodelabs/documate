@@ -51,7 +51,8 @@ export default defineConfig({
           { text: 'Quickstart', link: '/getting-started/' },
           { text: 'Build the Backend', link: '/getting-started/backend' },
           { text: 'Start with VitePress', link: '/getting-started/vitepress' },
-          { text: 'General Vue Project', link: '/getting-started/general-vue' }
+          { text: 'General Vue Project', link: '/getting-started/general-vue' },
+          { text: 'Start with Native JS', link: '/getting-started/vanilla-js' }
         ]
       },
       {

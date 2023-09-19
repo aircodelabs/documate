@@ -12,6 +12,7 @@ Please choose a framework below to get started:
 
 - [VitePress](/getting-started/vitepress)
 - [General Vue Project](/getting-started/general-vue)
+- [Vanilla JS](/getting-started/vanilla-js)
 
 The following frameworks are coming soon:
 
@@ -21,6 +22,7 @@ The following frameworks are coming soon:
 - Docus
 - Nextra
 - General React Project
+
 ## Key Features
 
 ### Hassle-free Integration
