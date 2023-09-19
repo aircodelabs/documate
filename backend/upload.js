@@ -1,7 +1,6 @@
 // @see https://docs.aircode.io/guide/functions/
 const aircode = require('aircode');
 const crypto = require('crypto');
-const util = require('util');
 const tokenizer = require('gpt-3-encoder');
 const { generateEmbeddings } = require('./generate');
 
