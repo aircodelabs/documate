@@ -71,11 +71,16 @@ function sleep(ms) {
     return null;
   }
 
+  const endpoint = askAI.dataset.endpoint;
+  if(!endpoint) {
+    throw new Error('Missing endpoint');
+  }
+
   async function searchAI(question) {
     const loading = document.querySelector('.documate-dialog .loading');
     loading.style.display = 'block';
     if(!loading) return;
-    const {body} = await fetch('https://8c7b1be9gi.us.aircode.run/ask', {
+    const {body} = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

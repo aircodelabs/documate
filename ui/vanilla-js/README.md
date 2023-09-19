@@ -10,6 +10,8 @@ Build [Documate](https://github.com/aircodelabs/documate) UI using native JavaSc
 ### Import from CDN:
 
 ```html
+<button id="ask-ai" data-endpoint="https://xxxxxxxx.us.aircode.run/ask"></button>
+...
 <script src="https://unpkg.com/@documate/ui"></script>
 ```
 
