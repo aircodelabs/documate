@@ -137,6 +137,7 @@
 
 .documate-dialog .kbd-wrap kbd.esc {
   font-weight: bold;
+  padding: 2px 6px;
 }
 
 .documate-dialog .powered-by {
