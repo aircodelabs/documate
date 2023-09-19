@@ -9,7 +9,9 @@
     "templates"
   ],
   "scripts": {
-    "prepublish": "zx ./scripts/cp-templates.mjs",
+    "cp-templates": "zx ./scripts/cp-templates.mjs",
+    "prepare": "pnpm cp-templates",
+    "prepublish": "pnpm cp-templates",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
