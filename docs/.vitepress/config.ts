@@ -56,6 +56,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Integration',
+        items: [
+          { text: 'Integration to Docsify', link: '/integration/docsify' },
+        ]
+      },
+      {
         text: 'Reference',
         items: [
           { text: 'documate.json', link: '/reference/documate-config' },
