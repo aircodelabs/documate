@@ -14,9 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.10",
-    "@documate/documate": "^0.2.3"
+    "@documate/documate": "^0.1.0"
   },
   "dependencies": {
-    "@documate/vue": "^0.1.0"
+    "@documate/vue": "^0.2.3"
   }
 }
