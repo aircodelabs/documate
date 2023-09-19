@@ -14,7 +14,7 @@ Please choose a framework below to get started:
 - [General Vue Project](/getting-started/general-vue)
 - [Vanilla JS](/getting-started/vanilla-js)
 
-Documate can also be manually integrated to other library or frameworks.
+Documate can also be manually integrated to other libraries or frameworks.
 
 - [Docsify](/integration/docsify)
 
