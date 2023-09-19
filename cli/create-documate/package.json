@@ -9,7 +9,7 @@
     "templates"
   ],
   "scripts": {
-    "prepublish": "rimraf templates && cp -R ./../../examples ./templates",
+    "prepublish": "zx ./scripts/cp-templates.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -29,6 +29,7 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "zx": "^7.2.3"
   }
 }

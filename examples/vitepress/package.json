@@ -1,17 +1,15 @@
 {
-  "name": "vitepress",
-  "version": "1.0.0",
+  "name": "documate-vitepress-starter",
   "description": "A demo of how to integrate Documate into Vitepress site. You can also use this as a template to start a new project.",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
     "documate:upload": "documate upload"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.10",
     "@documate/documate": "^0.1.0"
