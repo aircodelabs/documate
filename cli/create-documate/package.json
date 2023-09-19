@@ -1,10 +1,17 @@
 {
   "name": "create-documate",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "create-documate can let you create a new Documate project without installing CLI.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "templates"
+  ],
   "scripts": {
-    "prepare": "cp -R ./../../examples ./templates",
+    "cp-templates": "zx ./scripts/cp-templates.mjs",
+    "prepare": "pnpm cp-templates",
+    "prepublish": "pnpm cp-templates",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -22,5 +29,9 @@
     "fs-extra": "^11.1.1",
     "kolorist": "^1.8.0",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.1",
+    "zx": "^7.2.3"
   }
 }

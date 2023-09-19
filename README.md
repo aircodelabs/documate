@@ -5,6 +5,13 @@
     </picture>
     <h1 align="center">Documate</h1>
   </a>
+  <p align="center">
+    <a href="https://documate.site">Website</a>
+    <span> · </span>
+    <a href="https://discord.gg/YhypQrZBu5">Discord</a>
+    <span> · </span>
+    <a href="https://github.com/AirCodeLabs/documate/discussions">Discussions</a> 
+  </p>
 </p>
 
 Documate is an open-source tool designed to seamlessly embed AI chat dialog into your documentation site. It uses your content to generate real-time answers to user questions, effectively acting as a "ChatGPT" for your platform.
@@ -41,3 +48,13 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 
 - Adcent Lei ([@adcentlei](https://twitter.com/adcentlei))
 - Kevin Wu ([@0xinhua](https://twitter.com/0xinhua))
+
+## Star History
+
+<a href="https://star-history.com/#aircodelabs/documate&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date" />
+  </picture>
+</a>
