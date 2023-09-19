@@ -1,8 +1,13 @@
 {
   "name": "create-documate",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "create-documate can let you create a new Documate project without installing CLI.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "templates"
+  ],
   "scripts": {
     "prepublish": "rimraf templates && cp -R ./../../examples ./templates",
     "test": "echo \"Error: no test specified\" && exit 1"
