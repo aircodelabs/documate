@@ -12,15 +12,20 @@ Please choose a framework below to get started:
 
 - [VitePress](/getting-started/vitepress)
 - [General Vue Project](/getting-started/general-vue)
+- [Vanilla JS](/getting-started/vanilla-js)
+
+Documate can also be manually integrated to other libraries or frameworks.
+
+- [Docsify](/integration/docsify)
 
 The following frameworks are coming soon:
 
 - Docusaurus
-- Docsify
 - Vuepress
 - Docus
 - Nextra
 - General React Project
+
 ## Key Features
 
 ### Hassle-free Integration

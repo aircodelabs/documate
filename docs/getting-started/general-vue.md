@@ -54,7 +54,7 @@ import '@documate/vue/dist/style.css'
 </template>
 ```
 
-## Run the Rroject
+## Run the Project
 
 Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
 
