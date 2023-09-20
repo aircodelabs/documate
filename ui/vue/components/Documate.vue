@@ -80,7 +80,7 @@ async function startChat(question: string) {
 
     loading.value = false
 
-    async function streamToString(body: any) {
+    async function streamToString(body: any, assistantId: number) {
       const reader = body?.pipeThrough(new TextDecoderStream()).getReader();
       while (reader) {
         let stream = await reader.read()
@@ -107,7 +107,7 @@ async function startChat(question: string) {
         }
       }
     }
-    streamToString(response.body)
+    streamToString(response.body, assistantId)
   } catch (err) {
     console.log(err)
   }
