@@ -1,0 +1,374 @@
+input {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.documate-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  height: var(--dm-button-height);
+  transition: border-color 0.25s ease-in-out;
+  cursor: pointer;
+
+  .icon {
+    height: 1rem;
+  }
+}
+
+.button-placeholder {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .documate-button {
+    font-size: var(--dm-button-font-size);
+    color: var(--dm-color-hint);
+    border: 1px solid transparent;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
+    background: var(--dm-color-bg-alt);
+
+    .icon {
+      height: var(--dm-button-font-size);
+      margin-right: 0.2rem;
+    }
+  }
+
+  .button-placeholder {
+    display: block;
+  }
+
+  .documate-button:hover {
+    border-color: var(--dm-color-brand);
+  }
+}
+
+
+.dialog {
+  position: relative;
+  z-index: 10;
+}
+
+.enter {
+  transition: opacity 200ms ease-out;
+}
+
+.enter-from {
+  opacity: 0;
+}
+
+.enter-to {
+  opacity: 1;
+}
+
+.leave {
+  transition: opacity 100ms ease-in;
+}
+
+.leave-from {
+  opacity: 1;
+}
+
+.leave-to {
+  opacity: 0;
+}
+
+.transition-child-ref {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dialog-container {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  padding: 1rem;
+  background-color: var(--dm-mask-bg-color);
+
+  @media (min-width: 640px) { 
+    padding: 1.5rem;
+  }
+  @media (min-width: 768px) { 
+    padding: 5rem;
+  }
+
+}
+
+.dialog-panel {
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  max-width: 36rem;
+  background-color: var(--dm-modal-bg-color);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+}
+
+.magnifying-glass-icon {
+  position: absolute;
+  top: 0.875rem;
+  left: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--dm-text-color);
+  pointer-events: none;
+}
+
+.chat-container {
+  position: relative;
+}
+
+.chat-input {
+  box-sizing: border-box;
+  padding-right: 1rem;
+  padding-left: 2.75rem;
+  border-width: 0;
+  width: 100%;
+  height: 3rem;
+  color: var(--dm-text-color);
+  background-color: transparent;
+  border-bottom: 1px solid var(--dm-divider-color);
+
+  @media (min-width: 640px) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+.chat-input::placeholder {
+  font-size: 1rem;
+}
+
+.combobox-options {
+  overflow-y: auto;
+  padding: 1rem;
+  max-height: 20rem;
+  scroll-padding-top: 2.5rem;
+  scroll-padding-bottom: 2.5rem;
+  scroll-padding-bottom: 0.5rem;
+  min-height: 5rem;
+  list-style: none;
+}
+
+.combobox-option {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.combobox-options-container {
+  margin-top: 0.5rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--dm-text-color);
+}
+
+.active {
+  color: var(--dm-c-white);
+  background-color: var(--dm-highlight-color);
+}
+
+.combobox-options-name {
+  margin-left: 0.75rem;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ }
+
+.loading {
+  padding: 1rem;
+  padding-left: 2.6rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.loading-spin {
+  animation: spin 1s linear infinite;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.option-icon {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.question-anwser-section {
+  list-style: none;
+  max-height: 20rem;
+  font-size: 0.875rem;
+  scroll-padding-top: 0.5rem;
+  scroll-padding-bottom: 0.5rem;
+  color: var(--dm-text-color);
+}
+
+.question-anwser-item {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+}
+
+.question-role-user {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.question-role-icon {
+  display: inline-block;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.documate-logo {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.result-not-found {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  text-align: center;
+
+  @media (min-width: 640px) { 
+    padding-left: 3.5rem;
+    padding-right: 3.5rem; 
+  }
+}
+
+.result-not-found-text {
+  margin-top: 0.5rem;
+  color: var(--dm-text-color);
+  font-size: 0.85rem;
+}
+.anwser-content {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.markdown-body {
+  border-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  overflow-wrap: break-word;
+  color: var(--dm-text-color);
+  list-style: auto;
+}
+
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--dm-text-color);
+  border-top: 1px solid var(--dm-divider-color);
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.kbd-wrap {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.kbd-text {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kbd {
+  display: flex;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  width: 1.25rem;
+  height: 1.25rem;
+  font-weight: 600;
+
+  @media (min-width: 640px) { 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.esc {
+  width: 2rem;
+}
+
+.powered-by {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dm-text-color);
+  gap: 0.25rem;
+  @media (max-width: 768px) {
+    margin-top: 0.2rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
