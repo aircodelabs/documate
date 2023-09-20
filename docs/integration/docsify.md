@@ -5,7 +5,7 @@ It's very easy to integrate Documate into Docsify. You just need to follow the [
 ```html
 <button id="ask-ai" data-endpoint="https://xxxxxxxx.us.aircode.run/ask"></button>
 ...
-<script src="https://unpkg.com/@documate/ui"></script>
+<script src="https://unpkg.com/@documate/vanilla"></script>
 ```
 
 You can place the button anywhere you like, but the most convenient way is to [enable the NavBar](https://docsify.js.org/#/configuration?id=loadnavbar) and then place the button on the NavBar.

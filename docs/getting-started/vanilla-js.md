@@ -1,27 +1,27 @@
 # Get Started with Native JavaScript
 
-Documate supports native JavaScript pages through the `@documate/ui` package.
+Documate supports native JavaScript pages through the `@documate/vanilla` package.
 
 ## Initialize Documate
 
-`@documate/ui` will automatically search for DOM elements with the ID `ask-ai` on the page, so you don't need to perform any manual initialization. The only thing you need to do is provide a button with the ID `ask-ai` on the page.
+`@documate/vanilla` will automatically search for DOM elements with the ID `ask-ai` on the page, so you don't need to perform any manual initialization. The only thing you need to do is provide a button with the ID `ask-ai` on the page.
 
-### Import from CDN:
+### Import from CDN
 
 ```html
 <button id="ask-ai" data-endpoint="https://xxxxxxxx.us.aircode.run/ask"></button>
 ...
-<script src="https://unpkg.com/@documate/ui"></script>
+<script src="https://unpkg.com/@documate/vanilla"></script>
 ```
 
-### Import from Node:
+### Import from Node
 
 ```bash
-npm install @documate/ui
+npm install @documate/vanilla
 ```
 
 ```js
-import 'documate-ui';
+import 'documate-vanilla';
 ```
 
 ## Prepare Data
