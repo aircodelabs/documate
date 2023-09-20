@@ -1,8 +1,8 @@
 {
-  "name": "@documate/ui",
-  "version": "0.1.2",
+  "name": "@documate/vanilla",
+  "version": "0.1.0",
   "description": "Building Documate UI using native JavaScript",
-  "main": "dist/documate-ui.js",
+  "main": "dist/documate-vanilla.js",
   "type": "module",
   "scripts": {
     "build": "mode=production node build.js",
@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "devDependencies": {
     "esbuild": "^0.19.3",
     "eslint": "^8.49.0"

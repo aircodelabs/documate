@@ -40,13 +40,13 @@ After you've deployed the backend and got the request URLs, you can start buildi
 
 Choose a framework below to get started:
 
-- [VitePress](/getting-started/vitepress)
+- [VitePress](/integration/vitepress)
+- [Docsify](/integration/docsify)
 - [General Vue Project](/getting-started/general-vue)
 
 The following frameworks are coming soon:
 
 - Docusaurus
-- Docsify
 - Vuepress
 - Docus
 - Nextra

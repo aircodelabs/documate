@@ -35,7 +35,7 @@ If you already have a VitePress site, you can add Documate to it by following th
 
 ### 1. Initialize Documate
 
-<!--@include: ./_partials/_initialize-vue.md-->
+<!--@include: ../_partials/_initialize-vue.md-->
 
 ### 2. Add Documate UI to Your Project
 
@@ -60,7 +60,7 @@ export default {
 
 ## Connect to Backend
 
-<!--@include: ./_partials/_connect-backend.md-->
+<!--@include: ../_partials/_connect-backend.md-->
 
 Modify the `.vitepress/theme/index.js` file to pass the endpoint to the `Documate` component as props.
 

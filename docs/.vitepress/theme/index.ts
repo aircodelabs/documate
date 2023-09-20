@@ -21,7 +21,7 @@ export default {
         predefinedQuestions: [
           'What is Documate?',
           'How to integrate Documate with VitePress?',
-          'How to integrate Documate with other Vue projects?',
+          'How to integrate Documate with Docsify?',
         ],
       }),
     })
