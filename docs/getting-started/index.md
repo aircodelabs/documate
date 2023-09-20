@@ -10,13 +10,9 @@ Documate can integrate with popular frameworks you're already familiar with, and
 
 Please choose a framework below to get started:
 
-- [VitePress](/getting-started/vitepress)
-- [General Vue Project](/getting-started/general-vue)
-- [Vanilla JS](/getting-started/vanilla-js)
-
-Documate can also be manually integrated to other libraries or frameworks.
-
+- [VitePress](/integration/vitepress)
 - [Docsify](/integration/docsify)
+- [General Vue Project](/getting-started/general-vue)
 
 The following frameworks are coming soon:
 

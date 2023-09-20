@@ -1,17 +1,125 @@
-# Integration to Docsify
+# Get started with Docsify
 
-It's very easy to integrate Documate into Docsify. You just need to follow the [Native JavaScript Startup](/getting-started/vanilla-js) guide to import js and provide a button with the ID `ask-ai` in your doc's `index.html` page.
+Documate can work with Docsify out of the box. 
+
+## Initialize Documate
+
+To prepare your project for Documate, run the following command:
+
+::: code-group
+
+```bash [npm]
+npm install @documate/documate --save-dev
+```
+
+```bash [yarn]
+yarn add @documate/documate --dev
+```
+
+```bash [pnpm]
+pnpm install @documate/documate --save-dev
+```
+
+:::
+
+Ceate a `documate.json` file:
+
+```json
+{
+  "root": ".",
+  "include": [ "**/*.md" ],
+  "backend": ""
+}
+```
+
+The `root` should be the directory where your markdown files are located.
+
+Then add a script in your `package.json` file:
+
+```json{4}
+{
+  "scripts": {
+    ...
+    "documate:upload": "documate upload"
+  }
+}
+```
+
+## Add Documate UI to Your Project
+
+Documate offers a vanilla JS component `@documate/vanilla` that you can seamlessly integrate into your Docsify project.
+
+### Import from CDN
 
 ```html
-<button id="ask-ai" data-endpoint="https://xxxxxxxx.us.aircode.run/ask"></button>
-...
 <script src="https://unpkg.com/@documate/vanilla"></script>
 ```
 
-You can place the button anywhere you like, but the most convenient way is to [enable the NavBar](https://docsify.js.org/#/configuration?id=loadnavbar) and then place the button on the NavBar.
+### Import from Package Manager
 
-There is an [online Example](https://spritejs.vercel.app/#/).
+::: code-group
 
-<img src="https://aircode-yvo.b-cdn.net/resource/14-y607yzcv44.jpg" width="400">
+```bash [npm]
+npm install @documate/vanilla
+```
 
-<img src="https://aircode-yvo.b-cdn.net/resource/1695090094690-cbh1nh85p3.jpg" width="400">
+```bash [yarn]
+yarn add @documate/vanilla
+```
+
+```bash [pnpm]
+pnpm install @documate/vanilla
+```
+
+:::
+
+Them import it in your `index.js` file:
+
+```js
+import '@documate/vanilla'
+```
+
+### Add the Component
+
+`@documate/vanilla` will automatically search for DOM elements with the ID ask-ai on the page, so you don't need to perform any manual initialization. The only thing you need to do is provide a button with the ID ask-ai on the page.
+
+```html
+<button id="ask-ai" data-endpoint=""></button>
+```
+
+## Connect to Backend
+
+<!--@include: ../_partials/_connect-backend.md-->
+
+Modify the Documate UI you added before to pass the endpoint to the `data-endpoint` attribute.
+
+```html
+<!-- Replace the URL with your own one -->
+<button id="ask-ai" data-endpoint="https://test123.us.aircode.run/ask"></button>
+```
+
+## Run the Project
+
+Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
+
+::: code-group
+
+```bash [npm]
+npm run documate:upload
+```
+
+```bash [yarn]
+yarn documate:upload
+```
+
+```bash [pnpm]
+pnpm documate:upload
+```
+
+:::
+
+After the command finishes, you can run the local server and find an __Ask AI__ button in the top nav.
+
+```bash
+docsify serve docs
+```

@@ -4,7 +4,7 @@ Besides the popular frameworks, Documate also supports any Vue project. This gui
 
 ## Initialize Documate
 
-<!--@include: ./_partials/_initialize-vue.md-->
+<!--@include: ../_partials/_initialize-vue.md-->
 
 ## Add Documate UI to Your Project
 
@@ -36,9 +36,9 @@ See [default CSS variables](https://github.com/AirCodeLabs/documate/blob/main/ui
 
 ## Connect to Backend
 
-<!--@include: ./_partials/_connect-backend.md-->
+<!--@include: ../_partials/_connect-backend.md-->
 
-Modify the Document UI you added before to pass the endpoint to the `Documate` component as props.
+Modify the Documate UI you added before to pass the endpoint to the `Documate` component as props.
 
 ```vue{8-9}
 <script setup>
