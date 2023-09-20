@@ -1,4 +1,4 @@
-import './index.less';
+import './index.scoped.less';
 
 export function Documate() {
   return (

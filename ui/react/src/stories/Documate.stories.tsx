@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Documate } from './Documate';
+import { Documate } from '../components/Documate';
 
-const meta: Meta<typeof Documate> = {
+const meta = {
   component: Documate,
-};
+} satisfies Meta<typeof Documate>;;
 
 export default meta;
-type Story = StoryObj<typeof Documate>;
+type Story = StoryObj<typeof meta>;
 
 /*
  *👇 Render functions are a framework specific feature to allow you control on how the component renders.
