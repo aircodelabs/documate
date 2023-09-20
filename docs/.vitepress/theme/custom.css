@@ -85,6 +85,10 @@
   text-underline-position: from-font;
 }
 
+.dialog-container .dialog-panel .combobox-option.active {
+  color: var(--vp-c-neutral-inverse);
+}
+
 @media (min-width: 960px) {
   #app .VPNavBar:not(.has-sidebar):not(.top) {
     background-color: transparent;
