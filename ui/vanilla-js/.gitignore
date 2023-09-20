@@ -4,4 +4,3 @@ npm-debug.log*
 .dir-locals.el
 .DS_Store
 .test
-package-lock.json
