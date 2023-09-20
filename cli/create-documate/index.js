@@ -30,7 +30,10 @@ const TEMPLATES = [
   {
     name: 'vitepress',
     display: 'VitePress',
-    color: green,
+  },
+  {
+    name: 'docsify',
+    display: 'Docsify',
   },
 ]
 
@@ -58,9 +61,8 @@ async function create(name, options) {
       message: 'Select a template:',
       initial: 0,
       choices: TEMPLATES.map((template) => {
-        const templateColor = template.color || lightBlue
         return {
-          title: templateColor(template.display || template.name),
+          title: template.display || template.name,
           value: template,
         }
       }),
