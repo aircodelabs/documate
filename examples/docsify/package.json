@@ -1,0 +1,12 @@
+{
+  "name": "documate-docsify-starter",
+  "version": "1.0.0",
+  "description": "A template for creating a new Docsify site with Documate",
+  "private": true,
+  "scripts": {
+    "documate:upload": "documate upload"
+  },
+  "devDependencies": {
+    "@documate/documate": "^0.1.0"
+  }
+}

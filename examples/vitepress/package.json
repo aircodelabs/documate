@@ -1,6 +1,6 @@
 {
   "name": "documate-vitepress-starter",
-  "description": "A demo of how to integrate Documate into Vitepress site. You can also use this as a template to start a new project.",
+  "description": "A template for creating a new VitePress site with Documate",
   "version": "0.0.0",
   "private": true,
   "type": "module",

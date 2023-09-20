@@ -73,7 +73,7 @@ pnpm install @documate/vanilla
 
 :::
 
-Them import it in your `index.js` file:
+Then import it in your `index.js` file:
 
 ```js
 import '@documate/vanilla'
@@ -95,7 +95,7 @@ Modify the Documate UI you added before to pass the endpoint to the `data-endpoi
 
 ```html
 <!-- Replace the URL with your own one -->
-<button id="ask-ai" data-endpoint="https://test123.us.aircode.run/ask"></button>
+<button id="ask-ai" data-endpoint="https://test123.us.aircode.run/ask">Ask AI</button>
 ```
 
 ## Run the Project
