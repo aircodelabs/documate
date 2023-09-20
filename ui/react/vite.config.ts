@@ -12,6 +12,9 @@ export default defineConfig({
         }),
         reactScopedCssPlugin(),
     ],
+    optimizeDeps: {
+        exclude: ['stories'],
+    },
     build: {
         lib: {
             entry: path.resolve(__dirname, 'src/components/index.ts'),

@@ -1,6 +1,7 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Documate } from '../components/Documate';
+import { Documate } from '../src/components/Documate';
 
 const meta = {
   component: Documate,

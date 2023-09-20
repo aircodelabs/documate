@@ -2,9 +2,9 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: [
-    '../src/stories/Documate.stories.tsx', // default page
-    "../src/**/*.mdx", 
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+    '../stories/Documate.stories.tsx', // default page
+    "../stories/**/*.mdx", 
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
