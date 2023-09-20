@@ -1,1 +1,4 @@
-export { default as MyButton } from './Documate';
+import { Documate } from './Documate'
+
+export { Documate }
+export default Documate
