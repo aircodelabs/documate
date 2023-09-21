@@ -12,10 +12,10 @@ To use Azure OpenAI as the backend, you need to deploy two models: one GPT model
 
 Unlike the OpenAI Backend, the Azure OpenAI Backend requires the configuration of four parameters, as follows:
 
-- AZURE_OPENAI_KEY : The OpenAI Access Key.
-- AZURE_OPENAI_ENDPOINT : The OpenAI Endpoint.
-- AZURE_OPENAI_DEPLOYMENT : The deployment ID fo the GPT module.
-- AZURE_OPENAI_EMBEDDING : The deployment ID fo the Embedding module.
+- `AZURE_OPENAI_KEY` : The OpenAI Access Key.
+- `AZURE_OPENAI_ENDPOINT` : The OpenAI Endpoint.
+- `AZURE_OPENAI_DEPLOYMENT` : The deployment ID fo the GPT module.
+- `AZURE_OPENAI_EMBEDDING` : The deployment ID fo the Embedding module.
 
 <img src="https://aircode-yvo.b-cdn.net/resource/1695293476139-n2f95c7cea.jpg" width="400">
 
