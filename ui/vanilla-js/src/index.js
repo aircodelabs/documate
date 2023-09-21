@@ -4,11 +4,12 @@ function sleep(ms) {
 }
 
 import MarkdownIt from 'markdown-it';
+import MarkdownItHighlightjs from 'markdown-it-highlightjs';
 
 // markdown processor
 const markdownToHtml = (content) => {
-  const markdown = new MarkdownIt();
-  // .use(MarkdownItHighlightjs)
+  const markdown = new MarkdownIt()
+    .use(MarkdownItHighlightjs);
 
   const html = markdown.render(content);
   return html;
