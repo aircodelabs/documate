@@ -48,6 +48,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 
 - Adcent Lei ([@adcentlei](https://twitter.com/adcentlei))
 - Kevin Wu ([@0xinhua](https://twitter.com/0xinhua))
+- Akira Wu ([@akira_cn](https://twitter.com/akira_cn))
 
 ## Star History
 
