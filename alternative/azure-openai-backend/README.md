@@ -8,7 +8,7 @@ This is the alternative backend of Documate, you can get a copy and launch your 
 
 To use Azure OpenAI as the backend, you need to deploy two models: one GPT model and one Embedding model.
 
-![](https://aircode-yvo.b-cdn.net/resource/1695293654504-29kykwztv1p.jpg)
+<img src="https://aircode-yvo.b-cdn.net/resource/1695293654504-29kykwztv1p.jpg" width="400">
 
 Unlike the OpenAI Backend, the Azure OpenAI Backend requires the configuration of four parameters, as follows:
 
@@ -17,6 +17,6 @@ Unlike the OpenAI Backend, the Azure OpenAI Backend requires the configuration o
 - AZURE_OPENAI_DEPLOYMENT : The deployment ID fo the GPT module.
 - AZURE_OPENAI_EMBEDDING : The deployment ID fo the Embedding module.
 
-![](https://aircode-yvo.b-cdn.net/resource/1695293476139-n2f95c7cea.jpg)
+<img src="https://aircode-yvo.b-cdn.net/resource/1695293476139-n2f95c7cea.jpg" width="400">
 
 For more information, please refer to [https://documate.site/getting-started/backend](https://documate.site/getting-started/backend).
