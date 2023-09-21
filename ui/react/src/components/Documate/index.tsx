@@ -43,6 +43,9 @@ const markdownToHtml = (content: string): string => {
   }
 }
 
+const questionList: Question[] = [];
+let assistantId = 0
+
 export const Documate = ({
   endpoint = '',
   buttonLabel = 'Ask AI',
@@ -50,14 +53,11 @@ export const Documate = ({
   predefinedQuestions = [],
   ...props
 }: DocumateProps) => {
-  let assistantId = 0
   const [isOpen, setIsOpen] = useState(false)
   // eslint-disable-next-line prefer-const
-  let [selectionMade, setSelectionMade] = useState(false)
   const [query, setQuery] = useState('')
   const [loading, setLoading] = useState(false)
   const [questions, setQuestions] = useState<Question[] | []>([]);
-  const questionList: Question[] = [];
 
   const chatContainer = useRef<HTMLDivElement>(null)
 
@@ -82,6 +82,7 @@ export const Documate = ({
     const ask = { role: 'user', content: question, id: ++assistantId }
 
     questionList.push(ask);
+    console.log(questionList);
 
     setQuestions(() => {
       return [...questionList]
@@ -142,19 +143,11 @@ export const Documate = ({
     }
   }
 
-  const onSelect = () => {
-    selectionMade = true
-  }
-
   const queryEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if(e.key !== 'Enter') return;
-    if (selectionMade) {
-      setSelectionMade(false)
-    } else {
-      e.preventDefault()
-      startChat(query)
-      scrollToBottom()
-    }
+    e.preventDefault()
+    startChat(query)
+    scrollToBottom()
     setQuery('')
   }
 
@@ -180,7 +173,7 @@ export const Documate = ({
       <Dialog className="dialog" open={isOpen} onClose={() => setIsOpen(false)}>
         <div className="dialog-container">
           <Dialog.Panel className="dialog-panel">
-            <Combobox onChange = {onSelect} as="div">
+            <Combobox as="div">
               <div className="chat-container">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="magnifying-glass-icon" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
