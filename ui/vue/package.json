@@ -6,13 +6,13 @@
     "dist",
     "README.md"
   ],
-  "main": "./dist/documate.umd.js",
+  "main": "./dist/documate.umd.cjs",
   "module": "./dist/documate.js",
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/documate.js",
-      "require": "./dist/documate.umd.js"
+      "require": "./dist/documate.umd.cjs"
     },
     "./dist/style.css": "./dist/style.css"
   },
