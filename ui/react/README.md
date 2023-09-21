@@ -14,11 +14,15 @@ npm install @documate/react
 ```
 
 ```jsx
-<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask' predefinedQuestions={[
-   'What is SpriteJS?',
-   'How can I use SpriteJS to draw a circle?',
-   'Can SpriteJS render 3D Objects?'
-]}/>
+import { Documate } from '@documate/react'
+
+export default () => {
+   return (<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask' predefinedQuestions={[
+      'What is SpriteJS?',
+      'How can I use SpriteJS to draw a circle?',
+      'Can SpriteJS render 3D Objects?'
+   ]}/>)
+}
 ```
 
 ## Development
