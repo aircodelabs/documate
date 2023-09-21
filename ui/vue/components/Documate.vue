@@ -591,7 +591,7 @@ ul {
   line-height: 1rem;
   color: var(--dm-text-color);
   border-top: 1px solid var(--dm-divider-color);
-  @media (max-width: 768px) {
+  @media (max-width: 454px) {
     justify-content: center;
   }
 }

@@ -5,7 +5,7 @@ import { Documate } from '../src/components/Documate';
 
 const meta = {
   component: Documate,
-} satisfies Meta<typeof Documate>;;
+} satisfies Meta<typeof Documate>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -17,7 +17,16 @@ type Story = StoryObj<typeof meta>;
  */
 export const Primary: Story = {
   render: () => {
-    return (<Documate/>);
+    return (<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask'/>);
   }
 };
 
+export const AskSpriteJS: Story = {
+  render: () => {
+    return (<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask' predefinedQuestions={[
+      'What is SpriteJS?',
+      'How can I use SpriteJS to draw a circle?',
+      'Can SpriteJS render 3D Objects?'
+    ]}/>);
+  }
+};

@@ -1,14 +1,15 @@
 {
   "name": "react",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/documate-ui-react.umd.js",
   "module": "./dist/documate-ui-react.es.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "storybook dev -p 6006",
     "build": "tsc --build --clean && vite build",
+    "prepublishOnly": "npm run build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "markdown-it": "^13.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.0.8"
@@ -29,6 +31,7 @@
     "@storybook/react": "^7.4.2",
     "@storybook/react-vite": "^7.4.2",
     "@storybook/testing-library": "^0.2.1",
+    "@types/markdown-it": "^13.0.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.27",
