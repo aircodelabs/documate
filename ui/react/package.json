@@ -1,6 +1,6 @@
 {
   "name": "@documate/react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "main": "./dist/documate-ui-react.umd.js",
   "module": "./dist/documate-ui-react.es.js",
@@ -17,10 +17,11 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "markdown-it": "^13.0.1",
-    "markdown-it-highlightjs": "^4.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^6.0.8"
+    "markdown-it-highlightjs": "^4.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.2",
