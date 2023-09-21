@@ -2,6 +2,7 @@
 
 import './styles/vars.css'
 import './styles/markdown-body.css'
+import './styles/highlight-js.css'
 
 import { onBeforeUnmount, onMounted, ref, computed } from 'vue'
 import {
@@ -16,7 +17,7 @@ import {
 } from '@headlessui/vue'
 
 import MarkdownIt from 'markdown-it'
-// import MarkdownItHighlightjs from 'markdown-it-highlightjs'
+import MarkdownItHighlightjs from 'markdown-it-highlightjs'
 import { DocumateProps } from './index'
 
 
@@ -45,7 +46,7 @@ function onSelect(item: string ): void {
 // markdown processor
 const markdownToHtml = (content: string): string => {
   const markdown = new MarkdownIt()
-  // .use(MarkdownItHighlightjs)
+    .use(MarkdownItHighlightjs)
 
   const html = markdown.render(content)
   return html
