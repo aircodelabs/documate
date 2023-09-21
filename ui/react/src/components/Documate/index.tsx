@@ -15,6 +15,17 @@ interface DocumateProps {
   predefinedQuestions?: string[],
 }
 
+interface OpenAIResponseBody {
+  // eslint-disable-next-line no-unused-vars
+  pipeThrough: (arg0: TextDecoderStream) => { getReader: () => ReadableStreamDefaultReader }
+}
+
+interface Question {
+  role: string,
+  content: string,
+  id: number,
+}
+
 import MarkdownIt from 'markdown-it'
 // markdown processor
 const markdownToHtml = (content: string): string => {
@@ -33,12 +44,13 @@ export const Documate = ({
   ...props
 }: DocumateProps) => {
   let assistantId = 0
-  let [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  // eslint-disable-next-line prefer-const
   let [selectionMade, setSelectionMade] = useState(false)
-  let [query, setQuery] = useState('')
-  let [loading, setLoading] = useState(false)
-  let [questions, setQuestions] = useState<any[] | []>([]);
-  const questionList: any[] = [];
+  const [query, setQuery] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [questions, setQuestions] = useState<Question[] | []>([]);
+  const questionList: Question[] = [];
 
   const chatContainer = useRef<HTMLDivElement>(null)
 
@@ -81,15 +93,16 @@ export const Documate = ({
 
       setLoading(false)
 
-      async function streamToString(body: any, assistantId: number) {
+      // eslint-disable-next-line no-inner-declarations
+      async function streamToString(body: OpenAIResponseBody|null, assistantId: number) {
         const reader = body?.pipeThrough(new TextDecoderStream()).getReader();
         while (reader) {
-          let stream = await reader.read()
+          const stream = await reader.read()
           if (stream.done) break
           const chunks = stream.value
   
           if (chunks) {
-            for (let chunk of chunks) {
+            for (const chunk of chunks) {
               const assistantIndex = questionList.findIndex(q => q.role === 'assistant' && q.id === assistantId)
   
               const content = chunk
@@ -181,7 +194,7 @@ export const Documate = ({
                   <Combobox.Options static className="combobox-options">
                     <ul className="combobox-options-container">
                       {predefinedQuestions.map((item, index) => (
-                        <Combobox.Option value={item} key={item} className="combobox-option" onClick={() => startChat(item)}>
+                        <Combobox.Option value={item} key={index} className="combobox-option" onClick={() => startChat(item)}>
                           <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="option-icon">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
                           </svg>
