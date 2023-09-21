@@ -48,8 +48,12 @@ const markdownToHtml = (content: string): string => {
   const markdown = new MarkdownIt()
     .use(MarkdownItHighlightjs)
 
-  const html = markdown.render(content)
-  return html
+  try {
+    const html = markdown.render(content)
+    return html
+  } catch (err) {
+    return content
+  }
 }
 
 // fetch ChatGPT
