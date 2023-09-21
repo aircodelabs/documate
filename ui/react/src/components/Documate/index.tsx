@@ -67,7 +67,7 @@ export const Documate = ({
     }
   }
 
-    // fetch ChatGPT
+  // fetch ChatGPT
   async function startChat(question: string) {
     if (!question) {
       return
