@@ -1,6 +1,6 @@
 {
   "name": "@documate/react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/documate-ui-react.umd.js",
   "module": "./dist/documate-ui-react.es.js",
