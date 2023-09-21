@@ -56,6 +56,14 @@
   min-width: 36rem;
 }
 
+.documate-dialog .chat-input {
+  outline: none;
+}
+
+.documate-dialog .chat-input:focus {
+  outline: none;
+}
+
 .documate-dialog .dialog-panel {
   margin: 0 auto;
   overflow: hidden;
@@ -84,7 +92,7 @@
 }
 
 .documate-dialog .question-anwser-section .loading-item:first-of-type::before {
-  content: 'No resent searches.';
+  content: 'How can I help you today?';
   line-height: 6rem;
   text-align: center;
   width: 100%;

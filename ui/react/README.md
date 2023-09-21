@@ -14,6 +14,7 @@ npm install @documate/react
 ```
 
 ```jsx
+import '@documate/react/dist/style.css'
 import { Documate } from '@documate/react'
 
 export default () => {

@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import './styles/vars.css'
 import './styles/markdown-body.css'
 import './styles/index.scoped.less'
+import './styles/highlight-js.less'
 
 import {
   Combobox,
@@ -27,13 +28,19 @@ interface Question {
 }
 
 import MarkdownIt from 'markdown-it'
+import MarkdownItHighlightjs from 'markdown-it-highlightjs'
+
 // markdown processor
 const markdownToHtml = (content: string): string => {
   const markdown = new MarkdownIt()
-  // .use(MarkdownItHighlightjs)
+    .use(MarkdownItHighlightjs)
 
-  const html = markdown.render(content)
-  return html
+  try {
+    const html = markdown.render(content)
+    return html
+  } catch (err) {
+    return content
+  }
 }
 
 export const Documate = ({
@@ -60,7 +67,7 @@ export const Documate = ({
     }
   }
 
-    // fetch ChatGPT
+  // fetch ChatGPT
   async function startChat(question: string) {
     if (!question) {
       return
@@ -135,9 +142,8 @@ export const Documate = ({
     }
   }
 
-  const onSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onSelect = () => {
     selectionMade = true
-    startChat(e.target.value)
   }
 
   const queryEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
