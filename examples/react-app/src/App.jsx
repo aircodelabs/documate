@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask'/>
+      <Documate endpoint='https://9b767964ir.us.aircode.run/ask'/>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
