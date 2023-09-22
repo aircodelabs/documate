@@ -1,0 +1,7 @@
+{
+  "root": "docs",
+  "include": [
+    "**/*.md"
+  ],
+  "backend": ""
+}
