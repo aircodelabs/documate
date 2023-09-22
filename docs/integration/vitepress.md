@@ -9,18 +9,18 @@ There are two ways you can integrate Documate with VitePress. Both are convinien
 
 To create a new VitePress site with Documate, use the following command:
 
-::: code-group
-
-```bash [npm]
+::: tabs key:pm
+== npm
+```bash
 npm create documate@latest --template vitepress
 ```
-
-```bash [yarn]
-yarn create documate --template vitepress
+== yarn
+```bash
+yarn create documate@latest --template vitepress
 ```
-
-```bash [pnpm]
-pnpm create documate --template vitepress
+== pnpm
+```bash
+pnpm create documate@latest --template vitepress
 ```
 
 :::
@@ -85,37 +85,21 @@ export default {
 
 ## Run the Project
 
-Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
+<!--@include: ../_partials/_run-project-upload.md-->
 
-::: code-group
+After the command finishes, you can start the dev server and find the __Ask AI__ button at the top left corner.
 
-```bash [npm]
-npm run documate:upload
-```
-
-```bash [yarn]
-yarn documate:upload
-```
-
-```bash [pnpm]
-pnpm documate:upload
-```
-
-:::
-
-After the command finishes, you can start the dev server and find the __Ask AI__ button in the top left corner.
-
-::: code-group
-
-```bash [npm]
+::: tabs key:pm 
+== npm
+```bash
 npm run docs:dev
 ```
-
-```bash [yarn]
+== yarn
+```bash
 yarn docs:dev
 ```
-
-```bash [pnpm]
+== pnpm
+```bash
 pnpm docs:dev
 ```
 

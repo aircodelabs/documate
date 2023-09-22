@@ -11,12 +11,12 @@ Documate can integrate with popular frameworks you're already familiar with, and
 Please choose a framework below to get started:
 
 - [VitePress](/integration/vitepress)
+- [Docusaurus](/integration/docusaurus)
 - [Docsify](/integration/docsify)
 - [General Vue Project](/getting-started/general-vue)
 
 The following frameworks are coming soon:
 
-- Docusaurus
 - Vuepress
 - Docus
 - Nextra
@@ -50,20 +50,51 @@ These examples can serve as headless templates to kickstart a new documentation 
 
 - VitePress ([examples/vitepress](https://github.com/AirCodeLabs/documate/tree/main/examples/vitepress))
 
-::: code-group
-
-```bash [npm]
+::: tabs key:pm
+== npm
+```bash
 npm create documate@latest --template vitepress
 ```
-
-```bash [yarn]
+== yarn
+```bash
 yarn create documate --template vitepress
 ```
-
-```bash [pnpm]
+== pnpm
+```bash
 pnpm create documate --template vitepress
 ```
-
 :::
 
-- More is coming soon...
+- Docusaurus ([examples/docusaurus](https://github.com/AirCodeLabs/documate/tree/main/examples/docusaurus))
+
+::: tabs key:pm
+== npm
+```bash
+npm create documate@latest --template docusaurus
+```
+== yarn
+```bash
+yarn create documate --template docusaurus
+```
+== pnpm
+```bash
+pnpm create documate --template docusaurus
+```
+:::
+
+- Docsify ([examples/docsify](https://github.com/AirCodeLabs/documate/tree/main/examples/docsify))
+
+::: tabs key:pm
+== npm
+```bash
+npm create documate@latest --template docsify
+```
+== yarn
+```bash
+yarn create documate --template docsify
+```
+== pnpm
+```bash
+pnpm create documate --template docsify
+```
+:::

@@ -6,17 +6,17 @@ Documate can work with Docsify out of the box.
 
 To prepare your project for Documate, run the following command:
 
-::: code-group
-
-```bash [npm]
+::: tabs key:pm
+== npm
+```bash
 npm install @documate/documate --save-dev
 ```
-
-```bash [yarn]
+== yarn
+```bash
 yarn add @documate/documate --dev
 ```
-
-```bash [pnpm]
+== pnpm
+```bash
 pnpm install @documate/documate --save-dev
 ```
 
@@ -57,17 +57,17 @@ Documate offers a vanilla JS component `@documate/vanilla` that you can seamless
 
 ### Import from Package Manager
 
-::: code-group
-
-```bash [npm]
+::: tabs key:pm
+== npm
+```bash
 npm install @documate/vanilla
 ```
-
-```bash [yarn]
+== yarn
+```bash
 yarn add @documate/vanilla
 ```
-
-```bash [pnpm]
+== pnpm
+```bash
 pnpm install @documate/vanilla
 ```
 
@@ -100,23 +100,7 @@ Modify the Documate UI you added before to pass the endpoint to the `data-endpoi
 
 ## Run the Project
 
-Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
-
-::: code-group
-
-```bash [npm]
-npm run documate:upload
-```
-
-```bash [yarn]
-yarn documate:upload
-```
-
-```bash [pnpm]
-pnpm documate:upload
-```
-
-:::
+<!--@include: ../_partials/_run-project-upload.md-->
 
 After the command finishes, you can run the local server and find an __Ask AI__ button in the top nav.
 

@@ -1,4 +1,5 @@
 import { h, onMounted } from 'vue'
+import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { useRouter } from 'vitepress'
 import Documate from '@documate/vue'
@@ -10,8 +11,10 @@ import './custom.css'
 import HeroPattern from './components/HeroPattern.vue'
 import HeroVideo from './components/HeroVideo.vue'
 
+import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
+
 export default {
-  ...DefaultTheme,
+  extends: DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'home-hero-before': () => h(HeroPattern),
@@ -46,4 +49,7 @@ export default {
       mixpanel.track_pageview()
     }
   },
-}
+  enhanceApp({ app }) {
+    enhanceAppWithTabs(app)
+  },
+} satisfies Theme
