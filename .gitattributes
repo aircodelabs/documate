@@ -1,9 +1,6 @@
+* linguist-detectable=false
 *.js linguist-detectable=true
 *.jsx linguist-detectable=true
 *.ts linguist-detectable=true
 *.jsx linguist-detectable=true
 *.vue linguist-detectable=true
-*.css linguist-detectable=false
-*.less linguist-detectable=false
-*.mdx linguist-detectable=false
-*.html linguist-detectable=false
