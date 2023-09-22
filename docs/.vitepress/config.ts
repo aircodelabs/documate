@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -23,6 +24,11 @@ export default defineConfig({
           )
         },
       ],
+    },
+  },
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
     },
   },
   themeConfig: {
@@ -51,6 +57,7 @@ export default defineConfig({
           { text: 'Quickstart', link: '/getting-started/' },
           { text: 'Build the Backend', link: '/getting-started/backend' },
           { text: 'Start with VitePress', link: '/integration/vitepress' },
+          { text: 'Start with Docusaurus', link: '/integration/docusaurus' },
           { text: 'Start with Docsify', link: '/integration/docsify' },
           { text: 'General Vue Project', link: '/getting-started/general-vue' },
         ],
@@ -75,5 +82,5 @@ export default defineConfig({
       message: 'Made with ❤️ by <a href="https://aircode.io" target="_blank">AirCode</a>',
       copyright: '© 2023 AirCode, Inc. All rights reserved.',
     }
-  }
+  },
 })

@@ -56,38 +56,21 @@ import '@documate/vue/dist/style.css'
 
 ## Run the Project
 
-Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
-
-::: code-group
-
-```bash [npm]
-npm run documate:upload
-```
-
-```bash [yarn]
-yarn documate:upload
-```
-
-```bash [pnpm]
-pnpm documate:upload
-```
-
-:::
+<!--@include: ../_partials/_run-project-upload.md-->
 
 After the command finishes, you can start the dev server and see the __Ask AI__ button in your page.
 
-::: code-group
-
-```bash [npm]
+::: tabs key:pm
+== npm
+```bash
 npm run dev
 ```
-
-```bash [yarn]
+== yarn
+```bash
 yarn dev
 ```
-
-```bash [pnpm]
+== pnpm
+```bash
 pnpm dev
 ```
-
 :::

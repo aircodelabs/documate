@@ -1,24 +1,23 @@
 In the root of your project, run the following command:
 
 ::: tabs key:pm
-=== npm
+== npm
 ```bash
-npx @documate/documate init --framework vue
+npx @documate/documate init --framework react
 ```
-=== yarn
+== yarn
 ```bash
-yarn dlx @documate/documate init --framework vue
+yarn dlx @documate/documate init --framework react
 ```
-=== pnpm
+== pnpm
 ```bash
-pnpm dlx @documate/documate init --framework vue
+pnpm dlx @documate/documate init --framework react
 ```
-
 :::
 
 This command does the following:
 
-- Install `@documate/documate` and `@documate/vue` packages to your project
+- Install `@documate/documate` and `@documate/react` packages to your project
 - Create a `documate.json`
 
 ```json
