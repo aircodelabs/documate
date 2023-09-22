@@ -3,3 +3,4 @@
 *.jsx linguist-detectable=true
 *.ts linguist-detectable=true
 *.tsx linguist-detectable=true
+*.vue linguist-detectable=true
