@@ -5,11 +5,17 @@ import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [
+    vue(),
+    dts({
+      insertTypesEntry: true,
+    }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, 'components/index.ts'),
       name: 'Documate',
-      fileName: (format) => `documate.${format}.js`,
+      fileName: 'documate',
     },
     rollupOptions: {
       external: ['vue'],
@@ -22,8 +28,4 @@ export default defineConfig({
       },
     },
   },
-  plugins: [
-    vue(),
-    dts(),
-  ],
 })

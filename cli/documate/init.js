@@ -2,6 +2,7 @@ import fsPromises from 'fs/promises';
 import { detect } from 'detect-package-manager';
 import Spinnies from 'spinnies';
 import { $ } from 'execa';
+import prompts from 'prompts';
 
 const cwd = process.cwd();
 
@@ -50,9 +51,9 @@ const injectScript = async () => {
 const generateDocumateJson = async () => {
   const filePath = `${cwd}/documate.json`;
   try {
-    fsPromises.access(filePath);
+    await fsPromises.access(filePath);
   } catch (error) {
-    fsPromises.writeFile(filePath, JSON.stringify({
+    await fsPromises.writeFile(filePath, JSON.stringify({
       "root": ".",
       "include": [ "**/*.md" ],
       "backend": ""
@@ -64,7 +65,20 @@ const init = async (options) => {
   console.log('Start initializing the project with Documate.\n');
 
   const spinnies = new Spinnies();
-  const { framework = 'vue' } = options;
+
+  let { framework } = options;
+  if (!framework) {
+    const result = await prompts({
+      type: 'select',
+      name: 'framework',
+      message: 'Which framework are you using?',
+      choices: [
+        { title: 'Vue', value: 'vue' },
+        { title: 'React', value: 'react' },
+      ],
+    });
+    framework = result.framework;
+  }
 
   spinnies.add('installing', { text: 'Installing dependencies...' });
   try {

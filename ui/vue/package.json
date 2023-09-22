@@ -1,18 +1,18 @@
 {
   "name": "@documate/vue",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "files": [
     "dist",
     "README.md"
   ],
-  "main": "./dist/documate.es.umd.js",
-  "module": "./dist/documate.es.js",
+  "main": "./dist/documate.umd.cjs",
+  "module": "./dist/documate.js",
   "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/documate.es.js",
-      "require": "./dist/documate.umd.js"
+      "import": "./dist/documate.js",
+      "require": "./dist/documate.umd.cjs"
     },
     "./dist/style.css": "./dist/style.css"
   },
