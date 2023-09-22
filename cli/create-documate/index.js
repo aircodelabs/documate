@@ -30,14 +30,21 @@ const TEMPLATES = [
   {
     name: 'vitepress',
     display: 'VitePress',
+    devCommand: '__PACKAGE_MANAGER__ run docs:dev',
   },
   {
     name: 'docsify',
     display: 'Docsify',
+    devCommand: 'docsify serve .',
+  },
+  {
+    name: 'docusaurus',
+    display: 'Docusaurus',
+    devCommand: '__PACKAGE_MANAGER__ start',
   },
 ]
 
-const DEFAULT_PROJECT_NAME = 'documate-vitepress-starter'
+const DEFAULT_PROJECT_NAME = 'my-documate-project'
 
 async function create(name, options) {
   let projectName = name
@@ -103,21 +110,13 @@ async function create(name, options) {
       console.log(`\nDone.\n`)
 
       console.log('  cd', projectName)
+      console.log(`  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`)
 
-      switch (pkgManager) {
-        case 'yarn':
-          console.log('  yarn')
-          console.log('  yarn docs:dev')
-          break
-        case 'pnpm':
-            console.log('  pnpm install')
-            console.log('  pnpm docs:dev')
-            break
-        default:
-          console.log(`  ${pkgManager} install`)
-          console.log(`  ${pkgManager} run docs:dev`)
-          break
-      }
+      const selected = TEMPLATES.find(t => t.name === template)
+      const devCommand = selected
+        ? selected.devCommand.replace('__PACKAGE_MANAGER__', pkgManager)
+        : `${pkgManager} run dev`
+      console.log(`  ${devCommand}`)
 
       console.log('\nVisit https://documate.site for more information.')
     })
