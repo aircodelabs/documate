@@ -1,3 +1,3 @@
-* linguist-vendored
+* linguist-detectable=true
 *.css linguist-detectable=false
 *.less linguist-detectable=false
