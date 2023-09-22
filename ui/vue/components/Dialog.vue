@@ -279,7 +279,7 @@ onBeforeUnmount(() => {
 </TransitionRoot>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 
 input {
   outline: none;
@@ -307,11 +307,6 @@ ul {
   .button-placeholder {
     display: block;
   }
-}
-
-.dialog {
-  position: relative;
-  z-index: 10;
 }
 
 .enter {
@@ -350,23 +345,22 @@ ul {
 }
 
 .dialog-container {
-  overflow-y: auto;
   position: fixed;
+  z-index: 999999;
+  overflow-y: auto;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 999999;
-  padding: 1rem;
   background-color: var(--dm-mask-bg-color);
+  padding: 1rem;
 
-  @media (min-width: 640px) { 
+  @media (min-width: 640px) {
     padding: 1.5rem;
   }
-  @media (min-width: 768px) { 
+  @media (min-width: 768px) {
     padding: 5rem;
   }
-
 }
 
 .dialog-panel {
@@ -460,7 +454,7 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
- }
+}
 
 .loading {
   padding: 1rem;
@@ -521,9 +515,9 @@ ul {
   padding-bottom: 3.5rem;
   text-align: center;
 
-  @media (min-width: 640px) { 
+  @media (min-width: 640px) {
     padding-left: 3.5rem;
-    padding-right: 3.5rem; 
+    padding-right: 3.5rem;
   }
 }
 
@@ -590,7 +584,7 @@ ul {
   height: 1.25rem;
   font-weight: 600;
 
-  @media (min-width: 640px) { 
+  @media (min-width: 640px) {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
