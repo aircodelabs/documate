@@ -1,6 +1,6 @@
 {
   "name": "@documate/documate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -19,6 +19,7 @@
     "detect-package-manager": "^3.0.1",
     "execa": "^8.0.1",
     "glob": "^10.3.4",
+    "prompts": "^2.4.2",
     "spinnies": "^0.5.1"
   }
 }
