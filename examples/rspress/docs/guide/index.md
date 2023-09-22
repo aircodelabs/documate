@@ -127,22 +127,22 @@ You can use the \`\`\` syntax to create code blocks and support custom titles. F
 
 ````md
 ```js
-console.log('Hello World');
+console.log("Hello World");
 ```
 
 ```js title="hello.js"
-console.log('Hello World');
+console.log("Hello World");
 ```
 ````
 
 **Output:**
 
 ```js
-console.log('Hello World');
+console.log("Hello World");
 ```
 
 ```js title="hello.js"
-console.log('Hello World');
+console.log("Hello World");
 ```
 
 ### Show Line Numbers
@@ -166,7 +166,7 @@ You can also apply line highlighting and code block title at the same time, for 
 
 ````md
 ```js title="hello.js" {1,3-5}
-console.log('Hello World');
+console.log("Hello World");
 
 const a = 1;
 
@@ -181,7 +181,7 @@ console.log(b);
 **Ouput:**
 
 ```js title="hello.js" {1,3-5}
-console.log('Hello World');
+console.log("Hello World");
 
 const a = 1;
 
@@ -194,8 +194,4 @@ console.log(b);
 
 ## Rustify MDX compiler
 
-You can enable Rustify MDX compiler by following config:
-
-import MdxRs from '../../fragments/mdx-rs';
-
-<MdxRs />
+You can enable Rustify MDX compiler by following config.

@@ -1,13 +1,21 @@
 import Theme from "rspress/theme";
-import { Documate } from "../../../ui/react";
-import "../../../ui/react/dist/style.css";
+import { NoSSR } from "rspress/runtime";
+import { Documate } from "@documate/react";
+import "@documate/react/dist/style.css";
 
-const Layout = () => <Theme.Layout afterNavTitle={<Documate endpoint="" />} />;
+const Layout = () => (
+  <Theme.Layout
+    afterNavTitle={
+      <NoSSR>
+        <Documate endpoint="" />
+      </NoSSR>
+    }
+  />
+);
 
 export default {
   ...Theme,
   Layout,
 };
 
-// eslint-disable-next-line import/export
 export * from "rspress/theme";
