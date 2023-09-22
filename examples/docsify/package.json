@@ -7,6 +7,6 @@
     "documate:upload": "documate upload"
   },
   "devDependencies": {
-    "@documate/documate": "^0.1.0"
+    "@documate/documate": "^0.2.0"
   }
 }
