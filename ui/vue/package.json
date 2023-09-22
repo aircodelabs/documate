@@ -1,6 +1,6 @@
 {
   "name": "@documate/vue",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "type": "module",
   "files": [
     "dist",
@@ -12,7 +12,8 @@
   "exports": {
     ".": {
       "import": "./dist/documate.js",
-      "require": "./dist/documate.umd.cjs"
+      "require": "./dist/documate.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./dist/style.css": "./dist/style.css"
   },
@@ -31,6 +32,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
     "@tailwindcss/forms": "^0.5.6",
+    "less": "^4.2.0",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1"
   },

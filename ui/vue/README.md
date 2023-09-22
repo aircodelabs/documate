@@ -13,7 +13,7 @@
 npm install @documate/vue
 ```
 
-```js
+```vue
 <script setup>
 import Documate from '@documate/vue'
 import '@documate/vue/dist/style.css'
@@ -28,6 +28,28 @@ import '@documate/vue/dist/style.css'
 ```
 
 Other Props check here [component-props](https://documate.site/reference/documate-vue#component-props)
+
+## Custom Button
+
+```vue
+<script setup>
+import {Dialog} from '@documate/vue'
+import '@documate/vue/dist/style.css'
+import { ref } from 'vue'
+
+const isOpen = ref(false)
+</script>
+
+<template>
+<button type="button" @click="isOpen = true">Click me to Ask AI</button>
+<Dialog  endpoint="https://xqtb17uycg.us.aircode.run/ask",
+  :predefinedQuestions=[
+    'What is Documate?',
+  ],
+  :open = "isOpen"
+  @close="isOpen = false"></Dialog>
+</template>
+```
 
 ## Documentation
 

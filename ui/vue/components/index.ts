@@ -1,10 +1,5 @@
-export interface DocumateProps {
-  endpoint: string;
-  buttonLabel?: string;
-  placeholder?: string;
-  predefinedQuestions?: string[];
-}
+import Button from './Button.vue';
+import Dialog from './Dialog.vue';
 
-import Documate from './Documate.vue';
-
-export default Documate;
+export { Dialog, Button as Documate };
+export default Button;
