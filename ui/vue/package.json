@@ -1,6 +1,6 @@
 {
   "name": "@documate/vue",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "type": "module",
   "files": [
     "dist",
@@ -12,7 +12,8 @@
   "exports": {
     ".": {
       "import": "./dist/documate.js",
-      "require": "./dist/documate.umd.cjs"
+      "require": "./dist/documate.umd.cjs",
+      "types": "./dist/index.d.ts"
     },
     "./dist/style.css": "./dist/style.css"
   },

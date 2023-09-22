@@ -3,7 +3,7 @@ import { DocumateDialog as Dialog } from './dialog';
 import './styles/button.scoped.less'
 
 interface ButtonProps {
-  endpoint?: string,
+  endpoint: string,
   buttonLabel?: string,
   placeholder?: string,
   predefinedQuestions?: string[],

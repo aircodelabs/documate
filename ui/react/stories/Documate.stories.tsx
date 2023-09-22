@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Documate } from '../src/components/Documate';
@@ -16,17 +15,18 @@ type Story = StoryObj<typeof meta>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => {
-    return (<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask'/>);
+  args: {
+    endpoint: 'https://8c7b1be9gi.us.aircode.run/ask'
   }
 };
 
 export const AskSpriteJS: Story = {
-  render: () => {
-    return (<Documate endpoint='https://8c7b1be9gi.us.aircode.run/ask' predefinedQuestions={[
+  args: {
+    endpoint: 'https://8c7b1be9gi.us.aircode.run/ask',
+    predefinedQuestions: [
       'What is SpriteJS?',
       'How can I use SpriteJS to draw a circle?',
       'Can SpriteJS render 3D Objects?'
-    ]}/>);
-  }
+    ],
+  },
 };

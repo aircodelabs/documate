@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-
-import { DocumateDialog as Dialog } from '../src/components/Documate/dialog';
+import { Dialog } from '../src/components/Documate'
 
 export const Documate = ({
   ...props

@@ -10,11 +10,11 @@ import {
 } from '@headlessui/react'
 
 interface DialogProps {
-  open?: boolean,
-  endpoint?: string,
+  open: boolean,
+  endpoint: string,
   placeholder?: string,
   predefinedQuestions?: string[],
-  onClose?: () => void,
+  onClose: () => void,
 }
 
 interface OpenAIResponseBody {
