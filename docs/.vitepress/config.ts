@@ -1,6 +1,6 @@
-import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vitepress';
-import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs';
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -36,7 +36,7 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      md.use(tabsMarkdownPlugin);
+      md.use(tabsMarkdownPlugin)
     },
   },
   themeConfig: {
@@ -93,4 +93,4 @@ export default defineConfig({
       copyright: '© 2023 AirCode, Inc. All rights reserved.',
     },
   },
-});
+})
