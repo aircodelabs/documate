@@ -1,6 +1,6 @@
 # Get Started with Rspress
 
-There are two ways you can integrate Documate with Rspress. Both are convinient and can be done in a few minutes.
+There are two ways you can integrate Documate with [Rspress](https://rspress.dev). Both are convinient and can be done in a few minutes.
 
 - [Create a new Rspress site using CLI](#quickstart-for-new-project)
 - [Add to an existing Rspress site](#mannually-add-to-existing-project)
@@ -43,10 +43,10 @@ Rspress allows you to customize the project by [extending the default theme](htt
 
 ```js
 // theme/index.tsx
-import Theme from "rspress/theme";
-import { NoSSR } from "rspress/runtime";
-import { Documate } from "@documate/react";
-import "@documate/react/dist/style.css";
+import Theme from 'rspress/theme'
+import { NoSSR } from 'rspress/runtime'
+import { Documate } from '@documate/react'
+import '@documate/react/dist/style.css'
 
 const Layout = () => (
   <Theme.Layout
@@ -56,14 +56,14 @@ const Layout = () => (
       </NoSSR>
     }
   />
-);
+)
 
 export default {
   ...Theme,
   Layout,
-};
+}
 
-export * from "rspress/theme";
+export * from 'rspress/theme'
 ```
 
 ## Connect to Backend
