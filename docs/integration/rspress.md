@@ -1,4 +1,4 @@
-# Get Started with VitePress
+# Get Started with Rspress
 
 There are two ways you can integrate Documate with Rspress. Both are convinient and can be done in a few minutes.
 
@@ -7,7 +7,7 @@ There are two ways you can integrate Documate with Rspress. Both are convinient 
 
 ## Quickstart for New Project
 
-To create a new VitePress site with Documate, use the following command:
+To create a new Rspress site with Documate, use the following command:
 
 ::: code-group
 
@@ -52,7 +52,7 @@ const Layout = () => (
   <Theme.Layout
     afterNavTitle={
       <NoSSR>
-        <Documate endpoint="YOUR_BACKEND_DOMAIN/ask" />
+        <Documate endpoint="" />
       </NoSSR>
     }
   />
@@ -66,11 +66,15 @@ export default {
 export * from "rspress/theme";
 ```
 
-The `endpoint` prop is the URL of your backend. You can find it in the backend dashboard.
-
 ## Connect to Backend
 
 <!--@include: ../_partials/_connect-backend.md-->
+
+Then you can pass the `endpoint` prop to the `Documate` component.
+
+```js
+<Documate endpoint="YOUR_DOMAIN/ask" />
+```
 
 ## Run the Project
 
