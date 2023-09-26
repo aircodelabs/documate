@@ -106,7 +106,7 @@ async function create(name, options) {
 
       console.log('  cd', projectName)
       console.log(
-        `  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`
+        `  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`,
       )
 
       const selected = TEMPLATES.find((t) => t.name === template)

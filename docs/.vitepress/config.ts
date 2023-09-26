@@ -28,7 +28,7 @@ export default defineConfig({
         {
           find: /^.*\/VPFeature\.vue$/,
           replacement: fileURLToPath(
-            new URL('./theme/components/DocuFeature.vue', import.meta.url)
+            new URL('./theme/components/DocuFeature.vue', import.meta.url),
           ),
         },
       ],
