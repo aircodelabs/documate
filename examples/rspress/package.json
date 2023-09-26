@@ -11,7 +11,7 @@
   "dependencies": {
     "rspress": "^0.1.1",
     "@documate/documate": "^0.1.0",
-    "@documate/react": "0.0.4"
+    "@documate/react": "0.2.0"
   },
   "devDependencies": {
     "@types/node": "^14",
