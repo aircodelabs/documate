@@ -1,7 +1,7 @@
-import Theme from "rspress/theme";
-import { NoSSR } from "rspress/runtime";
-import { Documate } from "@documate/react";
-import "@documate/react/dist/style.css";
+import Theme from 'rspress/theme';
+import { NoSSR } from 'rspress/runtime';
+import { Documate } from '@documate/react';
+import '@documate/react/dist/style.css';
 
 const Layout = () => (
   <Theme.Layout
@@ -18,4 +18,4 @@ export default {
   Layout,
 };
 
-export * from "rspress/theme";
+export * from 'rspress/theme';
