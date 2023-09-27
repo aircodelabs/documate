@@ -4,12 +4,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const prompts = require('prompts')
 
-const {
-  green,
-  lightBlue,
-  red,
-  reset,
-} = require('kolorist')
+const { green, lightBlue, red, reset } = require('kolorist')
 
 function pkgFromUserAgent(userAgent) {
   if (!userAgent) return undefined
@@ -41,6 +36,11 @@ const TEMPLATES = [
     name: 'docusaurus',
     display: 'Docusaurus',
     devCommand: '__PACKAGE_MANAGER__ start',
+  },
+  {
+    name: 'rspress',
+    display: 'Rspress',
+    devCommand: '__PACKAGE_MANAGER__ dev',
   },
 ]
 
@@ -78,19 +78,15 @@ async function create(name, options) {
 
   if (questions.length > 0) {
     try {
-      result = await prompts(
-        questions,
-        {
-          onCancel: () => {
-            throw new Error(red('✖') + ' Operation cancelled')
-          },
+      result = await prompts(questions, {
+        onCancel: () => {
+          throw new Error(red('✖') + ' Operation cancelled')
         },
-      )
+      })
 
       // user choice associated with prompts
       template = template || result.template.name
       projectName = projectName || result.projectName
-
     } catch (cancelled) {
       console.log(cancelled.message)
       return
@@ -110,9 +106,11 @@ async function create(name, options) {
       console.log(`\nDone.\n`)
 
       console.log('  cd', projectName)
-      console.log(`  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`)
+      console.log(
+        `  ${pkgManager === 'yarn' ? 'yarn' : `${pkgManager} install`}`,
+      )
 
-      const selected = TEMPLATES.find(t => t.name === template)
+      const selected = TEMPLATES.find((t) => t.name === template)
       const devCommand = selected
         ? selected.devCommand.replace('__PACKAGE_MANAGER__', pkgManager)
         : `${pkgManager} run dev`
@@ -120,10 +118,10 @@ async function create(name, options) {
 
       console.log('\nVisit https://documate.site for more information.')
     })
-    .catch(err => console.error('err: '+ err))
+    .catch((err) => console.error('err: ' + err))
 }
 
-async function main () {
+async function main() {
   program
     .name('create-documate')
     .argument('[project-name]')
@@ -133,6 +131,6 @@ async function main () {
   await program.parseAsync(process.argv)
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err)
 })
