@@ -40,6 +40,7 @@ const TEMPLATES = [
   {
     name: 'rspress',
     display: 'Rspress',
+    devCommand: '__PACKAGE_MANAGER__ dev',
   },
 ]
 
