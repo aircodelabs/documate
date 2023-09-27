@@ -42,6 +42,11 @@ const TEMPLATES = [
     display: 'Rspress',
     devCommand: '__PACKAGE_MANAGER__ dev',
   },
+  {
+    name: 'nextra',
+    display: 'Nextra',
+    devCommand: '__PACKAGE_MANAGER__ dev',
+  },
 ]
 
 const DEFAULT_PROJECT_NAME = 'my-documate-project'
