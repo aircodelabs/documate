@@ -9,17 +9,20 @@ There are two ways you can integrate Documate with [Rspress](https://rspress.dev
 
 To create a new Rspress site with Documate, use the following command:
 
-::: code-group
+:::tabs key:pm
 
-```bash [npm]
+== npm
+```bash
 npm create documate@latest --template rspress
 ```
 
-```bash [yarn]
+== yarn
+```bash
 yarn create documate --template rspress
 ```
 
-```bash [pnpm]
+== pnpm
+```bash
 pnpm create documate --template rspress
 ```
 
@@ -80,17 +83,20 @@ Then you can pass the `endpoint` prop to the `Documate` component.
 
 Now you're all set with Documate. Run the following command to upload your content to backend and generate the knowledge base:
 
-::: code-group
+:::tabs key:pm
 
-```bash [npm]
+== npm
+```bash
 npm run documate:upload
 ```
 
-```bash [yarn]
+== yarn
+```bash
 yarn documate:upload
 ```
 
-```bash [pnpm]
+== pnpm
+```bash
 pnpm documate:upload
 ```
 
@@ -98,17 +104,20 @@ pnpm documate:upload
 
 After the command finishes, you can start the dev server and find the **Ask AI** button in the top left corner.
 
-::: code-group
+:::tabs key:pm
 
-```bash [npm]
-npm run DEV
+== npm
+```bash
+npm run dev
 ```
 
-```bash [yarn]
+== yarn
+```bash
 yarn dev
 ```
 
-```bash [pnpm]
+== pnpm
+```bash
 pnpm dev
 ```
 
