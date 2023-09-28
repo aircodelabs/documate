@@ -68,6 +68,7 @@ export default defineConfig({
           { text: 'Start with Docusaurus', link: '/integration/docusaurus' },
           { text: 'Start with Docsify', link: '/integration/docsify' },
           { text: 'Start with Rspress', link: '/integration/rspress' },
+          { text: 'Start with Nextra', link: '/integration/nextra' },
           { text: 'General Vue Project', link: '/getting-started/general-vue' },
         ],
       },

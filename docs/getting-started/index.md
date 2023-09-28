@@ -14,13 +14,13 @@ Please choose a framework below to get started:
 - [Docusaurus](/integration/docusaurus)
 - [Docsify](/integration/docsify)
 - [Rspress](/integration/rspress)
+- [Nextra](/integration/nextra)
 - [General Vue Project](/getting-started/general-vue)
 
 The following frameworks are coming soon:
 
 - Vuepress
 - Docus
-- Nextra
 - General React Project
 
 ## Key Features
@@ -137,6 +137,29 @@ yarn create documate --template rspress
 
 ```bash
 pnpm create documate --template rspress
+```
+
+:::
+
+- Nextra ([examples/nextra](https://github.com/AirCodeLabs/documate/tree/main/examples/nextra))
+
+::: tabs key:pm
+== npm
+
+```bash
+npm create documate@latest --template nextra
+```
+
+== yarn
+
+```bash
+yarn create documate --template nextra
+```
+
+== pnpm
+
+```bash
+pnpm create documate --template nextra
 ```
 
 :::
