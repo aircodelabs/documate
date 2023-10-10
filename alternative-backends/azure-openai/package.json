@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@azure/openai": "1.0.0-beta.5",
-    "@orama/orama": "1.2.6",
-    "aircode": "0.7.0",
-    "gpt-3-encoder": "1.1.4"
-  }
-}
