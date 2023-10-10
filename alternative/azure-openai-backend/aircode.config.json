@@ -1,7 +1,7 @@
 {
   "name": "Documate backend Azure OpenAI",
   "runtime": "node/v18",
-  "retion": "US",
+  "region": "US",
   "envs": [
     "AZURE_OPENAI_DEPLOYMENT",
     "AZURE_OPENAI_ENDPOINT",
