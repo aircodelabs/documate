@@ -114,10 +114,6 @@
   padding-left: 1.5rem;
 }
 
-.documate-dialog .question-anwser-item[role="option"] {
-  cursor: pointer;
-}
-
 .documate-dialog .question-role-user, .anwser-content {
   display: flex;
   gap: 1.2rem;
@@ -186,4 +182,8 @@
 .documate-dialog .question-anwser-item[role="option"]:hover {
   background-color: var(--dm-highlight-color);
   color: var(--dm-c-white);
+}
+
+.documate-dialog .question-anwser-section.asked .question-anwser-item[role="option"] {
+  display: none;
 }
