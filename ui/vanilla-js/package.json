@@ -1,6 +1,6 @@
 {
   "name": "@documate/vanilla",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Building Documate UI using native JavaScript",
   "main": "dist/documate-vanilla.js",
   "type": "module",

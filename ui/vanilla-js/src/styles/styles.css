@@ -6,6 +6,8 @@
     --dm-modal-bg-color: #fff;
     --dm-mask-bg-color: rgba(101,108,133, .8);
     --dm-divider-color: #F3F4F6;
+    --dm-highlight-color: #3451b2;
+    --dm-c-white: #fff;
   }
 }
 
@@ -15,6 +17,8 @@
     --dm-modal-bg-color: #202127;
     --dm-mask-bg-color: rgba(101,108,133, .8);
     --dm-divider-color: #2e2e32;
+    --dm-highlight-color: #a8b1ff;
+    --dm-c-white: #fff;
   }  
 }
 
@@ -77,7 +81,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  padding-right: 1.5rem;
   transform: translate(-50%, -50%);
 }
 
@@ -89,6 +92,7 @@
   scroll-padding-bottom: 0.5rem;
   color: var(--dm-text-color);
   overflow: scroll;
+  padding: 0;
 }
 
 .documate-dialog .question-anwser-section .loading-item:first-of-type::before {
@@ -100,9 +104,18 @@
   font-size: 1.2rem;
 }
 
+.documate-dialog .question-anwser-section .loading-item .loading {
+  padding-left: 1.5rem;
+}
+
 .documate-dialog .question-anwser-item {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
+  padding-left: 1.5rem;
+}
+
+.documate-dialog .question-anwser-item[role="option"] {
+  cursor: pointer;
 }
 
 .documate-dialog .question-role-user, .anwser-content {
@@ -165,4 +178,12 @@
 
 .documate-dialog .loading svg {
   animation: rotation 2s linear infinite;
+}
+
+.documate-dialog .question-anwser-item[role="option"] {
+  cursor: pointer;
+}
+.documate-dialog .question-anwser-item[role="option"]:hover {
+  background-color: var(--dm-highlight-color);
+  color: var(--dm-c-white);
 }
