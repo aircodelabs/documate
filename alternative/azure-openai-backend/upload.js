@@ -85,7 +85,7 @@ module.exports = async function(params, context) {
       return { ok: 1 };
     } else {
       // Delete the exist one since we will regenerate it
-      await PagesTable.where({ project, path });
+      await PagesTable.where({ project, path }).delete();
     }
   }
 

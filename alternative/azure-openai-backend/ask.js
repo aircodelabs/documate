@@ -4,7 +4,7 @@ const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
 const { create, insertMultiple, searchVector } = require('@orama/orama');
 const tokenizer = require('gpt-3-encoder');
 
-const MAX_CONTEXT_TOKEN = 1500;
+const MAX_CONTEXT_TOKEN = 5000;
 const PagesTable = aircode.db.table('pages');
 
 const {env} = process;
