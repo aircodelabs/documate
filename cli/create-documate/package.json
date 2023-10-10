@@ -1,6 +1,6 @@
 {
   "name": "create-documate",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "description": "create-documate can let you create a new Documate project without installing CLI.",
   "main": "index.js",
   "files": [

@@ -12,7 +12,7 @@ Then add it to the `documate.json` file:
 ```json{4}
 {
   "root": ".",
-  "include": [ "**/*.md" ],
+  "include": [ "**/*.md", "**/*.mdx" ],
   "backend": "https://test123.us.aircode.run/upload"
 }
 ```

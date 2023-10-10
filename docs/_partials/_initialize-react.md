@@ -23,7 +23,7 @@ This command does the following:
 ```json
 {
   "root": ".",
-  "include": [ "**/*.md" ],
+  "include": [ "**/*.md", "**/*.mdx" ],
   "backend": ""
 }
 ```

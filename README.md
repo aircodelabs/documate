@@ -50,12 +50,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 - Kevin Wu ([@0xinhua](https://twitter.com/0xinhua))
 - Akira Wu ([@akira_cn](https://twitter.com/akira_cn))
 
-## Star History
+## License
 
-<a href="https://star-history.com/#aircodelabs/documate&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=aircodelabs/documate&type=Date" />
-  </picture>
-</a>
+[Mozilla Public License 2.0](./LICENSE)

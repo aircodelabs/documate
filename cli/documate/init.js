@@ -55,7 +55,7 @@ const generateDocumateJson = async () => {
   } catch (error) {
     await fsPromises.writeFile(filePath, JSON.stringify({
       "root": ".",
-      "include": [ "**/*.md" ],
+      "include": [ "**/*.md", "**/*.mdx" ],
       "backend": ""
     }, null, 2))
   }

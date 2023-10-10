@@ -1,0 +1,20 @@
+{
+  "name": "documate-rspress-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview",
+    "documate:upload": "documate upload"
+  },
+  "dependencies": {
+    "rspress": "^0.1.1",
+    "@documate/documate": "^0.1.0",
+    "@documate/react": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14",
+    "@types/react": "^18.2.22"
+  }
+}

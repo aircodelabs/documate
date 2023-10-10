@@ -1,6 +1,6 @@
 # Documate Quickstart
 
-Documate is an open-source tool designed to seamlessly __integrate an AI chat dialog into your documentation site__.
+Documate is an open-source tool designed to seamlessly **integrate an AI chat dialog into your documentation site**.
 
 It uses your content to generate real-time answers to user questions, effectively acting as a "ChatGPT" for your platform.
 
@@ -13,13 +13,14 @@ Please choose a framework below to get started:
 - [VitePress](/integration/vitepress)
 - [Docusaurus](/integration/docusaurus)
 - [Docsify](/integration/docsify)
+- [Rspress](/integration/rspress)
+- [Nextra](/integration/nextra)
 - [General Vue Project](/getting-started/general-vue)
 
 The following frameworks are coming soon:
 
 - Vuepress
 - Docus
-- Nextra
 - General React Project
 
 ## Key Features
@@ -30,7 +31,7 @@ Documate can integrate with popular frameworks you're already familiar with, suc
 
 ### Easy to Use
 
-No  AI or vector search knowledge required. Simply follow a few steps, and you can integrate Documate into your site in minutes.
+No AI or vector search knowledge required. Simply follow a few steps, and you can integrate Documate into your site in minutes.
 
 ### Fully Controllable
 
@@ -52,49 +53,113 @@ These examples can serve as headless templates to kickstart a new documentation 
 
 ::: tabs key:pm
 == npm
+
 ```bash
 npm create documate@latest --template vitepress
 ```
+
 == yarn
+
 ```bash
 yarn create documate --template vitepress
 ```
+
 == pnpm
+
 ```bash
 pnpm create documate --template vitepress
 ```
+
 :::
 
 - Docusaurus ([examples/docusaurus](https://github.com/AirCodeLabs/documate/tree/main/examples/docusaurus))
 
 ::: tabs key:pm
 == npm
+
 ```bash
 npm create documate@latest --template docusaurus
 ```
+
 == yarn
+
 ```bash
 yarn create documate --template docusaurus
 ```
+
 == pnpm
+
 ```bash
 pnpm create documate --template docusaurus
 ```
+
 :::
 
 - Docsify ([examples/docsify](https://github.com/AirCodeLabs/documate/tree/main/examples/docsify))
 
 ::: tabs key:pm
 == npm
+
 ```bash
 npm create documate@latest --template docsify
 ```
+
 == yarn
+
 ```bash
 yarn create documate --template docsify
 ```
+
 == pnpm
+
 ```bash
 pnpm create documate --template docsify
 ```
+
+:::
+
+- Rspress ([examples/rspress](https://github.com/AirCodeLabs/documate/tree/main/examples/rspress))
+
+::: tabs key:pm
+== npm
+
+```bash
+npm create documate@latest --template rspress
+```
+
+== yarn
+
+```bash
+yarn create documate --template rspress
+```
+
+== pnpm
+
+```bash
+pnpm create documate --template rspress
+```
+
+:::
+
+- Nextra ([examples/nextra](https://github.com/AirCodeLabs/documate/tree/main/examples/nextra))
+
+::: tabs key:pm
+== npm
+
+```bash
+npm create documate@latest --template nextra
+```
+
+== yarn
+
+```bash
+yarn create documate --template nextra
+```
+
+== pnpm
+
+```bash
+pnpm create documate --template nextra
+```
+
 :::
