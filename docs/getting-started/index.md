@@ -43,7 +43,7 @@ Documate is designed for accessibility. It supports full keyboard navigation and
 
 ### Fully Customizable
 
-While provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
+While Documate provides a default UI tailored for your chosen framework, it's also completely adaptable to meet your specific needs.
 
 ## Examples
 
